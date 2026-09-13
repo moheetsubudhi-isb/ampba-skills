@@ -1,0 +1,13 @@
+{
+  "name": "isb-skills",
+  "owner": {
+    "name": "Moheet Subudhi"
+  },
+  "plugins": [
+    {
+      "name": "optimization-toolkit",
+      "source": "./plugins/optimization-toolkit",
+      "description": "Decision-science skills for turning business decisions into optimisation models, writing business rules correctly, allocating scarce supply fairly, choosing exact solvers or heuristics, and testing models before go-live."
+    }
+  ]
+}

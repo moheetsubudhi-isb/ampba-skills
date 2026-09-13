@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+.claude/
+evals/results/*.miss
+evals/results/smoke.json
+evals/results/retry.json
+evals/results/recheck.json
+evals/results/unknown.json
+evals/results/*.recheck.json
+# course material never belongs in this repo
+*.pdf
+*.pptx
+*.docx
+*.xlsx

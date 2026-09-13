@@ -1,0 +1,149 @@
+{
+ "skill": "optimization-formulation",
+ "passed": 18,
+ "unknown": 2,
+ "total": 20,
+ "timed_out_runs": 2,
+ "results": [
+  {
+   "query": "We make three grades of steel that share furnace hours and a limited scrap supply. Help me work out how much of each to produce next month to maximise margin.",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Our ops head wants to know whether paying for a second warehouse shift is worth it. Labour is clearly our bottleneck right now. How should I analyse this?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "I need to pick which 4 of 11 candidate cities get fulfilment centres so most customers get next-day delivery. Where do I start?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Marketing wants 40 lakh to boost demand for our premium SKU, but the plant is already maxed out on assembly hours. Is the campaign worth it?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "How should I split a fixed ad budget across 6 channels with minimum spends per channel and diminishing returns, to get the most conversions?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Can you write up a requirements document for a production planning optimisation model so our dev team can build it?",
+   "should_trigger": true,
+   "trigger_rate": null,
+   "runs_ok": 0,
+   "pass": null
+  },
+  {
+   "query": "The solver says our crew allocation is optimal but the plant manager doesn't believe it. How do I explain what is driving the answer?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "we have 3 plants, 12 distribution centres and 200 retailers and need the lowest cost shipping plan that respects plant capacities",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "My LP came back with shadow prices on the labour and raw material constraints. What do those mean for whether we should buy more material?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Nurse staffing: we must cover demand per shift with contract and permanent nurses at different costs and weekly hour limits. What does the model look like?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Forecast next quarter's demand for our premium SKU using the last 3 years of weekly sales.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Our checkout A/B test shows 3% higher conversion for variant B. Can we ship it?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "In my MIP, how do I write 'if warehouse j is closed then no shipments leave j' using a binary variable?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Demand is 30% above what our factory can supply this month. How do we decide which distributors get cut back without it being unfair?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Our vehicle routing model for 1,500 daily deliveries has not finished after 6 hours. What should we do?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "What test cases should I write for our production scheduling MIP before go-live?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Write a SQL query that sums monthly revenue by region from the orders table.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Explain the difference between the simplex method and interior point methods.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Build a Power BI dashboard showing plant utilisation by week.",
+   "should_trigger": false,
+   "trigger_rate": null,
+   "runs_ok": 0,
+   "pass": null
+  },
+  {
+   "query": "Segment our customers into groups based on purchase behaviour.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  }
+ ]
+}

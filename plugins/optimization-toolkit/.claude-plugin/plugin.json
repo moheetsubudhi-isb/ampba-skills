@@ -1,0 +1,6 @@
+{
+  "name": "optimization-toolkit",
+  "description": "Decision-science skills for turning business decisions into optimisation models, writing business rules correctly, allocating scarce supply fairly, choosing exact solvers or heuristics, and testing models before go-live.",
+  "version": "0.1.0",
+  "author": { "name": "Moheet Subudhi" }
+}

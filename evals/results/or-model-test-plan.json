@@ -1,0 +1,128 @@
+{
+ "skill": "or-model-test-plan",
+ "passed": 16,
+ "total": 20,
+ "timeouts": 6,
+ "results": [
+  {
+   "query": "What test cases should I write for our production scheduling MIP before go-live?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "pass": true
+  },
+  {
+   "query": "How do I validate that our route optimiser actually respects driver break rules?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "pass": true
+  },
+  {
+   "query": "Planners do not trust the new allocation model's output. How do we get them to sign off?",
+   "should_trigger": true,
+   "trigger_rate": 0.0,
+   "pass": false
+  },
+  {
+   "query": "We built an LP for fuel blending. How do we know the model is right and not just returning something?",
+   "should_trigger": true,
+   "trigger_rate": 0.0,
+   "pass": false
+  },
+  {
+   "query": "Set up regression tests for our OR-Tools scheduler so code changes don't silently break business rules.",
+   "should_trigger": true,
+   "trigger_rate": 0.0,
+   "pass": false
+  },
+  {
+   "query": "The model says last week's manual plan is infeasible, but we actually executed that plan. What does that tell us and how should we test for it?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "pass": true
+  },
+  {
+   "query": "How should we run the new optimisation engine alongside the current manual planning before switching over?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "pass": true
+  },
+  {
+   "query": "Give me a test plan with small, medium and large instances for our warehouse slotting MIP.",
+   "should_trigger": true,
+   "trigger_rate": 0.0,
+   "pass": false
+  },
+  {
+   "query": "Our solver returns a plan even when order sizes exceed truck capacity. What tests would have caught this?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "pass": true
+  },
+  {
+   "query": "What go/no-go criteria should the ops director use before we put the crew scheduling model into production?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "pass": true
+  },
+  {
+   "query": "Write pytest unit tests for this pandas data cleaning function.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "pass": true
+  },
+  {
+   "query": "Is our A/B test result valid, and should we check for sample ratio mismatch?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "pass": true
+  },
+  {
+   "query": "Formulate a crew scheduling model with shift rules and costs.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "pass": true
+  },
+  {
+   "query": "How do I write 'a driver cannot work more than 5 consecutive days' as a constraint?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "pass": true
+  },
+  {
+   "query": "Our route optimiser is too slow for 2,000 stops. Heuristic or exact?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "pass": true
+  },
+  {
+   "query": "How do I validate a machine learning churn model with cross-validation?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "pass": true
+  },
+  {
+   "query": "Run a hypothesis test on whether mean delivery time dropped after the process change.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "pass": true
+  },
+  {
+   "query": "Allocate scarce inventory fairly across stores when demand exceeds supply.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "pass": true
+  },
+  {
+   "query": "Set up GitHub Actions CI for my Python package.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "pass": true
+  },
+  {
+   "query": "Explain what a feasible solution is.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "pass": true
+  }
+ ]
+}

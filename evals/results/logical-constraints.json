@@ -1,0 +1,128 @@
+{
+ "skill": "logical-constraints",
+ "passed": 20,
+ "total": 20,
+ "timeouts": 0,
+ "results": [
+  {
+   "query": "In my MIP, how do I write 'if warehouse j is closed then no shipments leave j' using a binary variable?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "pass": true
+  },
+  {
+   "query": "I need constraints saying at most two of these five projects get funded, and project 3 only if project 1 is funded.",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "pass": true
+  },
+  {
+   "query": "How do I model a setup cost that only applies when a production line runs at all, plus a minimum batch of 500 units if it runs?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "pass": true
+  },
+  {
+   "query": "My model should minimise the absolute difference between forecast and production each week. How do I make that linear?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "pass": true
+  },
+  {
+   "query": "I wrote z <= x and z <= y to make z equal x AND y, but when I minimise cost the solver sets z to 0 even when x and y are both 1. Why?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "pass": true
+  },
+  {
+   "query": "our gurobi model is very slow and I used M = 1e9 in all the indicator constraints, is that the problem?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "pass": true
+  },
+  {
+   "query": "How do I linearise the product of a binary store-open variable and a continuous inventory variable?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "pass": true
+  },
+  {
+   "query": "Given an arrival time between 0 and 24, how do I get binary variables telling me which of three shifts it falls into?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "pass": true
+  },
+  {
+   "query": "Either machine A runs at least 8 hours or machine B is switched off completely. How do I write that either-or in PuLP?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "pass": true
+  },
+  {
+   "query": "The MIP keeps assigning drivers to routes on their day off even though I think I added that rule. Can you check my constraints?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "pass": true
+  },
+  {
+   "query": "We make three grades of steel sharing furnace hours. How much of each should we produce to maximise margin?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "pass": true
+  },
+  {
+   "query": "Demand is 30% above supply. Which distributors should be cut back, and how do we keep it fair?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "pass": true
+  },
+  {
+   "query": "Our routing model for 1,500 deliveries runs for hours. Should we switch to a heuristic?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "pass": true
+  },
+  {
+   "query": "What test cases should I write to confirm our scheduler is ready for go-live and planners will trust it?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "pass": true
+  },
+  {
+   "query": "Write a Python if-else that flags orders over 10,000 rupees as high value.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "pass": true
+  },
+  {
+   "query": "Explain what a binary variable is in linear programming.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "pass": true
+  },
+  {
+   "query": "Write a SQL CASE WHEN that buckets arrival times into morning, afternoon and night shifts.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "pass": true
+  },
+  {
+   "query": "Is the regression coefficient on price in our demand model statistically significant?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "pass": true
+  },
+  {
+   "query": "Create a truth table for the boolean expression (A and B) or not C for my digital electronics homework.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "pass": true
+  },
+  {
+   "query": "Compare Gurobi and HiGHS licensing costs for a small startup.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "pass": true
+  }
+ ]
+}

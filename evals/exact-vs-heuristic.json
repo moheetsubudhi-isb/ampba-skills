@@ -1,0 +1,82 @@
+[
+ {
+  "query": "Our vehicle routing model for 1,500 daily deliveries has not finished after 6 hours. What should we do?",
+  "should_trigger": true
+ },
+ {
+  "query": "Can we get the truly optimal route for a technician visiting 40 customer sites a day, or is that unrealistic?",
+  "should_trigger": true
+ },
+ {
+  "query": "Our job-shop scheduling MIP solves a 2-week horizon fine but the 3-month horizon never converges. What are the options?",
+  "should_trigger": true
+ },
+ {
+  "query": "Should I use a genetic algorithm or OR-Tools routing for planning pickups with time windows across 80 vans?",
+  "should_trigger": true
+ },
+ {
+  "query": "The solver stops at a 12% MIP gap when the time limit hits. Is that plan good enough to use?",
+  "should_trigger": true
+ },
+ {
+  "query": "Planners need a delivery plan by 5am every day and the model currently finishes at 9am. How do we speed it up?",
+  "should_trigger": true
+ },
+ {
+  "query": "I wrote a greedy algorithm for loading trucks. How do I know how far it is from optimal?",
+  "should_trigger": true
+ },
+ {
+  "query": "What is a sensible approach for rostering 3,000 staff over a month with lots of union rules?",
+  "should_trigger": true
+ },
+ {
+  "query": "my 2-opt local search keeps getting stuck on the same route, how do I get better solutions",
+  "should_trigger": true
+ },
+ {
+  "query": "Knapsack-style selection with 5,000 items and many side constraints: exact solver or heuristic?",
+  "should_trigger": true
+ },
+ {
+  "query": "How do I write 'if the depot is closed then no routes start there' as a MIP constraint?",
+  "should_trigger": false
+ },
+ {
+  "query": "Formulate a model to choose which 4 of 11 cities should get warehouses.",
+  "should_trigger": false
+ },
+ {
+  "query": "Demand exceeds supply this month. How do I allocate stock fairly between stores?",
+  "should_trigger": false
+ },
+ {
+  "query": "Write test cases for our route planner before go-live.",
+  "should_trigger": false
+ },
+ {
+  "query": "Our Python ETL job takes 3 hours. How do I speed it up?",
+  "should_trigger": false
+ },
+ {
+  "query": "Explain what NP-hard means.",
+  "should_trigger": false
+ },
+ {
+  "query": "Which is faster for a 50GB CSV, pandas or polars?",
+  "should_trigger": false
+ },
+ {
+  "query": "Train a model to predict delivery times from GPS data.",
+  "should_trigger": false
+ },
+ {
+  "query": "Our Spark job shuffles too much data and runs out of memory.",
+  "should_trigger": false
+ },
+ {
+  "query": "Plot our delivery routes on a map for the ops review.",
+  "should_trigger": false
+ }
+]
