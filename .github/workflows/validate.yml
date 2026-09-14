@@ -12,6 +12,8 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       - run: python tools/validate_skills.py
+      - name: Upload bundles match the skills
+        run: python tools/build_bundles.py --check
       - name: Script self-tests
         run: for s in plugins/*/skills/*/scripts/*.py; do python "$s" --selftest; done
       - uses: gitleaks/gitleaks-action@v2

@@ -1,17 +1,6 @@
----
-name: exact-vs-heuristic
-description: >-
-  Choose between an exact solver and a heuristic for a hard planning problem,
-  and set honest expectations on speed, plan quality and explainability. Use
-  when a routing, delivery, scheduling, rostering, packing, knapsack,
-  assignment or network model runs too long or never finishes; when someone
-  asks for the optimal plan for hundreds or thousands of stops, jobs or items;
-  mentions the travelling salesman or vehicle routing problem, greedy
-  algorithms, local or neighbourhood search, genetic algorithms, simulated
-  annealing, tabu search, OR-Tools routing, a MIP gap, rolling horizon or
-  decomposition; or when planners need a good plan in minutes rather than a
-  perfect plan tomorrow.
----
+# exact-vs-heuristic
+
+Use this skill when: Choose between an exact solver and a heuristic for a hard planning problem, and set honest expectations on speed, plan quality and explainability. Use when a routing, delivery, scheduling, rostering, packing, knapsack, assignment or network model runs too long or never finishes; when someone asks for the optimal plan for hundreds or thousands of stops, jobs or items; mentions the travelling salesman or vehicle routing problem, greedy algorithms, local or neighbourhood search, genetic algorithms, simulated annealing, tabu search, OR-Tools routing, a MIP gap, rolling horizon or decomposition; or when planners need a good plan in minutes rather than a perfect plan tomorrow.
 
 # Exact solver or heuristic
 

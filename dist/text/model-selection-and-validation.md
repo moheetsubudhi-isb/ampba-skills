@@ -1,18 +1,6 @@
----
-name: model-selection-and-validation
-description: >-
-  Choose a model family, design validation that proves the model will
-  generalise, and diagnose overfitting or underfitting. Use when someone asks
-  which algorithm to use; how to split training and test data; about
-  cross-validation, or stratified, grouped or time-based splits;
-  hyperparameter tuning or grid search; regularisation, tree depth or
-  pruning; k for k-nearest neighbours; bias and variance; learning curves;
-  why test performance is much worse than training; whether more data would
-  help; or why a model that validated well failed after launch. Not for
-  choosing a decision threshold or business metric for a classifier, not for
-  cleaning or auditing the dataset, and not for explaining what a term such as
-  cross-validation or overfitting means when no dataset or model is in play.
----
+# model-selection-and-validation
+
+Use this skill when: Choose a model family, design validation that proves the model will generalise, and diagnose overfitting or underfitting. Use when someone asks which algorithm to use; how to split training and test data; about cross-validation, or stratified, grouped or time-based splits; hyperparameter tuning or grid search; regularisation, tree depth or pruning; k for k-nearest neighbours; bias and variance; learning curves; why test performance is much worse than training; whether more data would help; or why a model that validated well failed after launch. Not for choosing a decision threshold or business metric for a classifier, not for cleaning or auditing the dataset, and not for explaining what a term such as cross-validation or overfitting means when no dataset or model is in play.
 
 # Model selection and validation
 
@@ -72,3 +60,46 @@ Where a step names a script and code cannot run here, do the same check by hand 
 - Tuning against the test set, or reporting the best single fold.
 - Picking a complex model for a gain smaller than the spread across folds.
 - Accuracy on imbalanced classes. Hand metric choice to a proper threshold analysis.
+
+---
+
+## Reference: references/cv-design.md
+
+# Validation design
+
+| Data situation | Split | scikit-learn |
+|---|---|---|
+| Independent rows, balanced target | K-fold, shuffled | `KFold(5, shuffle=True)` |
+| Independent rows, imbalanced classes | Stratified k-fold | `StratifiedKFold` |
+| Repeated entities (customers, patients, stores) | Group k-fold: each entity sits entirely in one fold | `GroupKFold`, `StratifiedGroupKFold` |
+| Predicting the future from the past | Forward-chaining, rolling-origin validation | `TimeSeriesSplit`, with a gap if labels mature slowly |
+| New entities *and* future periods | Split by time, and exclude training entities from the validation period | Custom split |
+| Small data (a few hundred rows) | Repeated stratified k-fold, and report the spread | `RepeatedStratifiedKFold` |
+
+**Rules**
+- Hold out a final test set that matches the production situation, such as the most recent period. Touch it once.
+- Tuning and reporting on the same folds inflates the score. Use nested cross-validation, or a separate hold-out.
+- Label maturity: if outcomes take 60 days to be known, leave a 60-day gap between the end of training and the start of validation.
+- Mirror production: if the model is retrained monthly and predicts the next month, validate exactly that way.
+
+---
+
+## Reference: references/model-choice.md
+
+# Shortlisting models for tabular data
+
+| Model | Strengths | Weaknesses | Reach for it when |
+|---|---|---|---|
+| Linear or logistic regression (L1/L2) | Explainable, fast, stable on small data, gives probabilities | Needs features for non-linear effects and interactions | Regulated or explainable decisions; a baseline; few rows |
+| Decision tree (pruned) | Readable rules, handles mixed types and interactions | Unstable, overfits without depth limits | Rules are wanted; stakeholders want to see the logic |
+| Random forest | Strong default, little tuning, robust | Larger, slower predictions, less explainable | A dependable first serious model |
+| Gradient boosting (XGBoost, LightGBM, CatBoost) | Usually the best accuracy on tabular data | Needs tuning, overfits with too many rounds | Accuracy matters and there is data to tune on |
+| k-nearest neighbours / Parzen window | No training step; local patterns | Slow predictions, needs scaling, weak in high dimensions | Small, low-dimensional data; similarity-based decisions |
+| Naive Bayes / density-based classifiers | Fast, work with little data, give probabilities | Strong independence or shape assumptions | Text-like counts; quick baselines |
+| Neural networks | Images, text, audio, very large data | Data-hungry, costly, hard to explain | Unstructured inputs |
+
+**Complexity knobs**
+- Tree: `max_depth`, `min_samples_leaf`, pruning `ccp_alpha`.
+- KNN: `k` (larger k is simpler); Parzen: bandwidth (wider is simpler).
+- Linear models: regularisation strength (`C` smaller, or `alpha` larger, is simpler).
+- Boosting: `learning_rate` × `n_estimators`, `max_depth`, and subsampling.

@@ -1,17 +1,6 @@
----
-name: shortage-allocation-fairness
-description: >-
-  Decide who gets what when there is not enough to go round, and explain the
-  trade-off between efficiency and fairness to the people affected. Use when a
-  planning or optimisation model is infeasible because demand exceeds supply;
-  when a plan starves one customer, store, region or team while another gets
-  everything; when allocating scarce stock, budget, capacity, staff, delivery
-  slots, appointments or medicines; when someone asks for a fair, equal,
-  proportional or priority-based allocation, min-max, a penalty for unmet
-  demand or slack variables; or when stakeholders reject an optimiser's plan
-  as unfair even though it has the lowest total cost. Not for testing,
-  validating or signing off an allocation model that already works.
----
+# shortage-allocation-fairness
+
+Use this skill when: Decide who gets what when there is not enough to go round, and explain the trade-off between efficiency and fairness to the people affected. Use when a planning or optimisation model is infeasible because demand exceeds supply; when a plan starves one customer, store, region or team while another gets everything; when allocating scarce stock, budget, capacity, staff, delivery slots, appointments or medicines; when someone asks for a fair, equal, proportional or priority-based allocation, min-max, a penalty for unmet demand or slack variables; or when stakeholders reject an optimiser's plan as unfair even though it has the lowest total cost. Not for testing, validating or signing off an allocation model that already works.
 
 # Shortage allocation and fairness
 

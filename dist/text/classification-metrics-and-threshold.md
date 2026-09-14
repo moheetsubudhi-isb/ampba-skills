@@ -1,17 +1,6 @@
----
-name: classification-metrics-and-threshold
-description: >-
-  Judge a classifier by what its errors cost, and set the decision threshold.
-  Use when someone reports accuracy, precision, recall, F1, ROC-AUC or PR-AUC
-  and asks what counts as good; when a model looks accurate but misses the
-  cases that matter; when classes are imbalanced, as in fraud, churn, loan
-  default, defects or medical screening; when choosing a probability cutoff;
-  when comparing two classifiers; when reading a confusion matrix; when a
-  review team can handle only so many alerts a day; or when checking whether
-  predicted probabilities are calibrated. Not for choosing the algorithm or
-  designing cross-validation, and not for ranking metrics for recommender
-  systems.
----
+# classification-metrics-and-threshold
+
+Use this skill when: Judge a classifier by what its errors cost, and set the decision threshold. Use when someone reports accuracy, precision, recall, F1, ROC-AUC or PR-AUC and asks what counts as good; when a model looks accurate but misses the cases that matter; when classes are imbalanced, as in fraud, churn, loan default, defects or medical screening; when choosing a probability cutoff; when comparing two classifiers; when reading a confusion matrix; when a review team can handle only so many alerts a day; or when checking whether predicted probabilities are calibrated. Not for choosing the algorithm or designing cross-validation, and not for ranking metrics for recommender systems.
 
 # Classification metrics and threshold
 

@@ -1,15 +1,6 @@
----
-name: dimensionality-reduction
-description: >-
-  Reduce many features to fewer, and choose between PCA, Fisher linear
-  discriminant analysis, feature selection and 2-D visualisation methods. Use
-  when a dataset has dozens or hundreds of correlated columns; when someone
-  asks whether to use PCA, how many principal components to keep, or what the
-  loadings mean; how to visualise high-dimensional data or embeddings; whether
-  to use t-SNE or UMAP; how to remove noise or multicollinearity; when to use
-  LDA to separate classes; or which features to keep or drop. Not for grouping
-  records into segments, and not for creating new features from raw data.
----
+# dimensionality-reduction
+
+Use this skill when: Reduce many features to fewer, and choose between PCA, Fisher linear discriminant analysis, feature selection and 2-D visualisation methods. Use when a dataset has dozens or hundreds of correlated columns; when someone asks whether to use PCA, how many principal components to keep, or what the loadings mean; how to visualise high-dimensional data or embeddings; whether to use t-SNE or UMAP; how to remove noise or multicollinearity; when to use LDA to separate classes; or which features to keep or drop. Not for grouping records into segments, and not for creating new features from raw data.
 
 # Dimensionality reduction
 
@@ -80,3 +71,55 @@ Where a step names a script and code cannot run here, do the same check by hand 
 - Dropping low-variance components that carry the class signal.
 - PCA on one-hot encoded categories.
 - Reading t-SNE distances or cluster sizes literally.
+
+---
+
+## Reference: references/fisher-lda.md
+
+# Fisher discriminant analysis (LDA)
+
+**Use when** class labels exist and the goal is a low-dimensional view, or features, that separate those classes.
+
+**Idea**
+A good direction pushes class means far apart while keeping each class tight. Fisher's criterion is the ratio of between-class scatter to within-class scatter. PCA maximises total variance instead, which can smear classes together.
+
+**Single-feature ranking (Fisher score)**
+For two classes: `(mean_A - mean_B)^2 / (var_A + var_B)`. Far means are good. Small within-class spread is good. Use it to rank features quickly.
+
+**Procedure**
+1. Scale features and split the data first.
+2. Fit `LinearDiscriminantAnalysis` on training data only. The projection has at most `classes - 1` dimensions, so two classes give one dimension.
+3. Compare cross-validated downstream accuracy for the LDA projection against PCA with the same number of dimensions. `scripts/projection_check.py --target` does this.
+4. LDA can also serve directly as a classifier.
+
+**Assumptions and limits**
+- Classes should be roughly Gaussian with similar covariance. Strongly unequal spreads call for quadratic discriminant analysis, or a non-linear model.
+- With more features than rows per class, use the shrinkage option (`solver="lsqr", shrinkage="auto"`).
+- It sees labels, so fitting it outside cross-validation leaks label information.
+
+---
+
+## Reference: references/pca.md
+
+# Principal components analysis
+
+**Use when** the data is numeric and multivariate, there are many features, labels are absent or ignored, and the goal is to visualise, compress for later stages, or remove noise.
+
+**Idea**
+Find orthogonal directions in decreasing order of variance. The first direction keeps the most variance; each later one keeps the most of what remains. Large eigenvalues are structure; the long tail of small ones is mostly noise.
+
+**Procedure**
+1. Scale features using the training data only.
+2. Fit PCA, then plot the explained variance per component and cumulatively.
+3. Choose how many components by one of these, stating which you used:
+   - a cumulative variance target (80–95%, depending on purpose);
+   - the elbow in the scree plot;
+   - the downstream cross-validated score. This is the best choice when a model consumes the output.
+4. Read the loadings. Name a component only after checking which original columns weigh most and in which direction.
+5. For denoising, reconstruct from the kept components and inspect the reconstruction error. A large error on a record can flag an anomaly.
+
+**Not for**
+- Curved, non-linear structure. Try kernel PCA or UMAP.
+- Categorical data.
+- Cases where stakeholders need original columns. Select features instead.
+- Separating known classes. Use Fisher / LDA.

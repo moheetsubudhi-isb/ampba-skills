@@ -31,6 +31,8 @@ The questions that usually matter here:
 
 ## Procedure
 
+Where a step names a script and code cannot run here, do the same check by hand on a small case, and say in the deliverable that it was done by hand.
+
 1. **Prepare the features.**
    - Keep the behavioural columns that relate to the use case.
    - Log-transform heavy-tailed columns such as spend or order counts.
