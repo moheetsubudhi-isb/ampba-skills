@@ -49,9 +49,9 @@ Every skill is one folder with a `SKILL.md` file, in the open [Agent Skills](htt
 | GitHub Copilot (VS Code, Copilot CLI) | IDE / terminal | Yes | Yes | [Folder](#github-copilot-in-vs-code-and-copilot-cli) |
 | Gemini CLI | Terminal | Yes | Yes | [Folder](#gemini-cli) |
 | Other agents (OpenCode, Cline and more) | Terminal / IDE | Yes | Yes | [One command](#one-command-for-every-terminal-tool) |
-| Claude (claude.ai and the desktop app) | Chat | Yes | Yes, with code execution on | [Upload a zip](#claude-chat) |
+| Claude (claude.ai and the desktop app) | Chat | Usually; name the skill if it doesn't | Yes, with code execution on | [Upload a zip](#claude-chat) |
 | ChatGPT | Chat | Yes | Yes | [Upload a zip](#chatgpt) |
-| Microsoft 365 Copilot | Chat | Yes | Yes | [Upload a zip to an agent](#microsoft-365-copilot) |
+| Microsoft 365 Copilot | Chat | Yes | Yes, in a sandbox; ML scripts need their packages preinstalled | [Upload a zip to an agent](#microsoft-365-copilot) |
 | Gemini app | Chat | No, lives inside a Gem | No | [Make a Gem](#gemini-app-gems) |
 | Microsoft Copilot app, or any other chat | Chat | No | No | [Paste the text](#any-other-chat) |
 
@@ -125,7 +125,7 @@ Type `/` in Claude Code to see the installed skills.
 
 ### Codex and the ChatGPT desktop app
 
-Copy the folders into `~/.agents/skills/` (every project) or `.agents/skills/` (one project). Codex picks a skill when a request matches its description; you can also type `$` and the skill name to call it. See OpenAI's [Build skills guide](https://learn.chatgpt.com/docs/build-skills).
+Copy the folders into `~/.agents/skills/` (every project) or `.agents/skills/` (one project). Codex picks a skill when a request matches its description; you can also run `/skills` or type `$` and the skill name to call it. See OpenAI's [Build skills guide](https://learn.chatgpt.com/docs/build-skills).
 
 ### Cursor
 
@@ -163,10 +163,11 @@ See [Use skills in Claude](https://support.claude.com/en/articles/12512180-use-s
 
 ### ChatGPT
 
-Skill upload is in beta on Business, Enterprise, Edu, Teachers and Healthcare plans; a workspace admin may need to allow it.
+Skill upload is in beta and, at the time of writing, limited to business, enterprise and education workspaces. If you don't see **Skills** in the sidebar, your plan doesn't have it yet, or a workspace admin needs to allow uploads.
 
 1. Go to **Skills**, select **Create**, then **Upload from your computer**.
 2. Choose `dist/<skill>.zip` and confirm.
+3. In a chat, type `@` to select the skill if it doesn't load by itself.
 
 See [Skills in ChatGPT](https://help.openai.com/en/articles/20001066-skills-in-chatgpt). On other plans, use the [text file](#any-other-chat) in a ChatGPT Project.
 
@@ -177,6 +178,8 @@ Skills are added to an agent built in Agent Builder. This is in preview for orga
 1. In Copilot chat, select **Agents & Skills**, then open or create an agent.
 2. Open **Configure**, expand **Skills** and select **Add**.
 3. Upload `dist/microsoft-365/<skill>.zip`. This zip has `SKILL.md` at its top level, which Agent Builder requires. An agent holds up to eight skills.
+
+Scripts run in a sandbox with no internet access and no package installs. The optimisation scripts need only Python. The ML scripts run only if `numpy`, `pandas` and `scikit-learn` are already in the sandbox; if they are not, the skill falls back to doing its checks by hand.
 
 See [Add custom skills in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills).
 
