@@ -1,6 +1,6 @@
 {
  "skill": "ml-data-audit",
- "passed": 19,
+ "passed": 20,
  "unknown": 0,
  "total": 20,
  "timed_out_runs": 0,
@@ -64,9 +64,9 @@
   {
    "query": "Check whether the features in this table would actually be available at the moment we make the prediction.",
    "should_trigger": true,
-   "trigger_rate": 0.0,
+   "trigger_rate": 1.0,
    "runs_ok": 1,
-   "pass": false
+   "pass": true
   },
   {
    "query": "We merged three source systems into one training table. What data problems should I look for before modelling?",

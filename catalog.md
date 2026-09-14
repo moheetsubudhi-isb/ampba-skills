@@ -10,7 +10,7 @@ One skill per moment. When a later module covers the same moment, it improves th
 | `exact-vs-heuristic` | A solver too slow for the real problem size; setting expectations on speed and quality | optimization | T1-OPT S4 | 20/20 | pilot |
 | `or-model-test-plan` | Deciding whether a model's plans can be trusted before go-live | optimization | T1-OPT S2, S5 | 20/20 | pilot |
 | `ml-problem-framing` | Deciding whether and how ML should solve a problem; target, labels, baseline, metric chain | ml | T1-MLUL D1, T2-MLSL1 L1-L2, L4, T3-MLSL2 | 20/20 | tier 1 |
-| `ml-data-audit` | Deciding whether a dataset can support a model; leakage, label definition, train/serve parity | ml | T2-MLSL1 L2 | 19/20 | tier 1 |
+| `ml-data-audit` | Deciding whether a dataset can support a model; leakage, label definition, train/serve parity | ml | T2-MLSL1 L2 | 20/20 | tier 1 |
 | `feature-engineering` | Designing and debugging features with point-in-time correctness | ml | T2-MLSL1 L6, T1-MLUL D1 | 20/20 | tier 1 |
 | `dimensionality-reduction` | Too many features; PCA vs Fisher/LDA vs feature selection vs 2-D pictures | ml | T2-MLSL1 L3, L5, L10 | 20/20 | tier 1 |
 | `clustering-and-segmentation` | Segmenting records; choosing k-means, hierarchical, DBSCAN, GMM or mixed-type methods | ml | T1-MLUL D1-D4 | 20/20 | tier 1 |
@@ -19,6 +19,4 @@ One skill per moment. When a later module covers the same moment, it improves th
 
 Trigger evals use `tools/trigger_eval.py`: 10 queries that should fire the skill and 10 that should not, with the negatives taken from sibling skills so overlaps surface. One run per query; runs that time out are retried with a longer limit rather than scored as failures.
 
-Overlaps found and fixed this way: `optimization-formulation` was taking shortage and solver-too-slow questions from its siblings, and `shortage-allocation-fairness` was taking model-testing questions. Both descriptions now say what they are not for. In the ML toolkit, `model-selection-and-validation` fired on a bare definition question ("What is cross-validation?"), and `ml-data-audit` stayed silent on direct leakage and prediction-time availability questions; the first now excludes definitions with no dataset or model in play, and the second leads with those phrasings.
-
-Open: `ml-data-audit` still misses "Check whether the features in this table would actually be available at the moment we make the prediction" (triggered 1 of 3 runs). No table is attached, so Claude tends to ask for it inline instead of loading the skill.
+Overlaps found and fixed this way: `optimization-formulation` was taking shortage and solver-too-slow questions from its siblings, and `shortage-allocation-fairness` was taking model-testing questions. Both descriptions now say what they are not for. In the ML toolkit, `model-selection-and-validation` fired on a bare definition question ("What is cross-validation?"), and `ml-data-audit` stayed silent on direct leakage and prediction-time availability questions; the first now excludes definitions with no dataset or model in play, and the second leads with those phrasings and applies even before the data is shared.

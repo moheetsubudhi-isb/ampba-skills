@@ -5,7 +5,8 @@ description: >-
   that silently ruin models. Always use this skill when someone asks which
   columns leak the target, whether a feature will actually be available at
   prediction time, why accuracy looks suspiciously high, or whether training
-  and serving data differ, even when the question sounds like a quick check.
+  and serving data differ, even when the question sounds like a quick check
+  and even before the data is shared.
   Also use it when someone shares or describes a dataset for modelling and
   asks whether it is usable, what is wrong with it or what to clean; or
   mentions missing values, duplicates, sentinel codes like 999 or -1,
