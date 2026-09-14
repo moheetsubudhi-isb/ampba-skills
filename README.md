@@ -1,4 +1,4 @@
-# ISB Analytics Skills
+# AMPBA Skills
 
 Skills that make an AI assistant work like a decision scientist and an advisor, not just a calculator. Each skill:
 
@@ -21,8 +21,8 @@ See [catalog.md](catalog.md) for the moment each skill handles.
 
 **Claude Code**
 ```
-/plugin marketplace add moheetsubudhi-isb/isb-skills
-/plugin install optimization-toolkit@isb-skills
+/plugin marketplace add moheetsubudhi-isb/ampba-skills
+/plugin install optimization-toolkit@ampba-skills
 ```
 
 **Codex and ChatGPT.** Skills use the shared `SKILL.md` format. Copy a skill folder, such as `plugins/optimization-toolkit/skills/logical-constraints`, into `~/.agents/skills/` to use it everywhere, or into `.agents/skills/` inside one project. See OpenAI's [Build skills guide](https://learn.chatgpt.com/docs/build-skills) for ChatGPT.
