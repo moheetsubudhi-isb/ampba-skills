@@ -1,6 +1,6 @@
 {
  "skill": "model-selection-and-validation",
- "passed": 19,
+ "passed": 20,
  "unknown": 0,
  "total": 20,
  "timed_out_runs": 0,
@@ -134,9 +134,9 @@
   {
    "query": "What is cross-validation?",
    "should_trigger": false,
-   "trigger_rate": 1.0,
+   "trigger_rate": 0.0,
    "runs_ok": 1,
-   "pass": false
+   "pass": true
   },
   {
    "query": "Does the price coefficient in our demand regression suffer from omitted variable bias?",

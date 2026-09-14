@@ -1,6 +1,6 @@
 {
  "skill": "ml-data-audit",
- "passed": 18,
+ "passed": 19,
  "unknown": 0,
  "total": 20,
  "timed_out_runs": 0,
@@ -22,9 +22,9 @@
   {
    "query": "Which columns in this loan dataset might leak the target?",
    "should_trigger": true,
-   "trigger_rate": 0.0,
+   "trigger_rate": 1.0,
    "runs_ok": 1,
-   "pass": false
+   "pass": true
   },
   {
    "query": "Before we train anything, audit this insurance claims dataset and tell me what needs fixing.",

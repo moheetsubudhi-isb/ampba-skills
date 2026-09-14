@@ -12,3 +12,5 @@ evals/results/*.recheck.json
 *.pptx
 *.docx
 *.xlsx
+evals/results/*retry*
+evals/results/*.out

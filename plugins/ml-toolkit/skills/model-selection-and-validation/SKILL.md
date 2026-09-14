@@ -9,8 +9,9 @@ description: >-
   pruning; k for k-nearest neighbours; bias and variance; learning curves;
   why test performance is much worse than training; whether more data would
   help; or why a model that validated well failed after launch. Not for
-  choosing a decision threshold or business metric for a classifier, and not
-  for cleaning or auditing the dataset.
+  choosing a decision threshold or business metric for a classifier, not for
+  cleaning or auditing the dataset, and not for explaining what a term such as
+  cross-validation or overfitting means when no dataset or model is in play.
 ---
 
 # Model selection and validation

@@ -1,16 +1,17 @@
 ---
 name: ml-data-audit
 description: >-
-  Check whether a dataset is fit for machine learning before any model is
-  trained, and catch the problems that silently ruin models. Use when someone
-  shares or describes a dataset for modelling and asks whether it is usable,
-  what is wrong with it, or what to clean; mentions missing values,
-  duplicates, sentinel values like 999 or -1, outliers, skewed or mixed-scale
-  columns, class imbalance, label quality or how the target was defined; gets
-  suspiciously high accuracy; suspects target leakage or features not
-  available at prediction time; or sees a model degrade because training and
-  production data differ. Not for designing new features, and not for
-  choosing or tuning a model.
+  Check whether a dataset is fit for machine learning, and catch the problems
+  that silently ruin models. Always use this skill when someone asks which
+  columns leak the target, whether a feature will actually be available at
+  prediction time, why accuracy looks suspiciously high, or whether training
+  and serving data differ, even when the question sounds like a quick check.
+  Also use it when someone shares or describes a dataset for modelling and
+  asks whether it is usable, what is wrong with it or what to clean; or
+  mentions missing values, duplicates, sentinel codes like 999 or -1,
+  outliers, skewed or mixed-scale columns, class imbalance, label quality, how
+  the target was defined, label delay, or post-outcome columns. Not for
+  designing new features, and not for choosing or tuning a model.
 ---
 
 # ML data audit

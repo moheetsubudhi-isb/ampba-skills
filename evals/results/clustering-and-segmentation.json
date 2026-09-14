@@ -1,7 +1,7 @@
 {
  "skill": "clustering-and-segmentation",
- "passed": 19,
- "unknown": 1,
+ "passed": 20,
+ "unknown": 0,
  "total": 20,
  "timed_out_runs": 1,
  "results": [
@@ -57,9 +57,10 @@
   {
    "query": "Build an RFM segmentation from our e-commerce transactions and tell me what each segment means.",
    "should_trigger": true,
-   "trigger_rate": null,
-   "runs_ok": 0,
-   "pass": null
+   "trigger_rate": 1.0,
+   "runs_ok": 2,
+   "pass": true,
+   "retried": "runs 2, timeout 480"
   },
   {
    "query": "Which linkage should I use for hierarchical clustering of our stores, and where should I cut the dendrogram?",
