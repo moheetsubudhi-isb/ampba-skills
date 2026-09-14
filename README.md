@@ -14,6 +14,7 @@ The methods come from analytics coursework at ISB (AMPBA), rewritten from scratc
 | Toolkit | Skills | Status |
 |---|---|---|
 | `optimization-toolkit` | `optimization-formulation`, `logical-constraints`, `shortage-allocation-fairness`, `exact-vs-heuristic`, `or-model-test-plan` | Pilot |
+| `ml-toolkit` | `ml-problem-framing`, `ml-data-audit`, `feature-engineering`, `dimensionality-reduction`, `clustering-and-segmentation`, `model-selection-and-validation`, `classification-metrics-and-threshold` | Tier 1 |
 
 See [catalog.md](catalog.md) for the moment each skill handles.
 
@@ -23,13 +24,14 @@ See [catalog.md](catalog.md) for the moment each skill handles.
 ```
 /plugin marketplace add moheetsubudhi-isb/ampba-skills
 /plugin install optimization-toolkit@ampba-skills
+/plugin install ml-toolkit@ampba-skills
 ```
 
 **Codex and ChatGPT.** Skills use the shared `SKILL.md` format. Copy a skill folder, such as `plugins/optimization-toolkit/skills/logical-constraints`, into `~/.agents/skills/` to use it everywhere, or into `.agents/skills/` inside one project. See OpenAI's [Build skills guide](https://learn.chatgpt.com/docs/build-skills) for ChatGPT.
 
 **Any other assistant.** Paste the contents of `SKILL.md` into its instructions.
 
-Scripts need only Python 3 and its standard library.
+Optimisation scripts need only Python 3. ML scripts also need `numpy`, `pandas` and `scikit-learn` (`pip install -r requirements.txt`).
 
 ## Academic integrity
 

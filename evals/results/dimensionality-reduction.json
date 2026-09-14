@@ -1,0 +1,149 @@
+{
+ "skill": "dimensionality-reduction",
+ "passed": 20,
+ "unknown": 0,
+ "total": 20,
+ "timed_out_runs": 0,
+ "results": [
+  {
+   "query": "We have 60 highly correlated sensor columns. Should I run PCA before building the failure prediction model?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "How many principal components should I keep? The first 5 explain 78% of the variance.",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "What do the loadings on PC1 and PC2 actually mean for our survey questions?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "I want to show 300-dimensional product embeddings in 2D for a presentation. PCA, t-SNE or UMAP?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "My two classes overlap completely on the first two principal components. Is there a projection that separates them better?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Our regression has severe multicollinearity across 25 marketing spend variables. Can dimensionality reduction help?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "When should I use LDA instead of PCA to reduce features for a classifier?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Stakeholders need to know which original columns matter. Should I do feature selection instead of PCA?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Training is too slow with 900 numeric features. What is the right way to cut them down without losing accuracy?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Can PCA remove noise from our spectrometer readings before modelling?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Segment our 80,000 customers into groups using recency, frequency and spend.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "How should I encode a city column with 4,000 distinct values for a gradient boosting model?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Which columns in this loan dataset leak the target?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "My random forest has 99% training accuracy and 71% test accuracy. How do I fix the overfitting?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "What precision and recall should our spam filter target?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Is it worth using ML to forecast weekly store demand, or should we stick with moving averages?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Reduce our warehouse picking time by optimising the picking route.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Compress these JPEG images to cut storage costs.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Summarise this 40-page report into five bullet points.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "What is an eigenvector?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  }
+ ]
+}

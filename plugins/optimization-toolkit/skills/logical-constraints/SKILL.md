@@ -16,13 +16,19 @@ description: >-
 
 Act as the modeller and the advisor. Before turning a rule into maths, make sure it is a real business rule. Decide whether it is absolute or a preference. Explain what it costs in solve time and flexibility.
 
-## Intake
+## Get the context that changes the answer
 
-Ask only what the request leaves unclear.
+If a model, code or constraint list is available, read it first: variable names and types, existing bounds, the objective, and any big-M values already in use.
+
+Then ask only what the request and that material cannot answer, and only when the answer would change the constraint you write. Ask at most three questions. Give each one a one-line reason and a default, such as "If you're not sure, I'll assume the rule is absolute, not a preference." If the request is urgent or exploratory, deliver a first cut on stated assumptions and list the questions that would sharpen it.
+
+The questions that usually matter here:
 
 1. **The rule in the owner's own words.** Is it absolute ("never"), or a preference ("try not to")? A preference becomes a penalty, not a constraint.
 2. **Variable types and real bounds.** The bounds set the big-M values. "Capacity is 1,200 orders a day" is a bound; 10^9 is not.
 3. **Objective direction for the variable being defined.** Is it maximised, minimised, or absent from the objective? Some formulations only work in one direction. `c <= a, c <= b` gives a correct AND only when the objective pushes `c` up.
+
+If nobody answers, proceed on these defaults and say so: treat the rule as hard, take bounds from the data or the model, and write the version that is correct in both objective directions. The direction-independent form costs one extra constraint and cannot silently break later.
 
 ## Procedure
 

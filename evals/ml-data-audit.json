@@ -1,0 +1,82 @@
+[
+ {
+  "query": "Is this churn dataset usable? About 30% of tenure values are missing and some customers appear twice.",
+  "should_trigger": true
+ },
+ {
+  "query": "Our model scores 0.99 AUC on the very first try. What could be wrong with the data?",
+  "should_trigger": true
+ },
+ {
+  "query": "Which columns in this loan dataset might leak the target?",
+  "should_trigger": true
+ },
+ {
+  "query": "Before we train anything, audit this insurance claims dataset and tell me what needs fixing.",
+  "should_trigger": true
+ },
+ {
+  "query": "The label says 'churned' but I am not sure how the team defined it. What should I check before modelling?",
+  "should_trigger": true
+ },
+ {
+  "query": "Half the income values are 999999 or -1. How should I treat them before training?",
+  "should_trigger": true
+ },
+ {
+  "query": "Our model worked in validation but performs badly in production. Could training and serving data differ?",
+  "should_trigger": true
+ },
+ {
+  "query": "Only 0.4% of transactions are labelled fraud. Is the dataset good enough to train on?",
+  "should_trigger": true
+ },
+ {
+  "query": "Check whether the features in this table would actually be available at the moment we make the prediction.",
+  "should_trigger": true
+ },
+ {
+  "query": "We merged three source systems into one training table. What data problems should I look for before modelling?",
+  "should_trigger": true
+ },
+ {
+  "query": "What features should I create from raw card transaction logs?",
+  "should_trigger": false
+ },
+ {
+  "query": "Should I run PCA on these 60 sensor columns?",
+  "should_trigger": false
+ },
+ {
+  "query": "Which algorithm and cross-validation scheme should I use for predicting loan default?",
+  "should_trigger": false
+ },
+ {
+  "query": "Our fraud model has 97% accuracy but misses most fraud. What threshold?",
+  "should_trigger": false
+ },
+ {
+  "query": "Segment our customers into groups.",
+  "should_trigger": false
+ },
+ {
+  "query": "Can machine learning help decide which complaints to escalate?",
+  "should_trigger": false
+ },
+ {
+  "query": "Set up a data catalog and lineage tracking for our finance warehouse.",
+  "should_trigger": false
+ },
+ {
+  "query": "Write a SQL query to find duplicate customer emails.",
+  "should_trigger": false
+ },
+ {
+  "query": "What does missing at random mean?",
+  "should_trigger": false
+ },
+ {
+  "query": "Our A/B test groups look unbalanced on age. Is the experiment result still valid?",
+  "should_trigger": false
+ }
+]

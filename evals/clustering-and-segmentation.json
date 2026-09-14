@@ -1,0 +1,82 @@
+[
+ {
+  "query": "Segment our 80,000 customers using recency, order frequency and spend so marketing can target them differently.",
+  "should_trigger": true
+ },
+ {
+  "query": "Should I use k-means or DBSCAN for grouping delivery locations that form irregular shapes around the city?",
+  "should_trigger": true
+ },
+ {
+  "query": "My elbow plot has no clear bend between k=3 and k=7 and silhouette scores are all around 0.3. How many clusters should I pick?",
+  "should_trigger": true
+ },
+ {
+  "query": "An agency gave us five customer personas. How can I check whether those segments actually exist in our data?",
+  "should_trigger": true
+ },
+ {
+  "query": "I need to group 2,000 SKUs by their weekly sales patterns so planners can treat similar products the same way.",
+  "should_trigger": true
+ },
+ {
+  "query": "Our k-means put a handful of big spenders in one tiny cluster and everyone else in another. What went wrong?",
+  "should_trigger": true
+ },
+ {
+  "query": "How do I cluster data that has categorical columns like city and plan type alongside numeric columns like tenure?",
+  "should_trigger": true
+ },
+ {
+  "query": "Build an RFM segmentation from our e-commerce transactions and tell me what each segment means.",
+  "should_trigger": true
+ },
+ {
+  "query": "Which linkage should I use for hierarchical clustering of our stores, and where should I cut the dendrogram?",
+  "should_trigger": true
+ },
+ {
+  "query": "we want soft segments where a customer can partly belong to two groups, gaussian mixture or something else?",
+  "should_trigger": true
+ },
+ {
+  "query": "We have 60 highly correlated sensor columns. Should I run PCA before building the failure prediction model?",
+  "should_trigger": false
+ },
+ {
+  "query": "What features should I create from raw card transaction logs for a fraud model?",
+  "should_trigger": false
+ },
+ {
+  "query": "Is this churn dataset usable? About 30% of tenure values are missing and some customers appear twice.",
+  "should_trigger": false
+ },
+ {
+  "query": "Which algorithm should I use to predict loan default, and how should I cross-validate it?",
+  "should_trigger": false
+ },
+ {
+  "query": "Our fraud model has 97% accuracy but misses most fraud. What threshold should we use?",
+  "should_trigger": false
+ },
+ {
+  "query": "Can machine learning help our call centre decide which complaints to escalate?",
+  "should_trigger": false
+ },
+ {
+  "query": "Demand is 30% above supply this month. How should we allocate stock fairly across stores?",
+  "should_trigger": false
+ },
+ {
+  "query": "Recommend products to each user based on what similar users bought.",
+  "should_trigger": false
+ },
+ {
+  "query": "Write a SQL GROUP BY that counts customers per city.",
+  "should_trigger": false
+ },
+ {
+  "query": "Explain what a centroid is in simple words.",
+  "should_trigger": false
+ }
+]

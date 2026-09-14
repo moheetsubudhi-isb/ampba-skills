@@ -1,0 +1,82 @@
+[
+ {
+  "query": "Can machine learning help our call centre decide which complaints to escalate?",
+  "should_trigger": true
+ },
+ {
+  "query": "We want to use AI to reduce customer churn. Where do we even start?",
+  "should_trigger": true
+ },
+ {
+  "query": "Is it worth using ML to forecast weekly store demand, or should we stick with moving averages and rules?",
+  "should_trigger": true
+ },
+ {
+  "query": "We don't have labels for good versus bad suppliers. Can we still build a model, maybe with a proxy?",
+  "should_trigger": true
+ },
+ {
+  "query": "Help me define what churn should mean for a model on our subscription business.",
+  "should_trigger": true
+ },
+ {
+  "query": "Our operations director wants an AI model for maintenance. Turn that into a concrete ML problem.",
+  "should_trigger": true
+ },
+ {
+  "query": "Should predicting delivery delays be a classification or a regression problem, and what should the target be?",
+  "should_trigger": true
+ },
+ {
+  "query": "We have only 200 examples of equipment failure over five years. Is an ML project feasible?",
+  "should_trigger": true
+ },
+ {
+  "query": "Our fraud team uses hand-written rules today. When does it make sense to replace them with a model?",
+  "should_trigger": true
+ },
+ {
+  "query": "How do we connect a model's accuracy to business value before approving the project budget?",
+  "should_trigger": true
+ },
+ {
+  "query": "Which algorithm and cross-validation scheme for predicting loan default?",
+  "should_trigger": false
+ },
+ {
+  "query": "Is this churn dataset usable? Missing tenure values and duplicate customers.",
+  "should_trigger": false
+ },
+ {
+  "query": "What features should I build from card transaction logs?",
+  "should_trigger": false
+ },
+ {
+  "query": "Our fraud model has 97% accuracy but misses most fraud. What threshold?",
+  "should_trigger": false
+ },
+ {
+  "query": "Segment our customers into groups.",
+  "should_trigger": false
+ },
+ {
+  "query": "Help me formulate a production mix model to maximise margin across three steel grades.",
+  "should_trigger": false
+ },
+ {
+  "query": "Does our new onboarding flow cause higher retention?",
+  "should_trigger": false
+ },
+ {
+  "query": "Write a Python class for a REST API client.",
+  "should_trigger": false
+ },
+ {
+  "query": "What is the difference between supervised and unsupervised learning?",
+  "should_trigger": false
+ },
+ {
+  "query": "Should I run PCA on 60 correlated sensor columns?",
+  "should_trigger": false
+ }
+]

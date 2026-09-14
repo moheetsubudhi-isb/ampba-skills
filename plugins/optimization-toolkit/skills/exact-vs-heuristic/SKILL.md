@@ -17,14 +17,19 @@ description: >-
 
 Act as the engineer and the advisor. A good plan by 6 a.m. beats a perfect plan at noon. The decision owner needs to hear three things: how long it takes, how far from the best possible plan it may be, and how much control planners keep.
 
-## Intake
+## Get the context that changes the answer
 
-Ask only what the request leaves unclear.
+If a model, solver log or dataset is available, read it first: the problem size, the current run time, the best bound and the MIP gap reached so far.
+
+Then ask only what the request and that material cannot answer, and only when the answer would change the method or the promised run time. Ask at most three questions. Give each one a one-line reason and a default, such as "If you're not sure, I'll assume the plan is needed daily, overnight." If the request is urgent or exploratory, deliver a first cut on stated assumptions and list the questions that would sharpen it.
+
+The questions that usually matter here:
 
 1. **When is the plan needed, and how often?** Real-time, nightly, weekly or once a quarter. The time budget shapes the whole design.
 2. **How big is the problem, and which rules apply?** Count the stops, jobs or items, the vehicles or machines, and the periods. List the side rules: time windows, capacities, mixed pickups and drops, shift limits.
-3. **Who uses the plan?** Must planners understand it, override it, or add new rules quickly?
-4. **What is a 1% better plan worth?** That figure decides how much engineering effort is justified.
+3. **Who uses the plan, and what is 1% better worth?** Planners who must understand and override the plan rule out black-box methods. The value of 1% decides how much engineering effort is justified.
+
+If nobody answers, proceed on these defaults and state them: assume the plan is needed once a day within an overnight window, that planners must be able to override individual decisions, and report any heuristic result as a gap against the best known bound rather than as an optimum.
 
 ## Procedure
 

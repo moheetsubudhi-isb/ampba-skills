@@ -1,0 +1,82 @@
+[
+ {
+  "query": "Which algorithm should I use to predict loan default, and how should I cross-validate it?",
+  "should_trigger": true
+ },
+ {
+  "query": "My random forest has 99% training accuracy and 71% test accuracy. How do I fix the overfitting?",
+  "should_trigger": true
+ },
+ {
+  "query": "How should I split our daily sales data for validation so the model isn't cheating?",
+  "should_trigger": true
+ },
+ {
+  "query": "The same customers appear many times in our data. Does that break a normal train/test split?",
+  "should_trigger": true
+ },
+ {
+  "query": "Set up hyperparameter tuning for gradient boosting without overfitting to the test set.",
+  "should_trigger": true
+ },
+ {
+  "query": "Logistic regression, a decision tree or XGBoost for a credit model the regulator needs to understand?",
+  "should_trigger": true
+ },
+ {
+  "query": "Both my training and validation scores are low. Is the model underfitting, and what should I change?",
+  "should_trigger": true
+ },
+ {
+  "query": "What value of k should I use for k-nearest neighbours, and how do I choose it properly?",
+  "should_trigger": true
+ },
+ {
+  "query": "Our model validated at 0.85 AUC but dropped to 0.68 after launch. What went wrong with the validation?",
+  "should_trigger": true
+ },
+ {
+  "query": "Would collecting twice as much training data actually improve our model? How can I tell?",
+  "should_trigger": true
+ },
+ {
+  "query": "Our fraud model has 97% accuracy but misses most fraud. What threshold should we use?",
+  "should_trigger": false
+ },
+ {
+  "query": "Which columns in this dataset leak the target?",
+  "should_trigger": false
+ },
+ {
+  "query": "How do I encode 4,000 city values for a boosting model?",
+  "should_trigger": false
+ },
+ {
+  "query": "Should I use PCA on 60 correlated sensor columns?",
+  "should_trigger": false
+ },
+ {
+  "query": "Segment customers by behaviour.",
+  "should_trigger": false
+ },
+ {
+  "query": "Can machine learning predict which suppliers will deliver late?",
+  "should_trigger": false
+ },
+ {
+  "query": "Our routing model hasn't finished after 6 hours. Exact solver or heuristic?",
+  "should_trigger": false
+ },
+ {
+  "query": "Tune our Postgres query that takes 40 seconds.",
+  "should_trigger": false
+ },
+ {
+  "query": "What is cross-validation?",
+  "should_trigger": false
+ },
+ {
+  "query": "Does the price coefficient in our demand regression suffer from omitted variable bias?",
+  "should_trigger": false
+ }
+]

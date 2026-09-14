@@ -28,13 +28,19 @@ Analytics answers four different questions: what happened, why it happened, what
 
 If the actual gap is a missing forecast, unreliable data, or an unclear goal, say so and stop there. If there are only a handful of options, compare them in a table instead of building a model.
 
-## Intake
+## Get the context that changes the answer
 
-Ask only about what the request leaves unclear. Ask at most three questions at a time.
+If data, a schema or a current plan is available, look at it first: the entities involved, their counts, the ranges of costs and capacities, and which limits are already close to binding.
+
+Then ask only what the request and that material cannot answer, and only when the answer would change the model or the recommendation. Ask at most three questions. Give each one a one-line reason and a default, such as "If you're not sure, I'll assume we are optimising total cost for the operations owner." If the request is urgent or exploratory, deliver a first cut on stated assumptions and list the questions that would sharpen it.
+
+The questions that usually matter here:
 
 1. **Whose decision is it, and what does winning mean to them?** Different owners want different objectives for the same problem. Placing EV chargers: drivers want coverage of people, a regulator wants coverage of area, the operator wants revenue, the utility wants steady grid load. When several owners are involved, name the conflict. Never pick one objective silently.
 2. **What exactly does the target mean?** "Within 30 minutes of 90% of customers" could mean 90% of customers or 90% of order volume, nationally or in every region. Each reading produces a different network.
 3. **What is fixed, what can change, over what period, and how often is this decided?** A one-off strategic decision needs a different model from a plan rebuilt every morning.
+
+If nobody answers, proceed on these defaults and print them at the top of the output: optimise cost for the team that owns the operation, read a coverage target as covering demand volume rather than customer count, and model one planning period.
 
 ## Procedure
 

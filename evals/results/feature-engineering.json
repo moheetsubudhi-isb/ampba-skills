@@ -1,0 +1,149 @@
+{
+ "skill": "feature-engineering",
+ "passed": 20,
+ "unknown": 0,
+ "total": 20,
+ "timed_out_runs": 0,
+ "results": [
+  {
+   "query": "What features should I create from raw card transaction logs for a fraud model?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "How should I encode a city column with 4,000 distinct values for a gradient boosting model?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Build useful features from order timestamps: hour, weekday, holidays, time since last order. What else?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Our delivery-time model is strangely complex, with hundreds of deep trees, and still makes odd errors on short trips. Could a feature be wrong?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "How do I create rolling 7-day and 30-day aggregates per customer without leaking future data into training?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Is target encoding safe for our high-cardinality merchant ID, or will it overfit?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Should I log-transform income and scale the features before logistic regression?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "For customers who never contacted support, what value should 'days since last complaint' take?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "We have GPS pings for every trip. What derived features would help predict late deliveries?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "My model barely beats the baseline for predicting subscription upgrades. What feature ideas should I try next?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "We have 60 correlated sensor columns. Should I run PCA first?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Is this churn dataset usable? Lots of missing tenure values and duplicate customers.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Segment our customers by purchase behaviour.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "How should I split time-series data for cross-validation?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "What threshold should our credit default model use given the cost of bad loans?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Can we use machine learning to predict which suppliers will deliver late?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Write a pandas script that removes duplicate rows from a CSV.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Explain what one-hot encoding is.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Design an ETL pipeline that loads orders from Postgres into Snowflake every night.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Is the increase in conversions after the website redesign statistically significant?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  }
+ ]
+}

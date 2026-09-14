@@ -17,9 +17,13 @@ description: >-
 
 Act as the analyst and the advisor. Making the model feasible is technical. **Choosing what "fair" means is a value judgement that belongs to the decision owner.** Your job is to set out the options and what each one costs, recommend one, and make the choice explicit. Never decide it quietly inside an objective function.
 
-## Intake
+## Get the context that changes the answer
 
-Ask only what the request leaves unclear.
+If demand, supply or an existing allocation is available, look at it first: total demand against total supply, how uneven the claimants are in size, and who the current plan starves.
+
+Then ask only what the request and that material cannot answer, and only when the answer would change who receives what. Ask at most three questions. Give each one a one-line reason and a default, such as "If you're not sure, I'll assume claimants differ in size, so we compare the percentage of need met." If the request is urgent or exploratory, deliver a first cut on stated assumptions and list the questions that would sharpen it.
+
+The questions that usually matter here:
 
 1. **Who are the claimants, and are their needs comparable?** A 5-unit clinic and a 500-unit hospital cannot share shortfall in raw units. Compare them on the percentage of need met.
 2. **What does fair mean here?** Offer these options:
@@ -29,6 +33,8 @@ Ask only what the request leaves unclear.
    - priority tiers, such as contracted, critical or strategic,
    - shares in proportion to history.
 3. **How much total output may be given up to buy fairness?** For example, "no more than 2% fewer units shipped."
+
+If nobody answers, proceed on these defaults and make them visible: compare claimants on the percentage of need met, protect the worst-off first and then maximise the total served (the two-stage rule), and present the efficient plan alongside it with the price of fairness attached.
 
 ## Procedure
 

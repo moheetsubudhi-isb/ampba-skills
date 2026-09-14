@@ -15,13 +15,19 @@ description: >-
 
 Act as the quality lead and the advisor. "It solves and returns a plan" proves nothing. The real questions are three: does it enforce every rule, does it allow every plan that should be allowed, and will the people who run operations trust it? Plan for all three.
 
-## Intake
+## Get the context that changes the answer
 
-Ask only what the request leaves unclear.
+If a model, its requirements or its code is available, read it first: the constraints it enforces, the objective, and any tests that already exist.
+
+Then ask only what the request and that material cannot answer, and only when the answer would change what gets tested or who signs off. Ask at most three questions. Give each one a one-line reason and a default, such as "If you're not sure, I'll assume every constraint in the model is a requirement that needs its own test." If the request is urgent or exploratory, deliver a first cut on stated assumptions and list the questions that would sharpen it.
+
+The questions that usually matter here:
 
 1. **What does the model decide, and who signs off before plans go live?**
 2. **Is there a requirements list?** If there is, test against its IDs. If not, derive one rule per constraint before planning any tests.
 3. **How big is the real problem, and what is the run-time budget?**
+
+If nobody answers, proceed on these defaults and state them: derive one requirement per constraint in the model, size the three test tiers from the data at hand, and treat the current manual plan as the known-good case that the model must accept as feasible.
 
 ## Procedure
 

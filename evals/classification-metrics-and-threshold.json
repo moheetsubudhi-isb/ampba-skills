@@ -1,0 +1,82 @@
+[
+ {
+  "query": "Our fraud model has 97% accuracy but misses most fraud. What threshold should we use?",
+  "should_trigger": true
+ },
+ {
+  "query": "A missed default costs us 20 times more than wrongly rejecting a good customer. Where should the probability cutoff be?",
+  "should_trigger": true
+ },
+ {
+  "query": "ROC-AUC is 0.93 but precision is terrible at a 2% positive rate. Which metric should we report?",
+  "should_trigger": true
+ },
+ {
+  "query": "The investigations team can only review 300 alerts a day. How do I pick the threshold?",
+  "should_trigger": true
+ },
+ {
+  "query": "Model A has higher AUC, model B has higher recall at our operating point. Which one should we deploy?",
+  "should_trigger": true
+ },
+ {
+  "query": "Explain this confusion matrix to the claims manager and tell me whether the model is good enough.",
+  "should_trigger": true
+ },
+ {
+  "query": "Are our predicted churn probabilities calibrated? We use them to set retention offer budgets.",
+  "should_trigger": true
+ },
+ {
+  "query": "We need at least 90% recall on defective parts. What precision will that cost us?",
+  "should_trigger": true
+ },
+ {
+  "query": "Should we optimise F1, F2 or precision for a medical screening classifier?",
+  "should_trigger": true
+ },
+ {
+  "query": "Our spam classifier flags too many legitimate emails. How do we tune it?",
+  "should_trigger": true
+ },
+ {
+  "query": "Which algorithm and cross-validation scheme for predicting loan default?",
+  "should_trigger": false
+ },
+ {
+  "query": "The model gets 0.99 AUC on the first try. What is wrong with the data?",
+  "should_trigger": false
+ },
+ {
+  "query": "How do we evaluate our product recommender with precision@10 and NDCG?",
+  "should_trigger": false
+ },
+ {
+  "query": "Is the difference in conversion rate between our A/B variants significant?",
+  "should_trigger": false
+ },
+ {
+  "query": "What features should I build from card transaction logs for fraud detection?",
+  "should_trigger": false
+ },
+ {
+  "query": "Segment our customers into groups.",
+  "should_trigger": false
+ },
+ {
+  "query": "Can machine learning help escalate complaints?",
+  "should_trigger": false
+ },
+ {
+  "query": "Our house price regression has an RMSE of 12 lakh. Is that good?",
+  "should_trigger": false
+ },
+ {
+  "query": "What does precision mean?",
+  "should_trigger": false
+ },
+ {
+  "query": "How do I set CPU usage alert thresholds in Grafana?",
+  "should_trigger": false
+ }
+]

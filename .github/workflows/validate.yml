@@ -10,7 +10,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install pyyaml
+      - run: pip install -r requirements.txt
       - run: python tools/validate_skills.py
       - name: Script self-tests
         run: for s in plugins/*/skills/*/scripts/*.py; do python "$s" --selftest; done
