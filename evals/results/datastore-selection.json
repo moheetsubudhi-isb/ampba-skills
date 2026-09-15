@@ -1,0 +1,149 @@
+{
+ "skill": "datastore-selection",
+ "passed": 20,
+ "unknown": 0,
+ "total": 20,
+ "timed_out_runs": 0,
+ "results": [
+  {
+   "query": "We're building a loyalty app with points balances and redemptions. Postgres or MongoDB?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Should our product catalogue, with very different attributes per category, go in a document store or relational tables?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Where should we store real-time leaderboard scores for a mobile game with 5 million players?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "We need to detect fraud rings across shared devices, cards and addresses. Would a graph database help?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Data lake, warehouse or lakehouse for a company with ERP data, clickstream logs and call recordings?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Our analytics queries are slowing down the production MySQL database. Where should reporting move to?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Is eventual consistency acceptable for a wallet balance service, or do we need ACID transactions?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Design the storage layer for a video streaming platform: content files, metadata, watch history, recommendations and billing.",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "ClickHouse or BigQuery for real-time analytics on 50,000 web events per second?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "We picked Cassandra for order management and now struggle with ad-hoc queries and joins. Was it the wrong choice?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Which distribution key should our Redshift sales fact table use?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "One partition in our Spark job is ten times larger than the others. How do I fix the skew?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Set up bronze, silver and gold layers for our clickstream pipeline, with checks between them.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "How do we write a data contract between the payments team and the analytics team?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Build a 'customers also bought' feature from our order history.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Find similar support tickets by their text.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Write a MongoDB aggregation query that counts orders per status.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Our Postgres query is slow; here is the EXPLAIN output. Which index should I add?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Detect unusual transactions in our card payments data.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "How much will storing 2 TB in S3 cost per month?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  }
+ ]
+}

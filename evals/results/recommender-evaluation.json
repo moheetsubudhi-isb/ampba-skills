@@ -1,0 +1,150 @@
+{
+ "skill": "recommender-evaluation",
+ "passed": 20,
+ "unknown": 0,
+ "total": 20,
+ "timed_out_runs": 1,
+ "results": [
+  {
+   "query": "How do we evaluate our product recommender offline before launch?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Precision@10 went up but NDCG went down. Which recommendation model is better?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Is a random 80/20 split okay for testing our next-basket recommendation model?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Our new recommender beats the old one offline. How should we test it live?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "How many users per group do we need to detect a 3% lift in click-through from new recommendations?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Compute MAP@5 and recall@5 for these recommendation lists against what users actually bought.",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Our recommendations only ever show the top 2% of products. How do we measure popularity bias and coverage?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "RMSE is 0.87 on our ratings model. Does that mean the recommendations are good?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "How do we compare our recommender with a simple best-sellers baseline?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Evaluate the ranking quality of our internal search results.",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Build a 'customers also bought' feature from order history.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Implement ALS matrix factorisation on our ratings data.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Our fraud model has 97% accuracy but misses most fraud. What threshold should we use?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Handle cold start for new users in our recommender.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Our house price regression has an RMSE of 12 lakh. Is that good?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Which cross-validation scheme should I use for predicting loan default?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Segment users by engagement.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 2,
+   "pass": true,
+   "retried": "runs 2, timeout 480"
+  },
+  {
+   "query": "Is the difference in average order value between two regions statistically significant?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Detect anomalies in daily sales.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "What does NDCG stand for?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  }
+ ]
+}

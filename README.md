@@ -11,7 +11,7 @@ The methods come from analytics coursework at ISB (AMPBA), rewritten from scratc
 
 ## Skills
 
-12 skills in two toolkits. Each one loads on its own when a request matches it, so nobody has to name it.
+22 skills in four toolkits. Each one loads on its own when a request matches it, so nobody has to name it.
 
 **Optimisation toolkit** (`optimization-toolkit`)
 
@@ -34,6 +34,26 @@ The methods come from analytics coursework at ISB (AMPBA), rewritten from scratc
 | `clustering-and-segmentation` | You are segmenting customers or records and need to choose k-means, hierarchical, DBSCAN, GMM or a mixed-type method |
 | `model-selection-and-validation` | You are choosing a model and a validation split that proves it generalises |
 | `classification-metrics-and-threshold` | You are judging a classifier by what its errors cost, and setting the decision threshold |
+| `tree-and-ensemble-models` | You are choosing, tuning or explaining a decision tree, random forest or boosted model |
+| `linear-and-logistic-models` | You are regularising or reading the coefficients of a linear, logistic or softmax model built for prediction |
+| `regression-error-metrics` | You need to judge whether a regression or forecast error is good enough, and which error metric to report |
+| `anomaly-detection` | You need to find unusual transactions, readings or behaviour with few labels, at an alert volume the team can review |
+| `text-and-embedding-features` | You need to match, deduplicate or search text, and choose between TF-IDF and embeddings |
+
+**Recommender toolkit** (`recommender-toolkit`)
+
+| Skill | Use it when |
+|---|---|
+| `recommender-build` | You are building recommendations: association rules, collaborative filtering, matrix factorisation or graph ranking |
+| `recommender-evaluation` | You need to prove a recommender works: data splits, precision@k and NDCG, coverage, shadow tests and A/B sizing |
+
+**Data engineering toolkit** (`data-engineering-toolkit`)
+
+| Skill | Use it when |
+|---|---|
+| `datastore-selection` | You are deciding where data should live: relational, columnar warehouse, document, key-value, graph, lake or lakehouse |
+| `distribution-key-and-partitioning` | You are choosing distribution, partition or shard keys, or fixing skewed nodes and slow joins in a warehouse |
+| `pipeline-and-quality-design` | You are designing a pipeline: ETL or ELT, medallion layers, data contracts, quality checks, reconciliation and governance |
 
 See [catalog.md](catalog.md) for the course modules behind each skill and its trigger-test score.
 
@@ -113,6 +133,8 @@ Install as plugins. Updates arrive with `/plugin marketplace update`.
 /plugin marketplace add moheetsubudhi-isb/ampba-skills
 /plugin install optimization-toolkit@ampba-skills
 /plugin install ml-toolkit@ampba-skills
+/plugin install recommender-toolkit@ampba-skills
+/plugin install data-engineering-toolkit@ampba-skills
 ```
 
 Or copy the folders into `~/.claude/skills/` (every project) or `.claude/skills/` (one project):

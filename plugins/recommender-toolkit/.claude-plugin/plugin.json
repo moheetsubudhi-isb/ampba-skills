@@ -1,0 +1,6 @@
+{
+  "name": "recommender-toolkit",
+  "description": "Recommender-system skills for choosing and building association rules, collaborative filtering, matrix factorisation or graph ranking, and for evaluating recommenders offline and online with the right splits and ranking metrics.",
+  "version": "0.1.0",
+  "author": { "name": "Moheet Subudhi" }
+}

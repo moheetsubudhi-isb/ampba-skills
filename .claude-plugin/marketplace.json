@@ -12,7 +12,17 @@
     {
       "name": "ml-toolkit",
       "source": "./plugins/ml-toolkit",
-      "description": "Data-science skills for framing ML problems, auditing data, engineering features, reducing dimensions, clustering and segmentation, model selection and validation, and choosing classification metrics and thresholds."
+      "description": "Data-science skills for framing ML problems, auditing data, engineering features, reducing dimensions, clustering, model selection and validation, classification and regression metrics, tree ensembles, linear and logistic models, anomaly detection, and text embeddings."
+    },
+    {
+      "name": "data-engineering-toolkit",
+      "source": "./plugins/data-engineering-toolkit",
+      "description": "Data-engineering skills for choosing where data should live, laying out distribution keys and partitions in MPP warehouses, and designing pipelines with data quality, reconciliation and governance built in."
+    },
+    {
+      "name": "recommender-toolkit",
+      "source": "./plugins/recommender-toolkit",
+      "description": "Recommender-system skills for choosing and building association rules, collaborative filtering, matrix factorisation or graph ranking, and for evaluating recommenders offline and online with the right splits and ranking metrics."
     }
   ]
 }

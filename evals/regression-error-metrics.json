@@ -1,0 +1,82 @@
+[
+ {
+  "query": "Our house price model has an RMSE of 12 lakh. Is that good?",
+  "should_trigger": true
+ },
+ {
+  "query": "R-squared on our test data is negative. What does that mean?",
+  "should_trigger": true
+ },
+ {
+  "query": "Our demand forecast MAPE is 180% for some slow-moving items. Which metric should we use instead?",
+  "should_trigger": true
+ },
+ {
+  "query": "Which error metric should we report to operations for a delivery-time prediction model?",
+  "should_trigger": true
+ },
+ {
+  "query": "R-squared is 0.92 but the sales team says the predictions are useless. How can both be true?",
+  "should_trigger": true
+ },
+ {
+  "query": "How do I compare my forecast with simply using last week's sales as the prediction?",
+  "should_trigger": true
+ },
+ {
+  "query": "Under-forecasting stock costs us four times more than over-forecasting. How should we measure forecast error?",
+  "should_trigger": true
+ },
+ {
+  "query": "Our salary prediction model does well overall but badly for senior roles. How do I show errors by segment?",
+  "should_trigger": true
+ },
+ {
+  "query": "MAE or RMSE for evaluating a taxi fare prediction model?",
+  "should_trigger": true
+ },
+ {
+  "query": "What does this funnel-shaped residual plot tell me about my price prediction model?",
+  "should_trigger": true
+ },
+ {
+  "query": "Our fraud model has 97% accuracy but misses most fraud. What threshold should we use?",
+  "should_trigger": false
+ },
+ {
+  "query": "Compute precision@10 for our recommender.",
+  "should_trigger": false
+ },
+ {
+  "query": "Is the coefficient for advertising spend statistically significant?",
+  "should_trigger": false
+ },
+ {
+  "query": "How do I interpret the coefficients in my linear regression?",
+  "should_trigger": false
+ },
+ {
+  "query": "How should I design time-series cross-validation for a demand forecast?",
+  "should_trigger": false
+ },
+ {
+  "query": "Random forest or boosting for predicting delivery time?",
+  "should_trigger": false
+ },
+ {
+  "query": "Build features from order timestamps for a delivery time model.",
+  "should_trigger": false
+ },
+ {
+  "query": "Detect unusual spikes in daily sales.",
+  "should_trigger": false
+ },
+ {
+  "query": "What does RMSE stand for?",
+  "should_trigger": false
+ },
+ {
+  "query": "Calculate the average of 4, 8 and 15.",
+  "should_trigger": false
+ }
+]

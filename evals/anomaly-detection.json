@@ -1,0 +1,82 @@
+[
+ {
+  "query": "Find suspicious transactions in our card payments data. We have almost no confirmed fraud labels.",
+  "should_trigger": true
+ },
+ {
+  "query": "How do I set the contamination parameter for isolation forest when my team can review only 40 alerts a day?",
+  "should_trigger": true
+ },
+ {
+  "query": "Detect faulty readings from factory temperature and vibration sensors.",
+  "should_trigger": true
+ },
+ {
+  "query": "Alert us when API traffic from a single IP range looks like a bot attack.",
+  "should_trigger": true
+ },
+ {
+  "query": "Daily sales per store: how do we flag unusual drops while accounting for weekends and festivals?",
+  "should_trigger": true
+ },
+ {
+  "query": "Z-score, IQR or isolation forest for spotting unusual insurance claims?",
+  "should_trigger": true
+ },
+ {
+  "query": "Every flagged expense report needs an explanation. How do we show why our anomaly model flagged it?",
+  "should_trigger": true
+ },
+ {
+  "query": "We have 30 confirmed fraud cases. How do we check whether our anomaly detector catches the right things?",
+  "should_trigger": true
+ },
+ {
+  "query": "Find employees whose system access patterns look unusual compared with their own history.",
+  "should_trigger": true
+ },
+ {
+  "query": "Local outlier factor or isolation forest for detecting unusual merchants with very different transaction volumes?",
+  "should_trigger": true
+ },
+ {
+  "query": "Half the income values are 999999 or -1. How should I treat them before training?",
+  "should_trigger": false
+ },
+ {
+  "query": "Should I remove outliers from my training data before fitting a regression?",
+  "should_trigger": false
+ },
+ {
+  "query": "Segment our customers with DBSCAN.",
+  "should_trigger": false
+ },
+ {
+  "query": "Our fraud classifier flags too many good customers. How should we move its threshold?",
+  "should_trigger": false
+ },
+ {
+  "query": "What features should I build from transaction logs for a fraud model?",
+  "should_trigger": false
+ },
+ {
+  "query": "Set up a Grafana alert when CPU usage goes above 90%.",
+  "should_trigger": false
+ },
+ {
+  "query": "Is the drop in conversion this week statistically significant?",
+  "should_trigger": false
+ },
+ {
+  "query": "What data quality checks should our orders pipeline run?",
+  "should_trigger": false
+ },
+ {
+  "query": "Random forest or XGBoost for fraud classification with 50,000 labelled cases?",
+  "should_trigger": false
+ },
+ {
+  "query": "What is an outlier?",
+  "should_trigger": false
+ }
+]

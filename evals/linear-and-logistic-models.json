@@ -1,0 +1,82 @@
+[
+ {
+  "query": "How do I interpret the coefficients of my logistic regression churn model for the marketing team?",
+  "should_trigger": true
+ },
+ {
+  "query": "Two of my features have VIF above 20. What should I do before interpreting the regression?",
+  "should_trigger": true
+ },
+ {
+  "query": "Ridge, Lasso or Elastic Net for a price prediction model with 300 correlated features?",
+  "should_trigger": true
+ },
+ {
+  "query": "Why did the coefficient for discount flip sign when I added the promotion flag to my sales prediction model?",
+  "should_trigger": true
+ },
+ {
+  "query": "Should I standardise features before comparing linear regression coefficients?",
+  "should_trigger": true
+ },
+ {
+  "query": "My logistic regression won't converge. What should I check?",
+  "should_trigger": true
+ },
+ {
+  "query": "How do I handle a categorical variable with 12 levels in linear regression, and what does the dropped category mean?",
+  "should_trigger": true
+ },
+ {
+  "query": "Softmax regression classifies support tickets into 5 categories. How do I read its coefficients?",
+  "should_trigger": true
+ },
+ {
+  "query": "Is a linear model enough for predicting insurance claim amounts, or do I need polynomial terms?",
+  "should_trigger": true
+ },
+ {
+  "query": "What does an odds ratio of 1.8 for 'late payment last month' mean in plain words?",
+  "should_trigger": true
+ },
+ {
+  "query": "Does increasing ad spend actually cause more sales, or is it just correlated?",
+  "should_trigger": false
+ },
+ {
+  "query": "Is the lift in our A/B test statistically significant?",
+  "should_trigger": false
+ },
+ {
+  "query": "Random forest or gradient boosting for this tabular problem?",
+  "should_trigger": false
+ },
+ {
+  "query": "Our house price regression has an RMSE of 12 lakh. Is that good?",
+  "should_trigger": false
+ },
+ {
+  "query": "How do I choose the probability cutoff for my logistic regression classifier when false negatives are expensive?",
+  "should_trigger": false
+ },
+ {
+  "query": "Design cross-validation and a learning curve for my model.",
+  "should_trigger": false
+ },
+ {
+  "query": "How should I encode high-cardinality merchant IDs?",
+  "should_trigger": false
+ },
+ {
+  "query": "Reduce 150 features with PCA before modelling.",
+  "should_trigger": false
+ },
+ {
+  "query": "What is linear regression?",
+  "should_trigger": false
+ },
+ {
+  "query": "Write a SQL query for average salary by department.",
+  "should_trigger": false
+ }
+]

@@ -1,0 +1,82 @@
+[
+ {
+  "query": "Should we do ETL or ELT when loading SAP data into Snowflake?",
+  "should_trigger": true
+ },
+ {
+  "query": "Design the bronze, silver and gold layers for our IoT sensor data in Databricks.",
+  "should_trigger": true
+ },
+ {
+  "query": "What data quality checks should our daily orders pipeline run, and which ones should block the load?",
+  "should_trigger": true
+ },
+ {
+  "query": "The revenue number on the dashboard doesn't match the finance system. How do we set up reconciliation so this gets caught?",
+  "should_trigger": true
+ },
+ {
+  "query": "Write a data contract for the customer events the app team publishes to the analytics team.",
+  "should_trigger": true
+ },
+ {
+  "query": "Customer personal data is flowing into every sandbox. How should we classify and protect it across the pipeline?",
+  "should_trigger": true
+ },
+ {
+  "query": "Batch or streaming for updating inventory availability on our website?",
+  "should_trigger": true
+ },
+ {
+  "query": "Our full nightly reload keeps missing records that were deleted in the source. How should the load work instead?",
+  "should_trigger": true
+ },
+ {
+  "query": "How do we set up data lineage and a data catalog so analysts know which tables to trust?",
+  "should_trigger": true
+ },
+ {
+  "query": "We're moving to a data mesh. What should each domain's data product include?",
+  "should_trigger": true
+ },
+ {
+  "query": "Postgres or DynamoDB for a shopping cart service?",
+  "should_trigger": false
+ },
+ {
+  "query": "Which sort key and distribution key should a Redshift clickstream table use?",
+  "should_trigger": false
+ },
+ {
+  "query": "Is this churn dataset usable? 30% of tenure values are missing and some customers appear twice.",
+  "should_trigger": false
+ },
+ {
+  "query": "What features should I build from card transaction logs for a fraud model?",
+  "should_trigger": false
+ },
+ {
+  "query": "Detect sudden spikes in our API error logs.",
+  "should_trigger": false
+ },
+ {
+  "query": "Fix this Airflow import error: No module named 'airflow.providers.amazon'.",
+  "should_trigger": false
+ },
+ {
+  "query": "Is the difference in conversion between our two landing pages significant?",
+  "should_trigger": false
+ },
+ {
+  "query": "Evaluate our product recommender with precision@10.",
+  "should_trigger": false
+ },
+ {
+  "query": "Explain what a LEFT JOIN does in SQL.",
+  "should_trigger": false
+ },
+ {
+  "query": "Build a Power BI dashboard of weekly sales by store.",
+  "should_trigger": false
+ }
+]
