@@ -1,0 +1,82 @@
+[
+ {
+  "query": "How many DataNodes do we need for 200 TB of data with replication factor 3?",
+  "should_trigger": true
+ },
+ {
+  "query": "Our NameNode keeps running out of memory. We have about 80 million small files.",
+  "should_trigger": true
+ },
+ {
+  "query": "Should we keep our on-prem Hadoop cluster or move storage to S3 and separate compute?",
+  "should_trigger": true
+ },
+ {
+  "query": "What block size and replication factor should we use for our HDFS cluster?",
+  "should_trigger": true
+ },
+ {
+  "query": "Plan storage capacity for a Hadoop cluster ingesting 500 GB a day with three-year retention.",
+  "should_trigger": true
+ },
+ {
+  "query": "How does rack awareness protect data if a whole rack fails in HDFS?",
+  "should_trigger": true
+ },
+ {
+  "query": "How do we compact millions of small files in HDFS?",
+  "should_trigger": true
+ },
+ {
+  "query": "Explain how YARN, the NameNode and DataNodes work together in our cluster and where data locality helps.",
+  "should_trigger": true
+ },
+ {
+  "query": "How much raw disk do we need to buy for 50 TB of compressed Parquet on HDFS?",
+  "should_trigger": true
+ },
+ {
+  "query": "What happens to our HDFS cluster if the NameNode dies and we have no standby?",
+  "should_trigger": true
+ },
+ {
+  "query": "Should we use a data lake, a warehouse or a lakehouse for analytics?",
+  "should_trigger": false
+ },
+ {
+  "query": "Which distribution key for our Synapse fact table?",
+  "should_trigger": false
+ },
+ {
+  "query": "Our Spark job has a skewed join. How do we fix it?",
+  "should_trigger": false
+ },
+ {
+  "query": "Choose between Cassandra and Postgres for our IoT app.",
+  "should_trigger": false
+ },
+ {
+  "query": "Write a data contract between the orders team and analytics.",
+  "should_trigger": false
+ },
+ {
+  "query": "Why does our PySpark job call collect() and crash the driver?",
+  "should_trigger": false
+ },
+ {
+  "query": "What is Hadoop?",
+  "should_trigger": false
+ },
+ {
+  "query": "How much should we pay for AWS reserved instances?",
+  "should_trigger": false
+ },
+ {
+  "query": "Build a pipeline from Kafka to Snowflake with freshness alerts.",
+  "should_trigger": false
+ },
+ {
+  "query": "Estimate server count for our web app's peak traffic.",
+  "should_trigger": false
+ }
+]

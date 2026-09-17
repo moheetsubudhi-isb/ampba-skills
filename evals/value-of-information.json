@@ -1,0 +1,82 @@
+[
+ {
+  "query": "Is a $60k test market worth running before we decide on a national launch?",
+  "should_trigger": true
+ },
+ {
+  "query": "What's the most we should pay for perfect information about next year's demand?",
+  "should_trigger": true
+ },
+ {
+  "query": "The geological survey is right 80% of the time. If it comes back positive, how likely is there really oil, and should we buy the survey?",
+  "should_trigger": true
+ },
+ {
+  "query": "Calculate EVPI and EVSI for this launch decision with a market research study.",
+  "should_trigger": true
+ },
+ {
+  "query": "Our fraud test has a 5% false positive rate and fraud is 1 in 1000. What does a positive result actually mean for our decision to block?",
+  "should_trigger": true
+ },
+ {
+  "query": "Should we pay for a pilot program before rolling out the new system company-wide?",
+  "should_trigger": true
+ },
+ {
+  "query": "A consultant offers a demand forecast for $25k. How do I decide if it's worth it?",
+  "should_trigger": true
+ },
+ {
+  "query": "Should we decide now or wait six months to learn more about the regulation?",
+  "should_trigger": true
+ },
+ {
+  "query": "Does it make sense to buy an inspection before purchasing this used equipment?",
+  "should_trigger": true
+ },
+ {
+  "query": "How much is better data worth to this pricing decision?",
+  "should_trigger": true
+ },
+ {
+  "query": "Should we launch the product? High demand gives $5M, low demand loses $2M, 40% chance of high.",
+  "should_trigger": false
+ },
+ {
+  "query": "How many users do we need in each arm of our A/B test to detect a 2% lift?",
+  "should_trigger": false
+ },
+ {
+  "query": "Design a questionnaire to measure customer willingness to pay.",
+  "should_trigger": false
+ },
+ {
+  "query": "Simulate the NPV of this project with uncertain costs and revenues.",
+  "should_trigger": false
+ },
+ {
+  "query": "Is our A/B test result statistically significant at 95%?",
+  "should_trigger": false
+ },
+ {
+  "query": "Which data quality checks should our pipeline run before loading the warehouse?",
+  "should_trigger": false
+ },
+ {
+  "query": "What is Bayes' theorem?",
+  "should_trigger": false
+ },
+ {
+  "query": "Tune the threshold on our fraud classifier to balance precision and recall.",
+  "should_trigger": false
+ },
+ {
+  "query": "Should we build a data lake or a warehouse?",
+  "should_trigger": false
+ },
+ {
+  "query": "Estimate price elasticity from our sales data.",
+  "should_trigger": false
+ }
+]

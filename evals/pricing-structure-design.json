@@ -1,0 +1,82 @@
+[
+ {
+  "query": "Should we charge enterprise customers more than startups for the same software, and how do we justify it?",
+  "should_trigger": true
+ },
+ {
+  "query": "Our Pro plan is priced so high that power users stay on Basic. How should we fix the tiers?",
+  "should_trigger": true
+ },
+ {
+  "query": "Design a good-better-best lineup for our coffee machines.",
+  "should_trigger": true
+ },
+ {
+  "query": "Should we offer a student discount, and how do we stop everyone claiming it?",
+  "should_trigger": true
+ },
+ {
+  "query": "Does bundling our streaming service with the music app make sense, or sell them separately?",
+  "should_trigger": true
+ },
+ {
+  "query": "Should we have peak and off-peak pricing for our gym memberships?",
+  "should_trigger": true
+ },
+ {
+  "query": "Our product line has 14 price points with random gaps. Diagnose the price ladder and margins.",
+  "should_trigger": true
+ },
+ {
+  "query": "Discounting has crept up and some categories now lose money after discounts. How should we restructure?",
+  "should_trigger": true
+ },
+ {
+  "query": "Is it legal and fair to show different prices to different users based on their browsing?",
+  "should_trigger": true
+ },
+ {
+  "query": "Should we price by volume, with lower per-unit prices for bulk orders?",
+  "should_trigger": true
+ },
+ {
+  "query": "Estimate the price elasticity of our juice brand from weekly scanner data.",
+  "should_trigger": false
+ },
+ {
+  "query": "What price should we set from our willingness-to-pay survey of 500 people?",
+  "should_trigger": false
+ },
+ {
+  "query": "Demand is higher than supply this quarter. How do we allocate units across key accounts fairly?",
+  "should_trigger": false
+ },
+ {
+  "query": "Cluster our customers into segments using RFM.",
+  "should_trigger": false
+ },
+ {
+  "query": "Build a recommender that suggests add-ons at checkout.",
+  "should_trigger": false
+ },
+ {
+  "query": "Which customers are likely to churn next month?",
+  "should_trigger": false
+ },
+ {
+  "query": "Should we launch the product now or wait a year for a competitor's move?",
+  "should_trigger": false
+ },
+ {
+  "query": "Set up a production plan that maximises profit given machine hours.",
+  "should_trigger": false
+ },
+ {
+  "query": "What is price discrimination?",
+  "should_trigger": false
+ },
+ {
+  "query": "Is the difference in conversion between two landing pages significant?",
+  "should_trigger": false
+ }
+]

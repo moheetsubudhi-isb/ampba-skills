@@ -1,0 +1,82 @@
+[
+ {
+  "query": "Should we launch the product nationally or not? If demand is high we make $5M, if low we lose $2M, and we think high demand is 40% likely.",
+  "should_trigger": true
+ },
+ {
+  "query": "Help me decide whether to settle this lawsuit for $1.2M or go to trial, where we might win or lose big.",
+  "should_trigger": true
+ },
+ {
+  "query": "Build a big plant or a small plant? Payoffs depend on whether demand turns out high, medium or low.",
+  "should_trigger": true
+ },
+ {
+  "query": "What's the expected monetary value of bidding on this contract versus not bidding?",
+  "should_trigger": true
+ },
+ {
+  "query": "Lay out our expansion choice as a decision tree with chance nodes and fold it back.",
+  "should_trigger": true
+ },
+ {
+  "query": "At what probability of success does launching stop being better than licensing the technology?",
+  "should_trigger": true
+ },
+ {
+  "query": "Expected value says to take the risky option, but a loss would bankrupt us. What should we do?",
+  "should_trigger": true
+ },
+ {
+  "query": "We can drill now, sell the land rights, or do nothing. How should we compare them?",
+  "should_trigger": true
+ },
+ {
+  "query": "How sensitive is our go/no-go decision to the probability we estimated for regulatory approval?",
+  "should_trigger": true
+ },
+ {
+  "query": "Compare these three investment options with uncertain outcomes and give me the best strategy.",
+  "should_trigger": true
+ },
+ {
+  "query": "Train a decision tree classifier to predict loan default and tell me the max_depth to use.",
+  "should_trigger": false
+ },
+ {
+  "query": "Should we use random forest or gradient boosting for our churn model?",
+  "should_trigger": false
+ },
+ {
+  "query": "Is it worth paying $50k for a market survey before we decide to launch?",
+  "should_trigger": false
+ },
+ {
+  "query": "Simulate our project budget with 12 uncertain cost items and tell me the chance we overrun.",
+  "should_trigger": false
+ },
+ {
+  "query": "Formulate a linear program to choose the product mix that maximises profit.",
+  "should_trigger": false
+ },
+ {
+  "query": "How do I prune a decision tree to stop it overfitting?",
+  "should_trigger": false
+ },
+ {
+  "query": "How much safety stock should we hold when demand is uncertain?",
+  "should_trigger": false
+ },
+ {
+  "query": "What is a decision tree?",
+  "should_trigger": false
+ },
+ {
+  "query": "Our A/B test shows a 2% lift. Should we ship it?",
+  "should_trigger": false
+ },
+ {
+  "query": "Turn our gradient boosted model into business rules the ops team can read.",
+  "should_trigger": false
+ }
+]

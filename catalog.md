@@ -26,6 +26,14 @@ One skill per moment. When a later module covers the same moment, it improves th
 | `datastore-selection` | Deciding where each kind of data should live: relational, columnar, document, key-value, graph, lake | data-engineering | T1-DE S1-S4 | 20/20 | new |
 | `distribution-key-and-partitioning` | Laying out distribution keys, partitions and shard keys; fixing skew and data movement | data-engineering | T1-DE S2, MPP note | 20/20 | new |
 | `pipeline-and-quality-design` | Designing ETL/ELT flows, medallion layers, data contracts, quality checks, reconciliation and governance | data-engineering | T1-DE S1, S4, S5 | 20/20 | new |
+| `spark-job-design-and-review` | Reviewing and speeding up a Spark job: shuffles, caching, partitions, joins, driver memory | data-engineering | T3-BDM | pending | new |
+| `cluster-storage-and-sizing` | Sizing HDFS disk, nodes and NameNode memory; small files; cluster vs object storage | data-engineering | T3-BDM | pending | new |
+| `price-elasticity-estimation` | Measuring how sales respond to price and promotions, and whether a price move or deal pays | pricing | T3-PDA | pending | new |
+| `willingness-to-pay-research` | Designing willingness-to-pay research and setting prices from it | pricing | T3-PDA | pending | new |
+| `pricing-structure-design` | Segment prices, tiers, fences, bundles and product-line ladders that hold up | pricing | T3-PDA | pending | new |
+| `decision-tree-analysis` | Structuring a choice under uncertainty by EMV, with sensitivity and risk | decision-analysis | T3-AOS | pending | new |
+| `value-of-information` | Deciding whether a test, survey or pilot is worth buying: EVPI, EVSI, Bayes | decision-analysis | T3-AOS | pending | new |
+| `simulation-model-design` | Monte Carlo risk models: distributions, run counts, newsvendor orders, schedule risk | decision-analysis | T3-AOS | pending | new |
 
 Trigger evals use `tools/trigger_eval.py`: 10 queries that should fire the skill and 10 that should not, with the negatives taken from sibling skills so overlaps surface. One run per query; runs that time out are retried with a longer limit rather than scored as failures.
 

@@ -11,7 +11,7 @@ The methods come from analytics coursework at ISB (AMPBA), rewritten from scratc
 
 ## Skills
 
-22 skills in four toolkits. Each one loads on its own when a request matches it, so nobody has to name it.
+30 skills in six toolkits. Each one loads on its own when a request matches it, so nobody has to name it.
 
 **Optimisation toolkit** (`optimization-toolkit`)
 
@@ -54,6 +54,24 @@ The methods come from analytics coursework at ISB (AMPBA), rewritten from scratc
 | `datastore-selection` | You are deciding where data should live: relational, columnar warehouse, document, key-value, graph, lake or lakehouse |
 | `distribution-key-and-partitioning` | You are choosing distribution, partition or shard keys, or fixing skewed nodes and slow joins in a warehouse |
 | `pipeline-and-quality-design` | You are designing a pipeline: ETL or ELT, medallion layers, data contracts, quality checks, reconciliation and governance |
+| `spark-job-design-and-review` | A Spark job is slow or failing, or needs a review before production: shuffles, caching, partitions, joins |
+| `cluster-storage-and-sizing` | You are sizing an HDFS cluster, fighting small files or NameNode memory, or deciding between a cluster and object storage |
+
+**Pricing toolkit** (`pricing-toolkit`)
+
+| Skill | Use it when |
+|---|---|
+| `price-elasticity-estimation` | You need to know how sales respond to a price change or promotion, and whether it makes money |
+| `willingness-to-pay-research` | You are finding out what customers will pay, by survey or test, and setting prices from it |
+| `pricing-structure-design` | You are designing tiers, segment prices, discounts with fences, bundles or a product-line price ladder |
+
+**Decision analysis toolkit** (`decision-analysis-toolkit`)
+
+| Skill | Use it when |
+|---|---|
+| `decision-tree-analysis` | You face a choice whose payoff depends on uncertain events and want the best option, its risk and what it hinges on |
+| `value-of-information` | You are deciding whether a test, survey, pilot or better data is worth paying for before the decision |
+| `simulation-model-design` | You need a range instead of a single number: Monte Carlo risk, order quantities under uncertain demand, schedule risk |
 
 See [catalog.md](catalog.md) for the course modules behind each skill and its trigger-test score.
 
@@ -71,7 +89,7 @@ Every skill is one folder with a `SKILL.md` file, in the open [Agent Skills](htt
 | Other agents (OpenCode, Cline and more) | Terminal / IDE | Yes | Yes | [One command](#one-command-for-every-terminal-tool) |
 | Claude (claude.ai and the desktop app) | Chat | Usually; name the skill if it doesn't | Yes, with code execution on | [Upload a zip](#claude-chat) |
 | ChatGPT | Chat | Yes | Yes | [Upload a zip](#chatgpt) |
-| Microsoft 365 Copilot | Chat | Yes | Yes, in a sandbox; ML scripts need their packages preinstalled | [Upload a zip to an agent](#microsoft-365-copilot) |
+| Microsoft 365 Copilot | Chat | Yes | Yes, in a sandbox; scripts that use numpy or pandas need them preinstalled | [Upload a zip to an agent](#microsoft-365-copilot) |
 | Gemini app | Chat | No, lives inside a Gem | No | [Make a Gem](#gemini-app-gems) |
 | Microsoft Copilot app, or any other chat | Chat | No | No | [Paste the text](#any-other-chat) |
 
@@ -85,7 +103,7 @@ Start by downloading the repository. While it is private, only people added as c
 git clone https://github.com/moheetsubudhi-isb/ampba-skills.git
 ```
 
-The scripts need Python 3. The ML scripts also need `numpy`, `pandas` and `scikit-learn`:
+The scripts need Python 3. Most of them also need `numpy` and `pandas`, and the ML scripts need `scikit-learn`:
 
 ```bash
 pip install -r ampba-skills/requirements.txt
@@ -135,6 +153,8 @@ Install as plugins. Updates arrive with `/plugin marketplace update`.
 /plugin install ml-toolkit@ampba-skills
 /plugin install recommender-toolkit@ampba-skills
 /plugin install data-engineering-toolkit@ampba-skills
+/plugin install pricing-toolkit@ampba-skills
+/plugin install decision-analysis-toolkit@ampba-skills
 ```
 
 Or copy the folders into `~/.claude/skills/` (every project) or `.claude/skills/` (one project):
@@ -201,7 +221,7 @@ Skills are added to an agent built in Agent Builder. This is in preview for orga
 2. Open **Configure**, expand **Skills** and select **Add**.
 3. Upload `dist/microsoft-365/<skill>.zip`. This zip has `SKILL.md` at its top level, which Agent Builder requires. An agent holds up to eight skills.
 
-Scripts run in a sandbox with no internet access and no package installs. The optimisation scripts need only Python. The ML scripts run only if `numpy`, `pandas` and `scikit-learn` are already in the sandbox; if they are not, the skill falls back to doing its checks by hand.
+Scripts run in a sandbox with no internet access and no package installs. The optimisation, decision-tree, value-of-information, pricing tier check, Spark review and cluster sizing scripts need only Python. The others run only if `numpy`, `pandas` and `scikit-learn` are already in the sandbox; if they are not, the skill falls back to doing its checks by hand.
 
 See [Add custom skills in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills).
 

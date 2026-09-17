@@ -17,12 +17,22 @@
     {
       "name": "data-engineering-toolkit",
       "source": "./plugins/data-engineering-toolkit",
-      "description": "Data-engineering skills for choosing where data should live, laying out distribution keys and partitions in MPP warehouses, and designing pipelines with data quality, reconciliation and governance built in."
+      "description": "Data-engineering skills for choosing where data should live, laying out distribution keys and partitions in MPP warehouses, designing pipelines with data quality and governance built in, reviewing and speeding up Spark jobs, and sizing HDFS cluster storage."
     },
     {
       "name": "recommender-toolkit",
       "source": "./plugins/recommender-toolkit",
       "description": "Recommender-system skills for choosing and building association rules, collaborative filtering, matrix factorisation or graph ranking, and for evaluating recommenders offline and online with the right splits and ranking metrics."
+    },
+    {
+      "name": "pricing-toolkit",
+      "source": "./plugins/pricing-toolkit",
+      "description": "Pricing and demand skills for estimating price and promotion elasticities, setting prices from willingness-to-pay research, and designing segment prices, tiers, bundles and product-line ladders."
+    },
+    {
+      "name": "decision-analysis-toolkit",
+      "source": "./plugins/decision-analysis-toolkit",
+      "description": "Decision-analysis skills for structuring choices under uncertainty as decision trees, valuing information before paying for a test, survey or pilot, and designing Monte Carlo simulations for risk, inventory and schedule decisions."
     }
   ]
 }

@@ -1,0 +1,6 @@
+{
+  "name": "decision-analysis-toolkit",
+  "description": "Decision-analysis skills for structuring choices under uncertainty as decision trees, valuing information before paying for a test, survey or pilot, and designing Monte Carlo simulations for risk, inventory and schedule decisions.",
+  "version": "0.1.0",
+  "author": { "name": "Moheet Subudhi" }
+}

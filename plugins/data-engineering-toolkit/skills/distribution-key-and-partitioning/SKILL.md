@@ -11,7 +11,8 @@ description: >-
   fact table by date, region or tenant, in Redshift, Synapse, Greenplum,
   BigQuery, Snowflake, Databricks, Spark, Cassandra or similar. Also use when
   reviewing warehouse table DDL before it goes live. Not for choosing which
-  kind of database to use, and not for pipeline or data quality design.
+  kind of database to use, not for pipeline or data quality design, and not
+  for reviewing or tuning Spark job code.
 ---
 
 # Distribution key and partitioning
