@@ -17,7 +17,7 @@
     {
       "name": "data-engineering-toolkit",
       "source": "./plugins/data-engineering-toolkit",
-      "description": "Data-engineering skills for choosing where data should live, laying out distribution keys and partitions in MPP warehouses, designing pipelines with data quality and governance built in, reviewing and speeding up Spark jobs, and sizing HDFS cluster storage."
+      "description": "Data-engineering skills for choosing where data should live, laying out distribution keys and partitions in MPP warehouses, and designing pipelines with data quality, reconciliation and governance built in."
     },
     {
       "name": "recommender-toolkit",

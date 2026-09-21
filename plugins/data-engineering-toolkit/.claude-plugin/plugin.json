@@ -1,8 +1,6 @@
 {
   "name": "data-engineering-toolkit",
-  "description": "Data-engineering skills for choosing where data should live, laying out distribution keys and partitions in MPP warehouses, designing pipelines with data quality and governance built in, reviewing and speeding up Spark jobs, and sizing HDFS cluster storage.",
-  "version": "0.2.0",
-  "author": {
-    "name": "Moheet Subudhi"
-  }
+  "description": "Data-engineering skills for choosing where data should live, laying out distribution keys and partitions in MPP warehouses, and designing pipelines with data quality, reconciliation and governance built in.",
+  "version": "0.1.0",
+  "author": { "name": "Moheet Subudhi" }
 }

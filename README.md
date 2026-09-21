@@ -11,7 +11,7 @@ The methods come from analytics coursework at ISB (AMPBA), rewritten from scratc
 
 ## Skills
 
-30 skills in six toolkits. Each one loads on its own when a request matches it, so nobody has to name it.
+28 skills in six toolkits. Each one loads on its own when a request matches it, so nobody has to name it.
 
 **Optimisation toolkit** (`optimization-toolkit`)
 
@@ -54,8 +54,6 @@ The methods come from analytics coursework at ISB (AMPBA), rewritten from scratc
 | `datastore-selection` | You are deciding where data should live: relational, columnar warehouse, document, key-value, graph, lake or lakehouse |
 | `distribution-key-and-partitioning` | You are choosing distribution, partition or shard keys, or fixing skewed nodes and slow joins in a warehouse |
 | `pipeline-and-quality-design` | You are designing a pipeline: ETL or ELT, medallion layers, data contracts, quality checks, reconciliation and governance |
-| `spark-job-design-and-review` | A Spark job is slow or failing, or needs a review before production: shuffles, caching, partitions, joins |
-| `cluster-storage-and-sizing` | You are sizing an HDFS cluster, fighting small files or NameNode memory, or deciding between a cluster and object storage |
 
 **Pricing toolkit** (`pricing-toolkit`)
 
@@ -221,7 +219,7 @@ Skills are added to an agent built in Agent Builder. This is in preview for orga
 2. Open **Configure**, expand **Skills** and select **Add**.
 3. Upload `dist/microsoft-365/<skill>.zip`. This zip has `SKILL.md` at its top level, which Agent Builder requires. An agent holds up to eight skills.
 
-Scripts run in a sandbox with no internet access and no package installs. The optimisation, decision-tree, value-of-information, pricing tier check, Spark review and cluster sizing scripts need only Python. The others run only if `numpy`, `pandas` and `scikit-learn` are already in the sandbox; if they are not, the skill falls back to doing its checks by hand.
+Scripts run in a sandbox with no internet access and no package installs. The optimisation, decision-tree, value-of-information and pricing tier check scripts need only Python. The others run only if `numpy`, `pandas` and `scikit-learn` are already in the sandbox; if they are not, the skill falls back to doing its checks by hand.
 
 See [Add custom skills in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills).
 

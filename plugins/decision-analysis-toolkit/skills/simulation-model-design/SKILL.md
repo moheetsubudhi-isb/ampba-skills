@@ -6,8 +6,9 @@ description: >-
   uncertain demand, cost, price, duration or returns; the chance a project,
   budget or forecast misses its target; a range instead of a single estimate;
   which distribution to use for an input; how many simulation runs are
-  enough; how much to order or stock when demand is uncertain (newsvendor,
-  overage and underage cost, service level); the probability a project
+  enough; how much to order or stock for one selling season when demand is
+  uncertain, including the newsvendor critical ratio from overage and
+  underage costs, and the service level or fill rate it implies; the probability a project
   finishes by a date or which tasks drive schedule risk; or why a plan built
   on average inputs is too optimistic. Not for choosing between a few options
   with known probabilities in a decision tree, not for deterministic

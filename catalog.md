@@ -26,17 +26,17 @@ One skill per moment. When a later module covers the same moment, it improves th
 | `datastore-selection` | Deciding where each kind of data should live: relational, columnar, document, key-value, graph, lake | data-engineering | T1-DE S1-S4 | 20/20 | new |
 | `distribution-key-and-partitioning` | Laying out distribution keys, partitions and shard keys; fixing skew and data movement | data-engineering | T1-DE S2, MPP note | 20/20 | new |
 | `pipeline-and-quality-design` | Designing ETL/ELT flows, medallion layers, data contracts, quality checks, reconciliation and governance | data-engineering | T1-DE S1, S4, S5 | 20/20 | new |
-| `spark-job-design-and-review` | Reviewing and speeding up a Spark job: shuffles, caching, partitions, joins, driver memory | data-engineering | T3-BDM | pending | new |
-| `cluster-storage-and-sizing` | Sizing HDFS disk, nodes and NameNode memory; small files; cluster vs object storage | data-engineering | T3-BDM | pending | new |
-| `price-elasticity-estimation` | Measuring how sales respond to price and promotions, and whether a price move or deal pays | pricing | T3-PDA | pending | new |
-| `willingness-to-pay-research` | Designing willingness-to-pay research and setting prices from it | pricing | T3-PDA | pending | new |
-| `pricing-structure-design` | Segment prices, tiers, fences, bundles and product-line ladders that hold up | pricing | T3-PDA | pending | new |
-| `decision-tree-analysis` | Structuring a choice under uncertainty by EMV, with sensitivity and risk | decision-analysis | T3-AOS | pending | new |
-| `value-of-information` | Deciding whether a test, survey or pilot is worth buying: EVPI, EVSI, Bayes | decision-analysis | T3-AOS | pending | new |
-| `simulation-model-design` | Monte Carlo risk models: distributions, run counts, newsvendor orders, schedule risk | decision-analysis | T3-AOS | pending | new |
+| `price-elasticity-estimation` | Measuring how sales respond to price and promotions, and whether a price move or deal pays | pricing | T3-PDA | 20/20 | new |
+| `willingness-to-pay-research` | Designing willingness-to-pay research and setting prices from it | pricing | T3-PDA | 19/20 | new |
+| `pricing-structure-design` | Segment prices, tiers, fences, bundles and product-line ladders that hold up | pricing | T3-PDA | 20/20 | new |
+| `decision-tree-analysis` | Structuring a choice under uncertainty by EMV, with sensitivity and risk | decision-analysis | T3-AOS | 20/20 | new |
+| `value-of-information` | Deciding whether a test, survey or pilot is worth buying: EVPI, EVSI, Bayes | decision-analysis | T3-AOS | 20/20 | new |
+| `simulation-model-design` | Monte Carlo risk models: distributions, run counts, newsvendor orders, schedule risk | decision-analysis | T3-AOS | 19/20 | new |
 
 Trigger evals use `tools/trigger_eval.py`: 10 queries that should fire the skill and 10 that should not, with the negatives taken from sibling skills so overlaps surface. One run per query; runs that time out are retried with a longer limit rather than scored as failures.
 
 Overlaps found and fixed this way: `optimization-formulation` was taking shortage and solver-too-slow questions from its siblings, and `shortage-allocation-fairness` was taking model-testing questions. Both descriptions now say what they are not for. In the ML toolkit, `model-selection-and-validation` fired on a bare definition question ("What is cross-validation?"), and `ml-data-audit` stayed silent on direct leakage and prediction-time availability questions; the first now excludes definitions with no dataset or model in play, and the second leads with those phrasings and applies even before the data is shared.
 
 The second wave (data engineering, recommenders and the ML model families) reached 20/20 the same way. `linear-and-logistic-models` first missed plain-language questions such as what an odds ratio means; leading its description with those pulled them in but then caught "What is linear regression?", which a definition scope-out settled.
+
+The pricing and decision-analysis wave (PDA, AOS) was scored after fixing wording misses. `decision-tree-analysis` first missed plain "should we launch?" questions until its description led with them. `pricing-structure-design` missed price-ladder, discount-erosion, volume-discount and pricing-fairness questions until those moved to the front. Two skills keep one borderline miss each: `willingness-to-pay-research` on "here are 400 survey responses with the most each would pay; what price maximises revenue?", and `simulation-model-design` on a bare newsvendor critical-ratio calculation. Two BDM skills (Spark job review and HDFS cluster sizing) were built and then dropped, because few users run Spark or Hadoop themselves; the everyday parts of that module live in `distribution-key-and-partitioning`, `datastore-selection` and `pipeline-and-quality-design`.
