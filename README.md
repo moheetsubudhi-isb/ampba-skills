@@ -240,9 +240,6 @@ This covers the Microsoft Copilot app, ChatGPT without skill upload, Perplexity 
 - **For a whole project:** paste `dist/text/<skill>.md` into a Project's instructions (ChatGPT Projects, Claude Projects), or attach it as a project file.
 - **For one conversation:** attach or paste `dist/text/<skill>.md` at the start, then ask your question.
 
-## Academic integrity
-
-These skills are for work and learning. Don't use them for graded coursework wherever your course restricts AI-assisted work.
 
 ## Contributing
 
