@@ -1,145 +1,145 @@
 {
- "skill": "recommender-evaluation",
- "passed": 19,
+ "skill": "prediction-interval-reporting",
+ "passed": 20,
  "unknown": 0,
  "total": 20,
  "timed_out_runs": 0,
  "results": [
   {
-   "query": "How do we evaluate our product recommender offline before launch?",
+   "query": "Give me a 95% range for the price of a 2,000 sq ft house from my regression.",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Precision@10 went up but NDCG went down. Which recommendation model is better?",
+   "query": "What is the difference between a confidence interval and a prediction interval?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Is a random 80/20 split okay for testing our next-basket recommendation model?",
+   "query": "How much error should I expect on the forecast for this one product next month?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Our new recommender beats the old one offline. How should we test it live?",
+   "query": "Our 90% forecast band only covers 70% of actuals. What is wrong?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "How many users per group do we need to detect a 3% lift in click-through from new recommendations?",
-   "should_trigger": true,
-   "trigger_rate": 0.0,
-   "runs_ok": 1,
-   "pass": false
-  },
-  {
-   "query": "Compute MAP@5 and recall@5 for these recommendation lists against what users actually bought.",
+   "query": "I want a range around each customer's predicted spend, not just a single number.",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Our recommendations only ever show the top 2% of products. How do we measure popularity bias and coverage?",
+   "query": "How do I build conformal prediction intervals for a gradient boosting model?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "RMSE is 0.87 on our ratings model. Does that mean the recommendations are good?",
+   "query": "Why is the prediction range wider for unusual inputs?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "How do we compare our recommender with a simple best-sellers baseline?",
+   "query": "Can you give an uncertainty band for one store's weekly sales forecast?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Evaluate the ranking quality of our internal search results.",
+   "query": "Is the interval around my regression line the range for individual outcomes?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Build a 'customers also bought' feature from order history.",
+   "query": "How do I check that my prediction intervals are calibrated?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Is an RMSE of 12 good for our model?",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Implement ALS matrix factorisation on our ratings data.",
+   "query": "Give me the margin of error for this survey.",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Our fraud model has 97% accuracy but misses most fraud. What threshold should we use?",
+   "query": "Simulate profit with uncertain demand and cost.",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Handle cold start for new users in our recommender.",
+   "query": "Is my regression significant? Check the assumptions.",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Our house price regression has an RMSE of 12 lakh. Is that good?",
+   "query": "How much should we order given uncertain demand?",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Which cross-validation scheme should I use for predicting loan default?",
+   "query": "Compare the average of two groups.",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Segment users by engagement.",
+   "query": "How many clusters should I use?",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Is the difference in average order value between two regions statistically significant?",
+   "query": "What is the expected value of launching the product?",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Detect anomalies in daily sales.",
+   "query": "Tune my random forest.",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "What does NDCG stand for?",
+   "query": "Fit a count model for orders per day.",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,

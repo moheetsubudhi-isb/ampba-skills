@@ -33,6 +33,11 @@
       "name": "decision-analysis-toolkit",
       "source": "./plugins/decision-analysis-toolkit",
       "description": "Decision-analysis skills for structuring choices under uncertainty as decision trees, valuing information before paying for a test, survey or pilot, and designing Monte Carlo simulations for risk, inventory and schedule decisions."
+    },
+    {
+      "name": "statistics-toolkit",
+      "source": "./plugins/statistics-toolkit",
+      "description": "Statistics skills for the moments that decide things at work: designing and reading A/B tests, comparing groups, estimating with a margin of error, setting control limits, checking causal claims, trusting a regression, giving honest prediction ranges, and modelling counts and rates."
     }
   ]
 }

@@ -1,0 +1,82 @@
+[
+ {
+  "query": "We audited 150 invoices and 9 had errors. What does that say about all 40,000 invoices?",
+  "should_trigger": true
+ },
+ {
+  "query": "What is the margin of error on a survey of 400 customers where 62% were satisfied?",
+  "should_trigger": true
+ },
+ {
+  "query": "How many transactions should we sample to estimate the average refund within $5?",
+  "should_trigger": true
+ },
+ {
+  "query": "Give me a 95% confidence interval for mean handling time: mean 14.2 minutes, sd 6, 25 tickets.",
+  "should_trigger": true
+ },
+ {
+  "query": "We found zero defects in 50 inspected units. Can we say the defect rate is zero?",
+  "should_trigger": true
+ },
+ {
+  "query": "Is a sample of 200 big enough to trust?",
+  "should_trigger": true
+ },
+ {
+  "query": "How do I explain a confidence interval to a non-technical manager?",
+  "should_trigger": true
+ },
+ {
+  "query": "Our population is only 1,200 accounts. How many do we need to audit for a 5% margin?",
+  "should_trigger": true
+ },
+ {
+  "query": "A poll has 55% in favour from 80 responses. How sure are we?",
+  "should_trigger": true
+ },
+ {
+  "query": "Should I use a t or z interval with 18 observations?",
+  "should_trigger": true
+ },
+ {
+  "query": "Is the average basket in region A different from region B?",
+  "should_trigger": false
+ },
+ {
+  "query": "How long should we run our A/B test?",
+  "should_trigger": false
+ },
+ {
+  "query": "Give me a range for this one house's predicted price.",
+  "should_trigger": false
+ },
+ {
+  "query": "What sample do we need to detect a 2% lift in conversion?",
+  "should_trigger": false
+ },
+ {
+  "query": "Did the new training programme cause higher sales?",
+  "should_trigger": false
+ },
+ {
+  "query": "How large is the error of our demand model?",
+  "should_trigger": false
+ },
+ {
+  "query": "Set up alert limits for daily revenue.",
+  "should_trigger": false
+ },
+ {
+  "query": "What is a confidence interval?",
+  "should_trigger": false
+ },
+ {
+  "query": "Simulate the project budget with uncertain costs.",
+  "should_trigger": false
+ },
+ {
+  "query": "Is a $40k survey worth buying before launch?",
+  "should_trigger": false
+ }
+]

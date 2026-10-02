@@ -1,145 +1,145 @@
 {
- "skill": "recommender-evaluation",
- "passed": 19,
+ "skill": "control-limits-and-error-costs",
+ "passed": 20,
  "unknown": 0,
  "total": 20,
  "timed_out_runs": 0,
  "results": [
   {
-   "query": "How do we evaluate our product recommender offline before launch?",
+   "query": "Where should we put control limits for the fill weight of our 500 g packs? The average is 503 and sd is 4.",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Precision@10 went up but NDCG went down. Which recommendation model is better?",
+   "query": "A false alarm costs us $200 of engineer time and a missed fault costs $8,000. How tight should the alert be?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Is a random 80/20 split okay for testing our next-basket recommendation model?",
+   "query": "What is the chance a pack comes in under the 490 g legal minimum if our average is 500 and sd is 6?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Our new recommender beats the old one offline. How should we test it live?",
+   "query": "What target average fill keeps underweight packs below 1%?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "How many users per group do we need to detect a 3% lift in click-through from new recommendations?",
-   "should_trigger": true,
-   "trigger_rate": 0.0,
-   "runs_ok": 1,
-   "pass": false
-  },
-  {
-   "query": "Compute MAP@5 and recall@5 for these recommendation lists against what users actually bought.",
+   "query": "How fast would our control chart catch a shift of one standard deviation?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Our recommendations only ever show the top 2% of products. How do we measure popularity bias and coverage?",
+   "query": "Should we use 3-sigma limits or 2-sigma for our monitoring dashboard?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "RMSE is 0.87 on our ratings model. Does that mean the recommendations are good?",
+   "query": "Design an acceptance sampling rule for incoming shipments.",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "How do we compare our recommender with a simple best-sellers baseline?",
+   "query": "How do we choose the significance level given what each kind of error costs?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Evaluate the ranking quality of our internal search results.",
+   "query": "What are type I and type II errors costing us in our quality check?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Build a 'customers also bought' feature from order history.",
+   "query": "Our daily average delivery time is monitored. When should we raise an alarm?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Pick the probability cutoff for our fraud classifier.",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Implement ALS matrix factorisation on our ratings data.",
+   "query": "Our team can review 50 alerts a day. Set the anomaly threshold.",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Our fraud model has 97% accuracy but misses most fraud. What threshold should we use?",
+   "query": "How long should our A/B test run?",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Handle cold start for new users in our recommender.",
+   "query": "Is the average different between our two plants?",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Our house price regression has an RMSE of 12 lakh. Is that good?",
+   "query": "Explain what a p-value is.",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Which cross-validation scheme should I use for predicting loan default?",
+   "query": "How much safety stock should we hold when demand is uncertain?",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Segment users by engagement.",
+   "query": "What is the margin of error of this sample?",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Is the difference in average order value between two regions statistically significant?",
+   "query": "Detect unusual transactions in our payments data.",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Detect anomalies in daily sales.",
+   "query": "Should we launch? It pays $5M if demand is high and loses $2M if low, with a 40% chance of high.",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "What does NDCG stand for?",
+   "query": "Choose a model to predict defects from sensor data.",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,

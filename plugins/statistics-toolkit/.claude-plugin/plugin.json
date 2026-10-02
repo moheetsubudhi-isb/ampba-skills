@@ -1,0 +1,6 @@
+{
+  "name": "statistics-toolkit",
+  "description": "Statistics skills for the moments that decide things at work: designing and reading A/B tests, comparing groups, estimating with a margin of error, setting control limits, checking causal claims, trusting a regression, giving honest prediction ranges, and modelling counts and rates.",
+  "version": "0.1.0",
+  "author": { "name": "Moheet Subudhi" }
+}

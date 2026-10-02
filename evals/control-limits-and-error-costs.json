@@ -1,0 +1,82 @@
+[
+ {
+  "query": "Where should we put control limits for the fill weight of our 500 g packs? The average is 503 and sd is 4.",
+  "should_trigger": true
+ },
+ {
+  "query": "A false alarm costs us $200 of engineer time and a missed fault costs $8,000. How tight should the alert be?",
+  "should_trigger": true
+ },
+ {
+  "query": "What is the chance a pack comes in under the 490 g legal minimum if our average is 500 and sd is 6?",
+  "should_trigger": true
+ },
+ {
+  "query": "What target average fill keeps underweight packs below 1%?",
+  "should_trigger": true
+ },
+ {
+  "query": "How fast would our control chart catch a shift of one standard deviation?",
+  "should_trigger": true
+ },
+ {
+  "query": "Should we use 3-sigma limits or 2-sigma for our monitoring dashboard?",
+  "should_trigger": true
+ },
+ {
+  "query": "Design an acceptance sampling rule for incoming shipments.",
+  "should_trigger": true
+ },
+ {
+  "query": "How do we choose the significance level given what each kind of error costs?",
+  "should_trigger": true
+ },
+ {
+  "query": "What are type I and type II errors costing us in our quality check?",
+  "should_trigger": true
+ },
+ {
+  "query": "Our daily average delivery time is monitored. When should we raise an alarm?",
+  "should_trigger": true
+ },
+ {
+  "query": "Pick the probability cutoff for our fraud classifier.",
+  "should_trigger": false
+ },
+ {
+  "query": "Our team can review 50 alerts a day. Set the anomaly threshold.",
+  "should_trigger": false
+ },
+ {
+  "query": "How long should our A/B test run?",
+  "should_trigger": false
+ },
+ {
+  "query": "Is the average different between our two plants?",
+  "should_trigger": false
+ },
+ {
+  "query": "Explain what a p-value is.",
+  "should_trigger": false
+ },
+ {
+  "query": "How much safety stock should we hold when demand is uncertain?",
+  "should_trigger": false
+ },
+ {
+  "query": "What is the margin of error of this sample?",
+  "should_trigger": false
+ },
+ {
+  "query": "Detect unusual transactions in our payments data.",
+  "should_trigger": false
+ },
+ {
+  "query": "Should we launch? It pays $5M if demand is high and loses $2M if low, with a 40% chance of high.",
+  "should_trigger": false
+ },
+ {
+  "query": "Choose a model to predict defects from sensor data.",
+  "should_trigger": false
+ }
+]

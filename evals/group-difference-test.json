@@ -1,0 +1,82 @@
+[
+ {
+  "query": "Is the average delivery time in Pune really different from Mumbai? I have 300 orders from each.",
+  "should_trigger": true
+ },
+ {
+  "query": "Conversion was 4.1% last quarter and 4.6% this quarter. Is that a real change?",
+  "should_trigger": true
+ },
+ {
+  "query": "We measured the same 40 stores before and after the new layout. Did sales change?",
+  "should_trigger": true
+ },
+ {
+  "query": "Which test should I use to compare the defect rate of two suppliers?",
+  "should_trigger": true
+ },
+ {
+  "query": "Do customers who used the mobile app spend more than web customers? Here is the data.",
+  "should_trigger": true
+ },
+ {
+  "query": "I ran a t-test and got p = 0.06 with 12 people per group. What now?",
+  "should_trigger": true
+ },
+ {
+  "query": "Is the variance in processing time different between the day and night shifts?",
+  "should_trigger": true
+ },
+ {
+  "query": "Is the new claims process faster than the old one? I have handling times for both.",
+  "should_trigger": true
+ },
+ {
+  "query": "I need to compare average salaries across five departments. Which test?",
+  "should_trigger": true
+ },
+ {
+  "query": "The difference between the two cohorts is significant at p = 0.001 but tiny. Does it matter?",
+  "should_trigger": true
+ },
+ {
+  "query": "How many users do we need for an A/B test to detect a 1% lift?",
+  "should_trigger": false
+ },
+ {
+  "query": "Does working from home improve performance? We only have observational data.",
+  "should_trigger": false
+ },
+ {
+  "query": "What is the average handling time, with a margin of error, from this sample of 200 tickets?",
+  "should_trigger": false
+ },
+ {
+  "query": "Fit a log-log demand model on price and sales.",
+  "should_trigger": false
+ },
+ {
+  "query": "Is an RMSE of 12 good for our demand model?",
+  "should_trigger": false
+ },
+ {
+  "query": "Segment our customers into groups by behaviour.",
+  "should_trigger": false
+ },
+ {
+  "query": "Where should we set the control limit for fill weights?",
+  "should_trigger": false
+ },
+ {
+  "query": "Check the residuals of my regression.",
+  "should_trigger": false
+ },
+ {
+  "query": "What is a t-test?",
+  "should_trigger": false
+ },
+ {
+  "query": "Give me a range for next month's forecast of one product.",
+  "should_trigger": false
+ }
+]

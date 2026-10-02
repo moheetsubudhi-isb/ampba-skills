@@ -11,7 +11,7 @@ The methods come from analytics coursework at ISB (AMPBA), rewritten from scratc
 
 ## Skills
 
-28 skills in six toolkits. Each one loads on its own when a request matches it, so nobody has to name it.
+36 skills in seven toolkits. Each one loads on its own when a request matches it, so nobody has to name it.
 
 **Optimisation toolkit** (`optimization-toolkit`)
 
@@ -70,6 +70,19 @@ The methods come from analytics coursework at ISB (AMPBA), rewritten from scratc
 | `decision-tree-analysis` | You face a choice whose payoff depends on uncertain events and want the best option, its risk and what it hinges on |
 | `value-of-information` | You are deciding whether a test, survey, pilot or better data is worth paying for before the decision |
 | `simulation-model-design` | You need a range instead of a single number: Monte Carlo risk, order quantities under uncertain demand, schedule risk |
+
+**Statistics toolkit** (`statistics-toolkit`)
+
+| Skill | Use it when |
+|---|---|
+| `experiment-design-and-readout` | You are sizing, running or reading an A/B test: how many users, how long, whether the lift is real, whether to ship |
+| `group-difference-test` | You need to know whether two groups, or before and after, really differ in data you already have |
+| `estimate-with-margin-of-error` | You need a number from a sample with a margin of error, or how big a sample to take |
+| `control-limits-and-error-costs` | You are setting an alert, control or pass/fail limit and need to balance false alarms against misses |
+| `causal-claim-check` | Someone says X caused Y and you need to know what to control for and whether an experiment is needed |
+| `regression-diagnostics` | You need to know whether a regression's coefficients, p-values and intervals can be trusted |
+| `prediction-interval-reporting` | You need an honest range around one prediction or forecast, and proof that the range covers |
+| `count-and-rate-models` | You are modelling counts or rates: orders per day, defects per batch, claims per policy |
 
 See [catalog.md](catalog.md) for the course modules behind each skill and its trigger-test score.
 
@@ -153,6 +166,7 @@ Install as plugins. Updates arrive with `/plugin marketplace update`.
 /plugin install data-engineering-toolkit@ampba-skills
 /plugin install pricing-toolkit@ampba-skills
 /plugin install decision-analysis-toolkit@ampba-skills
+/plugin install statistics-toolkit@ampba-skills
 ```
 
 Or copy the folders into `~/.claude/skills/` (every project) or `.claude/skills/` (one project):
@@ -219,7 +233,7 @@ Skills are added to an agent built in Agent Builder. This is in preview for orga
 2. Open **Configure**, expand **Skills** and select **Add**.
 3. Upload `dist/microsoft-365/<skill>.zip`. This zip has `SKILL.md` at its top level, which Agent Builder requires. An agent holds up to eight skills.
 
-Scripts run in a sandbox with no internet access and no package installs. The optimisation, decision-tree, value-of-information and pricing tier check scripts need only Python. The others run only if `numpy`, `pandas` and `scikit-learn` are already in the sandbox; if they are not, the skill falls back to doing its checks by hand.
+Scripts run in a sandbox with no internet access and no package installs. The optimisation, decision-tree, value-of-information, pricing tier check, A/B test planner, margin of error and control limit scripts need only Python. The others run only if `numpy`, `pandas` and `scikit-learn` are already in the sandbox; if they are not, the skill falls back to doing its checks by hand.
 
 See [Add custom skills in Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-skills).
 

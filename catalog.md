@@ -18,11 +18,11 @@ One skill per moment. When a later module covers the same moment, it improves th
 | `classification-metrics-and-threshold` | Judging a classifier by error costs and setting the threshold | ml | T3-MLSL2, T2-MLUL2 D3 | 20/20 | tier 1 |
 | `tree-and-ensemble-models` | Choosing, tuning and explaining a tree, random forest or boosted model | ml | T3-MLSL2, T2-MLSL1 L8 | 20/20 | tier 2 |
 | `linear-and-logistic-models` | Regularising and reading linear, logistic and softmax models built for prediction | ml | T3-MLSL2, T2-MLSL1 L9 | 20/20 | tier 2 |
-| `regression-error-metrics` | Judging regression and forecast errors against a baseline and the cost of acting on them | ml | T3-MLSL2 | 20/20 | tier 2 |
+| `regression-error-metrics` | Judging regression and forecast errors against a baseline and the cost of acting on them | ml | T3-MLSL2 | 19/20 | tier 2 |
 | `anomaly-detection` | Finding unusual records with few labels, and setting alert volume from review capacity | ml | T2-MLUL2 D5, T2-MLSL1 L10 | 20/20 | tier 2 |
 | `text-and-embedding-features` | Representing text for matching, deduplication and search; TF-IDF or embeddings | ml | T1-MLUL D4 | 20/20 | tier 2 |
 | `recommender-build` | Choosing and building association rules, collaborative filtering, matrix factorisation or graph ranking | recommender | T2-MLUL2 D1, D2, D4 | 20/20 | new |
-| `recommender-evaluation` | Proving a recommender works offline and online: splits, ranking metrics, A/B sizing | recommender | T2-MLUL2 D3 | 20/20 | new |
+| `recommender-evaluation` | Proving a recommender works offline and online: splits, ranking metrics, A/B sizing | recommender | T2-MLUL2 D3 | 19/20 | new |
 | `datastore-selection` | Deciding where each kind of data should live: relational, columnar, document, key-value, graph, lake | data-engineering | T1-DE S1-S4 | 20/20 | new |
 | `distribution-key-and-partitioning` | Laying out distribution keys, partitions and shard keys; fixing skew and data movement | data-engineering | T1-DE S2, MPP note | 20/20 | new |
 | `pipeline-and-quality-design` | Designing ETL/ELT flows, medallion layers, data contracts, quality checks, reconciliation and governance | data-engineering | T1-DE S1, S4, S5 | 20/20 | new |
@@ -32,6 +32,14 @@ One skill per moment. When a later module covers the same moment, it improves th
 | `decision-tree-analysis` | Structuring a choice under uncertainty by EMV, with sensitivity and risk | decision-analysis | T3-AOS | 20/20 | new |
 | `value-of-information` | Deciding whether a test, survey or pilot is worth buying: EVPI, EVSI, Bayes | decision-analysis | T3-AOS | 20/20 | new |
 | `simulation-model-design` | Monte Carlo risk models: distributions, run counts, newsvendor orders, schedule risk | decision-analysis | T3-AOS | 19/20 | new |
+| `experiment-design-and-readout` | Sizing, running and reading a randomised test; stopping rules, split checks, guardrails | statistics | T1-SA1, T2-SA2 | 20/20 | new |
+| `group-difference-test` | Is this difference between two groups, or before and after, real? Paired vs independent, size of the gap | statistics | T1-SA1 | 19/20 | new |
+| `estimate-with-margin-of-error` | What a sample says about the whole population, and how big a sample to take | statistics | T1-SA1 | 20/20 | new |
+| `control-limits-and-error-costs` | Setting alert, control and pass/fail limits from the cost of false alarms and misses | statistics | T1-SA1 | 20/20 | new |
+| `causal-claim-check` | Did X cause Y? Selection bias, what to control for, when an experiment is needed | statistics | T2-SA2 | 20/20 | new |
+| `regression-diagnostics` | Can this regression be trusted for inference? Output table, residuals, influence, unequal variance | statistics | T2-SA2, T3-ASA | 17/20 | new |
+| `prediction-interval-reporting` | An honest range around one prediction, and whether the range really covers | statistics | T2-SA2 | 20/20 | new |
+| `count-and-rate-models` | Counts and rates: Poisson, offsets, overdispersion, negative binomial, excess zeros | statistics | T3-ASA | 20/20 | new |
 
 Trigger evals use `tools/trigger_eval.py`: 10 queries that should fire the skill and 10 that should not, with the negatives taken from sibling skills so overlaps surface. One run per query; runs that time out are retried with a longer limit rather than scored as failures.
 
@@ -40,3 +48,8 @@ Overlaps found and fixed this way: `optimization-formulation` was taking shortag
 The second wave (data engineering, recommenders and the ML model families) reached 20/20 the same way. `linear-and-logistic-models` first missed plain-language questions such as what an odds ratio means; leading its description with those pulled them in but then caught "What is linear regression?", which a definition scope-out settled.
 
 The pricing and decision-analysis wave (PDA, AOS) was scored after fixing wording misses. `decision-tree-analysis` first missed plain "should we launch?" questions until its description led with them. `pricing-structure-design` missed price-ladder, discount-erosion, volume-discount and pricing-fairness questions until those moved to the front. Two skills keep one borderline miss each: `willingness-to-pay-research` on "here are 400 survey responses with the most each would pay; what price maximises revenue?", and `simulation-model-design` on a bare newsvendor critical-ratio calculation. Two BDM skills (Spark job review and HDFS cluster sizing) were built and then dropped, because few users run Spark or Hadoop themselves; the everyday parts of that module live in `distribution-key-and-partitioning`, `datastore-selection` and `pipeline-and-quality-design`.
+
+The statistics wave (SA1, SA2, ASA) adds eight skills split by decision moment instead of one general statistics skill. The local prototype `regression-sanity-check` competed with `causal-claim-check` for the same questions and is retired by it. Overlaps were settled this way: multicollinearity and VIF stay with `linear-and-logistic-models`, so `regression-diagnostics` scopes them out; `regression-diagnostics` now takes residual-plot questions about price predictions that `regression-error-metrics` used to take, and `experiment-design-and-readout` takes A/B sample-size questions for click-through that `recommender-evaluation` used to take, which leaves each of those older skills at 19/20. `regression-diagnostics` keeps three misses on short questions with no model in play: whether to use robust standard errors, whether a model with adjusted R-squared 0.20 and a significant F test is good, and whether repeated customers break standard errors. `group-difference-test` keeps one: app versus web spend with data attached, which is often answered directly.
+
+The eval harness now stops each run as soon as the verdict is known, and counts a run that ends in an error, such as a usage limit, as unknown rather than as a miss. Several earlier rounds had scored limit failures as misses.
+

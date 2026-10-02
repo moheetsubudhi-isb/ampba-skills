@@ -1,0 +1,82 @@
+[
+ {
+  "query": "Give me a 95% range for the price of a 2,000 sq ft house from my regression.",
+  "should_trigger": true
+ },
+ {
+  "query": "What is the difference between a confidence interval and a prediction interval?",
+  "should_trigger": true
+ },
+ {
+  "query": "How much error should I expect on the forecast for this one product next month?",
+  "should_trigger": true
+ },
+ {
+  "query": "Our 90% forecast band only covers 70% of actuals. What is wrong?",
+  "should_trigger": true
+ },
+ {
+  "query": "I want a range around each customer's predicted spend, not just a single number.",
+  "should_trigger": true
+ },
+ {
+  "query": "How do I build conformal prediction intervals for a gradient boosting model?",
+  "should_trigger": true
+ },
+ {
+  "query": "Why is the prediction range wider for unusual inputs?",
+  "should_trigger": true
+ },
+ {
+  "query": "Can you give an uncertainty band for one store's weekly sales forecast?",
+  "should_trigger": true
+ },
+ {
+  "query": "Is the interval around my regression line the range for individual outcomes?",
+  "should_trigger": true
+ },
+ {
+  "query": "How do I check that my prediction intervals are calibrated?",
+  "should_trigger": true
+ },
+ {
+  "query": "Is an RMSE of 12 good for our model?",
+  "should_trigger": false
+ },
+ {
+  "query": "Give me the margin of error for this survey.",
+  "should_trigger": false
+ },
+ {
+  "query": "Simulate profit with uncertain demand and cost.",
+  "should_trigger": false
+ },
+ {
+  "query": "Is my regression significant? Check the assumptions.",
+  "should_trigger": false
+ },
+ {
+  "query": "How much should we order given uncertain demand?",
+  "should_trigger": false
+ },
+ {
+  "query": "Compare the average of two groups.",
+  "should_trigger": false
+ },
+ {
+  "query": "How many clusters should I use?",
+  "should_trigger": false
+ },
+ {
+  "query": "What is the expected value of launching the product?",
+  "should_trigger": false
+ },
+ {
+  "query": "Tune my random forest.",
+  "should_trigger": false
+ },
+ {
+  "query": "Fit a count model for orders per day.",
+  "should_trigger": false
+ }
+]

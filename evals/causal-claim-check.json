@@ -1,0 +1,82 @@
+[
+ {
+  "query": "Our loyalty programme members spend 30% more. Did the programme cause that?",
+  "should_trigger": true
+ },
+ {
+  "query": "What should I control for when estimating the effect of discounts on repeat purchases?",
+  "should_trigger": true
+ },
+ {
+  "query": "Sales went up after the ad campaign. Can we say the campaign worked?",
+  "should_trigger": true
+ },
+ {
+  "query": "Does working from home raise productivity? The people who chose it performed better.",
+  "should_trigger": true
+ },
+ {
+  "query": "Regions with more ad spend have higher sales. Does advertising drive sales?",
+  "should_trigger": true
+ },
+ {
+  "query": "Is this correlation causal, or is it just confounding?",
+  "should_trigger": true
+ },
+ {
+  "query": "I added a control and the treatment effect shrank by half. Was the first estimate biased?",
+  "should_trigger": true
+ },
+ {
+  "query": "Can we trust an observational study of a new feature's effect on retention?",
+  "should_trigger": true
+ },
+ {
+  "query": "When do we need an experiment instead of just a regression with controls?",
+  "should_trigger": true
+ },
+ {
+  "query": "Does our training programme improve performance? The stronger employees signed up for it.",
+  "should_trigger": true
+ },
+ {
+  "query": "How long should we run an A/B test?",
+  "should_trigger": false
+ },
+ {
+  "query": "Why did the coefficient on discount flip sign when I added the region feature to my churn model?",
+  "should_trigger": false
+ },
+ {
+  "query": "Is the difference between two stores significant?",
+  "should_trigger": false
+ },
+ {
+  "query": "Is this regression significant? Check the residuals.",
+  "should_trigger": false
+ },
+ {
+  "query": "Give a 95% interval for this one prediction.",
+  "should_trigger": false
+ },
+ {
+  "query": "Build a model to predict which customers will churn next month.",
+  "should_trigger": false
+ },
+ {
+  "query": "What is causation?",
+  "should_trigger": false
+ },
+ {
+  "query": "Segment the customers by purchase behaviour.",
+  "should_trigger": false
+ },
+ {
+  "query": "Should we use Ridge or Lasso for 200 features?",
+  "should_trigger": false
+ },
+ {
+  "query": "How many users does our test need?",
+  "should_trigger": false
+ }
+]

@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Measure whether a skill triggers on queries it should, and stays quiet otherwise.
 
-Installs the skill under .claude/skills/ for the run, then scans the whole
-transcript of each `claude -p` run for a Skill or Read call naming it. Scanning
-the whole transcript matters: a CLAUDE.md that makes Claude call another tool
-first does not mean the skill was skipped.
+Installs the skill under .claude/skills/ for the run, then watches each
+`claude -p` run for a Skill or Read call naming it. Watching the whole run, not
+only the first call, matters: a CLAUDE.md that makes Claude call another tool
+first does not mean the skill was skipped. The run is stopped as soon as the
+verdict is known, which cuts the token cost of an eval by about ten times.
 
   python3 tools/trigger_eval.py --skill plugins/*/skills/logical-constraints \
       --eval-set evals/logical-constraints.json --runs 1
@@ -16,35 +17,53 @@ import pathlib
 import shutil
 import subprocess
 import sys
+import threading
 from concurrent.futures import ThreadPoolExecutor
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 
-def triggered(query, name, model, timeout):
+def triggered(query, name, model, timeout, max_calls=8):
+    """True if the run calls the skill (Skill or Read naming it), False if it does not,
+    None on timeout or when the run ends in an error such as a usage limit. Stops the run as soon as the answer is known: a hit ends it
+    at once, and a run that makes max_calls tool calls without a hit is a miss.
+    A full run costs ten times more and adds nothing to the verdict."""
     cmd = ["claude", "-p", query, "--output-format", "stream-json", "--verbose"]
     if model:
         cmd += ["--model", model]
     env = {k: v for k, v in os.environ.items() if k != "CLAUDECODE"}
+    proc = subprocess.Popen(cmd, cwd=ROOT, env=env, stdout=subprocess.PIPE,
+                            stderr=subprocess.DEVNULL, text=True)
+    timed_out = []
+    timer = threading.Timer(timeout, lambda: (timed_out.append(1), proc.kill()))
+    timer.start()
+    calls = 0
     try:
-        out = subprocess.run(cmd, cwd=ROOT, env=env, capture_output=True,
-                             text=True, timeout=timeout).stdout
-    except subprocess.TimeoutExpired:
-        return None
-    for line in out.splitlines():
-        try:
-            event = json.loads(line)
-        except json.JSONDecodeError:
-            continue
-        if event.get("type") != "assistant":
-            continue
-        for c in event.get("message", {}).get("content", []):
-            if c.get("type") != "tool_use":
+        for line in proc.stdout:
+            try:
+                event = json.loads(line)
+            except json.JSONDecodeError:
                 continue
-            arg = str(c.get("input", {}))
-            if c.get("name") in ("Skill", "Read") and name in arg:
-                return True
-    return False
+            if event.get("type") == "result":
+                # a run that ended in an error (usage limit, login failure) proves nothing
+                if event.get("is_error"):
+                    timed_out.append(1)
+                break
+            if event.get("type") != "assistant":
+                continue
+            for c in event.get("message", {}).get("content", []):
+                if c.get("type") != "tool_use":
+                    continue
+                calls += 1
+                if c.get("name") in ("Skill", "Read") and name in str(c.get("input", {})):
+                    return True
+            if calls >= max_calls:
+                return False
+    finally:
+        timer.cancel()
+        proc.kill()
+        proc.wait()
+    return None if timed_out else False
 
 
 def main():

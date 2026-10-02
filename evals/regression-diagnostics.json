@@ -1,0 +1,82 @@
+[
+ {
+  "query": "My regression shows p = 0.04 for discount. Is it significant, and can I trust it?",
+  "should_trigger": true
+ },
+ {
+  "query": "The residuals versus fitted plot looks like a funnel. What does that mean?",
+  "should_trigger": true
+ },
+ {
+  "query": "How do I read this regression output: estimate, std error, t value, R-squared, F-statistic?",
+  "should_trigger": true
+ },
+ {
+  "query": "What does the Q-Q plot of my residuals tell me?",
+  "should_trigger": true
+ },
+ {
+  "query": "One customer with huge sales seems to be driving the slope. How do I check influence?",
+  "should_trigger": true
+ },
+ {
+  "query": "The Breusch-Pagan test has a tiny p-value. What do I do?",
+  "should_trigger": true
+ },
+ {
+  "query": "Should I use robust standard errors?",
+  "should_trigger": true
+ },
+ {
+  "query": "Adjusted R-squared is 0.20 and the F test is significant. Is the model any good?",
+  "should_trigger": true
+ },
+ {
+  "query": "My residuals curve upward against the fitted values. What should I change in the model?",
+  "should_trigger": true
+ },
+ {
+  "query": "Customers appear many times in my data. Does that break my standard errors?",
+  "should_trigger": true
+ },
+ {
+  "query": "What RMSE is good for our demand forecast?",
+  "should_trigger": false
+ },
+ {
+  "query": "Should I use Ridge or Lasso when I have 200 features?",
+  "should_trigger": false
+ },
+ {
+  "query": "Did the discount cause more sales?",
+  "should_trigger": false
+ },
+ {
+  "query": "How do I interpret an odds ratio of 1.8?",
+  "should_trigger": false
+ },
+ {
+  "query": "Is the difference between two groups significant?",
+  "should_trigger": false
+ },
+ {
+  "query": "What is a residual?",
+  "should_trigger": false
+ },
+ {
+  "query": "Pick the decision threshold for our classifier.",
+  "should_trigger": false
+ },
+ {
+  "query": "Give me a range for one predicted value.",
+  "should_trigger": false
+ },
+ {
+  "query": "Model order counts per store with Poisson.",
+  "should_trigger": false
+ },
+ {
+  "query": "Two predictors have a VIF of 15. Is multicollinearity a problem?",
+  "should_trigger": false
+ }
+]

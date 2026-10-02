@@ -1,0 +1,149 @@
+{
+ "skill": "experiment-design-and-readout",
+ "passed": 20,
+ "unknown": 0,
+ "total": 20,
+ "timed_out_runs": 0,
+ "results": [
+  {
+   "query": "How many users do we need in each arm to detect a 2% relative lift in checkout conversion?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Our A/B test has run 4 days and variant B is up 6% with p = 0.03. Can we call it?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "How long should we run a test on the new homepage if we get about 3,000 visitors a day?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Variant B won on signups, but the split is 52% in one arm and 48% in the other. Does that matter?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "We're testing three button colours against five metrics. How do we avoid false winners?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Should we randomise by user or by store for a delivery fee test?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Is the lift in our test real or noise? A converted 1,000 of 10,000 and B converted 1,130 of 10,050.",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "What's the smallest effect we can detect with 20,000 users per arm and a 10% baseline?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Our experiment result flipped from positive to negative after the second week. What happened?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Plan a test for our new onboarding flow. What do we need to decide before launch?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Is the average order value in the north region different from the south region? I have both datasets.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Did our loyalty programme cause customers to spend more? We only have observational data.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "How many customers should we survey to estimate satisfaction within 3 points?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Is a $60k test market worth running before we decide on a national launch?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "How do we evaluate whether our new recommender beats the best-seller baseline offline?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "What is an A/B test?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Should we offer a student discount, and how do we stop everyone claiming it?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Where should we set the alert limit for daily order counts?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Our regression shows price is not significant. Can we trust that?",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Estimate price elasticity from two years of weekly scanner data.",
+   "should_trigger": false,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": true
+  }
+ ]
+}

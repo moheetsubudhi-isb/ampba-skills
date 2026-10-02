@@ -1,0 +1,82 @@
+[
+ {
+  "query": "How do I model the number of orders per store per day?",
+  "should_trigger": true
+ },
+ {
+  "query": "My Poisson regression has standard errors that look too small. Why?",
+  "should_trigger": true
+ },
+ {
+  "query": "Claims per policy need different exposure times. How do I handle that?",
+  "should_trigger": true
+ },
+ {
+  "query": "What does a coefficient of 0.2 mean in a Poisson regression?",
+  "should_trigger": true
+ },
+ {
+  "query": "Our forecast of units sold gives negative numbers for slow products. What should we use instead?",
+  "should_trigger": true
+ },
+ {
+  "query": "There are lots of zeros in the weekly sales of each product. What model fits?",
+  "should_trigger": true
+ },
+ {
+  "query": "When should I use negative binomial instead of Poisson?",
+  "should_trigger": true
+ },
+ {
+  "query": "How do I model defects per batch when batches have different sizes?",
+  "should_trigger": true
+ },
+ {
+  "query": "Is overdispersion a problem for my count model?",
+  "should_trigger": true
+ },
+ {
+  "query": "How do I compare two count models with AIC and deviance?",
+  "should_trigger": true
+ },
+ {
+  "query": "Predict whether a customer will churn.",
+  "should_trigger": false
+ },
+ {
+  "query": "Is the average number of orders different between two regions?",
+  "should_trigger": false
+ },
+ {
+  "query": "Give me a prediction interval for next month's demand.",
+  "should_trigger": false
+ },
+ {
+  "query": "Is my regression trustworthy? Check the residuals.",
+  "should_trigger": false
+ },
+ {
+  "query": "Judge our forecast with MAPE or WAPE.",
+  "should_trigger": false
+ },
+ {
+  "query": "Which algorithm should I use: random forest or boosting?",
+  "should_trigger": false
+ },
+ {
+  "query": "What is a Poisson distribution?",
+  "should_trigger": false
+ },
+ {
+  "query": "Simulate demand uncertainty for inventory planning.",
+  "should_trigger": false
+ },
+ {
+  "query": "Estimate price elasticity from sales data.",
+  "should_trigger": false
+ },
+ {
+  "query": "Explain odds ratios in logistic regression.",
+  "should_trigger": false
+ }
+]

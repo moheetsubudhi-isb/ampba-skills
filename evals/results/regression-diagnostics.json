@@ -1,145 +1,145 @@
 {
- "skill": "regression-error-metrics",
- "passed": 19,
+ "skill": "regression-diagnostics",
+ "passed": 17,
  "unknown": 0,
  "total": 20,
  "timed_out_runs": 0,
  "results": [
   {
-   "query": "Our house price model has an RMSE of 12 lakh. Is that good?",
+   "query": "My regression shows p = 0.04 for discount. Is it significant, and can I trust it?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "R-squared on our test data is negative. What does that mean?",
+   "query": "The residuals versus fitted plot looks like a funnel. What does that mean?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Our demand forecast MAPE is 180% for some slow-moving items. Which metric should we use instead?",
+   "query": "How do I read this regression output: estimate, std error, t value, R-squared, F-statistic?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Which error metric should we report to operations for a delivery-time prediction model?",
+   "query": "What does the Q-Q plot of my residuals tell me?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "R-squared is 0.92 but the sales team says the predictions are useless. How can both be true?",
+   "query": "One customer with huge sales seems to be driving the slope. How do I check influence?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "How do I compare my forecast with simply using last week's sales as the prediction?",
+   "query": "The Breusch-Pagan test has a tiny p-value. What do I do?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Under-forecasting stock costs us four times more than over-forecasting. How should we measure forecast error?",
-   "should_trigger": true,
-   "trigger_rate": 1.0,
-   "runs_ok": 1,
-   "pass": true
-  },
-  {
-   "query": "Our salary prediction model does well overall but badly for senior roles. How do I show errors by segment?",
-   "should_trigger": true,
-   "trigger_rate": 1.0,
-   "runs_ok": 1,
-   "pass": true
-  },
-  {
-   "query": "MAE or RMSE for evaluating a taxi fare prediction model?",
-   "should_trigger": true,
-   "trigger_rate": 1.0,
-   "runs_ok": 1,
-   "pass": true
-  },
-  {
-   "query": "What does this funnel-shaped residual plot tell me about my price prediction model?",
+   "query": "Should I use robust standard errors?",
    "should_trigger": true,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": false
   },
   {
-   "query": "Our fraud model has 97% accuracy but misses most fraud. What threshold should we use?",
+   "query": "Adjusted R-squared is 0.20 and the F test is significant. Is the model any good?",
+   "should_trigger": true,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": false
+  },
+  {
+   "query": "My residuals curve upward against the fitted values. What should I change in the model?",
+   "should_trigger": true,
+   "trigger_rate": 1.0,
+   "runs_ok": 1,
+   "pass": true
+  },
+  {
+   "query": "Customers appear many times in my data. Does that break my standard errors?",
+   "should_trigger": true,
+   "trigger_rate": 0.0,
+   "runs_ok": 1,
+   "pass": false
+  },
+  {
+   "query": "What RMSE is good for our demand forecast?",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Compute precision@10 for our recommender.",
+   "query": "Should I use Ridge or Lasso when I have 200 features?",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Is the coefficient for advertising spend statistically significant?",
+   "query": "Did the discount cause more sales?",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "How do I interpret the coefficients in my linear regression?",
+   "query": "How do I interpret an odds ratio of 1.8?",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "How should I design time-series cross-validation for a demand forecast?",
+   "query": "Is the difference between two groups significant?",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Random forest or boosting for predicting delivery time?",
+   "query": "What is a residual?",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Build features from order timestamps for a delivery time model.",
+   "query": "Pick the decision threshold for our classifier.",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Detect unusual spikes in daily sales.",
+   "query": "Give me a range for one predicted value.",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "What does RMSE stand for?",
+   "query": "Model order counts per store with Poisson.",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Calculate the average of 4, 8 and 15.",
+   "query": "Two predictors have a VIF of 15. Is multicollinearity a problem?",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,

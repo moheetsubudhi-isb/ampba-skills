@@ -1,145 +1,145 @@
 {
- "skill": "recommender-evaluation",
+ "skill": "group-difference-test",
  "passed": 19,
  "unknown": 0,
  "total": 20,
  "timed_out_runs": 0,
  "results": [
   {
-   "query": "How do we evaluate our product recommender offline before launch?",
+   "query": "Is the average delivery time in Pune really different from Mumbai? I have 300 orders from each.",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Precision@10 went up but NDCG went down. Which recommendation model is better?",
+   "query": "Conversion was 4.1% last quarter and 4.6% this quarter. Is that a real change?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Is a random 80/20 split okay for testing our next-basket recommendation model?",
+   "query": "We measured the same 40 stores before and after the new layout. Did sales change?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Our new recommender beats the old one offline. How should we test it live?",
+   "query": "Which test should I use to compare the defect rate of two suppliers?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "How many users per group do we need to detect a 3% lift in click-through from new recommendations?",
+   "query": "Do customers who used the mobile app spend more than web customers? Here is the data.",
    "should_trigger": true,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": false
   },
   {
-   "query": "Compute MAP@5 and recall@5 for these recommendation lists against what users actually bought.",
+   "query": "I ran a t-test and got p = 0.06 with 12 people per group. What now?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Our recommendations only ever show the top 2% of products. How do we measure popularity bias and coverage?",
+   "query": "Is the variance in processing time different between the day and night shifts?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "RMSE is 0.87 on our ratings model. Does that mean the recommendations are good?",
+   "query": "Is the new claims process faster than the old one? I have handling times for both.",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "How do we compare our recommender with a simple best-sellers baseline?",
+   "query": "I need to compare average salaries across five departments. Which test?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Evaluate the ranking quality of our internal search results.",
+   "query": "The difference between the two cohorts is significant at p = 0.001 but tiny. Does it matter?",
    "should_trigger": true,
    "trigger_rate": 1.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Build a 'customers also bought' feature from order history.",
+   "query": "How many users do we need for an A/B test to detect a 1% lift?",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Implement ALS matrix factorisation on our ratings data.",
+   "query": "Does working from home improve performance? We only have observational data.",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Our fraud model has 97% accuracy but misses most fraud. What threshold should we use?",
+   "query": "What is the average handling time, with a margin of error, from this sample of 200 tickets?",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Handle cold start for new users in our recommender.",
+   "query": "Fit a log-log demand model on price and sales.",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Our house price regression has an RMSE of 12 lakh. Is that good?",
+   "query": "Is an RMSE of 12 good for our demand model?",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Which cross-validation scheme should I use for predicting loan default?",
+   "query": "Segment our customers into groups by behaviour.",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Segment users by engagement.",
+   "query": "Where should we set the control limit for fill weights?",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Is the difference in average order value between two regions statistically significant?",
+   "query": "Check the residuals of my regression.",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "Detect anomalies in daily sales.",
+   "query": "What is a t-test?",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
    "pass": true
   },
   {
-   "query": "What does NDCG stand for?",
+   "query": "Give me a range for next month's forecast of one product.",
    "should_trigger": false,
    "trigger_rate": 0.0,
    "runs_ok": 1,
