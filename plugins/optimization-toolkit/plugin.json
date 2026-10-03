@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "optimization-toolkit",
+  "version": "1.0.0",
+  "description": "Decision-science skills for turning business decisions into optimisation models, writing business rules correctly, allocating scarce supply fairly, choosing exact solvers or heuristics, and testing models before go-live.",
+  "author": {
+    "name": "Moheet Subudhi"
+  },
+  "homepage": "https://github.com/moheetsubudhi-isb/business-analytics-skills",
+  "repository": "https://github.com/moheetsubudhi-isb/business-analytics-skills",
+  "license": "MIT",
+  "keywords": [
+    "analytics",
+    "decision-support",
+    "optimization"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Optimization toolkit",
+        "shortDescription": "Decision-science skills for turning business decisions into optimisation models, writing business rules correctly,\u2026",
+        "longDescription": "Decision-science skills for turning business decisions into optimisation models, writing business rules correctly, allocating scarce supply fairly, choosing exact solvers or heuristics, and testing models before go-live.",
+        "developerName": "Moheet Subudhi",
+        "category": "Productivity"
+      }
+    }
+  }
+}

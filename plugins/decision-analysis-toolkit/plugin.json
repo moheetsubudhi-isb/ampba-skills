@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "decision-analysis-toolkit",
+  "version": "1.0.0",
+  "description": "Decision-analysis skills for structuring choices under uncertainty as decision trees, valuing information before paying for a test, survey or pilot, and designing Monte Carlo simulations for risk, inventory and schedule decisions.",
+  "author": {
+    "name": "Moheet Subudhi"
+  },
+  "homepage": "https://github.com/moheetsubudhi-isb/business-analytics-skills",
+  "repository": "https://github.com/moheetsubudhi-isb/business-analytics-skills",
+  "license": "MIT",
+  "keywords": [
+    "analytics",
+    "decision-support",
+    "decision-analysis"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Decision analysis toolkit",
+        "shortDescription": "Decision-analysis skills for structuring choices under uncertainty as decision trees, valuing information before paying\u2026",
+        "longDescription": "Decision-analysis skills for structuring choices under uncertainty as decision trees, valuing information before paying for a test, survey or pilot, and designing Monte Carlo simulations for risk, inventory and schedule decisions.",
+        "developerName": "Moheet Subudhi",
+        "category": "Productivity"
+      }
+    }
+  }
+}

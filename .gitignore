@@ -7,7 +7,7 @@ evals/results/retry.json
 evals/results/recheck.json
 evals/results/unknown.json
 evals/results/*.recheck.json
-# course material never belongs in this repo
+# no slides or spreadsheets in here; skills are plain text
 *.pdf
 *.pptx
 *.docx

@@ -1,0 +1,106 @@
+{
+  "name": "business-analytics-skills",
+  "interface": {
+    "displayName": "Business Analytics Skills"
+  },
+  "plugins": [
+    {
+      "name": "optimization-toolkit",
+      "description": "Decision-science skills for turning business decisions into optimisation models, writing business rules correctly, allocating scarce supply fairly, choosing exact solvers or heuristics, and testing models before go-live.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/moheetsubudhi-isb/business-analytics-skills.git",
+        "path": "./plugins/optimization-toolkit",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "ml-toolkit",
+      "description": "Data-science skills for framing ML problems, auditing data, engineering features, reducing dimensions, clustering, model selection and validation, classification and regression metrics, tree ensembles, linear and logistic models, anomaly detection, and text embeddings.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/moheetsubudhi-isb/business-analytics-skills.git",
+        "path": "./plugins/ml-toolkit",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "data-engineering-toolkit",
+      "description": "Data-engineering skills for choosing where data should live, laying out distribution keys and partitions in MPP warehouses, and designing pipelines with data quality, reconciliation and governance built in.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/moheetsubudhi-isb/business-analytics-skills.git",
+        "path": "./plugins/data-engineering-toolkit",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "recommender-toolkit",
+      "description": "Recommender-system skills for choosing and building association rules, collaborative filtering, matrix factorisation or graph ranking, and for evaluating recommenders offline and online with the right splits and ranking metrics.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/moheetsubudhi-isb/business-analytics-skills.git",
+        "path": "./plugins/recommender-toolkit",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "pricing-toolkit",
+      "description": "Pricing and demand skills for estimating price and promotion elasticities, setting prices from willingness-to-pay research, and designing segment prices, tiers, bundles and product-line ladders.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/moheetsubudhi-isb/business-analytics-skills.git",
+        "path": "./plugins/pricing-toolkit",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "decision-analysis-toolkit",
+      "description": "Decision-analysis skills for structuring choices under uncertainty as decision trees, valuing information before paying for a test, survey or pilot, and designing Monte Carlo simulations for risk, inventory and schedule decisions.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/moheetsubudhi-isb/business-analytics-skills.git",
+        "path": "./plugins/decision-analysis-toolkit",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "statistics-toolkit",
+      "description": "Statistics skills for the moments that decide things at work: designing and reading A/B tests, comparing groups, estimating with a margin of error, setting control limits, checking causal claims, trusting a regression, giving honest prediction ranges, and modelling counts and rates.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/moheetsubudhi-isb/business-analytics-skills.git",
+        "path": "./plugins/statistics-toolkit",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

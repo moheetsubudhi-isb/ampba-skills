@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "recommender-toolkit",
+  "version": "1.0.0",
+  "description": "Recommender-system skills for choosing and building association rules, collaborative filtering, matrix factorisation or graph ranking, and for evaluating recommenders offline and online with the right splits and ranking metrics.",
+  "author": {
+    "name": "Moheet Subudhi"
+  },
+  "homepage": "https://github.com/moheetsubudhi-isb/business-analytics-skills",
+  "repository": "https://github.com/moheetsubudhi-isb/business-analytics-skills",
+  "license": "MIT",
+  "keywords": [
+    "analytics",
+    "decision-support",
+    "recommender"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Recommender toolkit",
+        "shortDescription": "Recommender-system skills for choosing and building association rules, collaborative filtering, matrix factorisation or\u2026",
+        "longDescription": "Recommender-system skills for choosing and building association rules, collaborative filtering, matrix factorisation or graph ranking, and for evaluating recommenders offline and online with the right splits and ranking metrics.",
+        "developerName": "Moheet Subudhi",
+        "category": "Productivity"
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ml-toolkit",
+  "version": "1.0.0",
+  "description": "Data-science skills for framing ML problems, auditing data, engineering features, reducing dimensions, clustering, model selection and validation, classification and regression metrics, tree ensembles, linear and logistic models, anomaly detection, and text embeddings.",
+  "author": {
+    "name": "Moheet Subudhi"
+  },
+  "homepage": "https://github.com/moheetsubudhi-isb/business-analytics-skills",
+  "repository": "https://github.com/moheetsubudhi-isb/business-analytics-skills",
+  "license": "MIT",
+  "keywords": [
+    "analytics",
+    "decision-support",
+    "ml"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Ml toolkit",
+        "shortDescription": "Data-science skills for framing ML problems, auditing data, engineering features, reducing dimensions, clustering,\u2026",
+        "longDescription": "Data-science skills for framing ML problems, auditing data, engineering features, reducing dimensions, clustering, model selection and validation, classification and regression metrics, tree ensembles, linear and logistic models, anomaly detection, and text embeddings.",
+        "developerName": "Moheet Subudhi",
+        "category": "Productivity"
+      }
+    }
+  }
+}

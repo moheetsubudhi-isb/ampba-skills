@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "pricing-toolkit",
+  "version": "1.0.0",
+  "description": "Pricing and demand skills for estimating price and promotion elasticities, setting prices from willingness-to-pay research, and designing segment prices, tiers, bundles and product-line ladders.",
+  "author": {
+    "name": "Moheet Subudhi"
+  },
+  "homepage": "https://github.com/moheetsubudhi-isb/business-analytics-skills",
+  "repository": "https://github.com/moheetsubudhi-isb/business-analytics-skills",
+  "license": "MIT",
+  "keywords": [
+    "analytics",
+    "decision-support",
+    "pricing"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Pricing toolkit",
+        "shortDescription": "Pricing and demand skills for estimating price and promotion elasticities, setting prices from willingness-to-pay\u2026",
+        "longDescription": "Pricing and demand skills for estimating price and promotion elasticities, setting prices from willingness-to-pay research, and designing segment prices, tiers, bundles and product-line ladders.",
+        "developerName": "Moheet Subudhi",
+        "category": "Productivity"
+      }
+    }
+  }
+}

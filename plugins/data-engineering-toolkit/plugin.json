@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "data-engineering-toolkit",
+  "version": "1.0.0",
+  "description": "Data-engineering skills for choosing where data should live, laying out distribution keys and partitions in MPP warehouses, and designing pipelines with data quality, reconciliation and governance built in.",
+  "author": {
+    "name": "Moheet Subudhi"
+  },
+  "homepage": "https://github.com/moheetsubudhi-isb/business-analytics-skills",
+  "repository": "https://github.com/moheetsubudhi-isb/business-analytics-skills",
+  "license": "MIT",
+  "keywords": [
+    "analytics",
+    "decision-support",
+    "data-engineering"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Data engineering toolkit",
+        "shortDescription": "Data-engineering skills for choosing where data should live, laying out distribution keys and partitions in MPP\u2026",
+        "longDescription": "Data-engineering skills for choosing where data should live, laying out distribution keys and partitions in MPP warehouses, and designing pipelines with data quality, reconciliation and governance built in.",
+        "developerName": "Moheet Subudhi",
+        "category": "Productivity"
+      }
+    }
+  }
+}

@@ -93,8 +93,8 @@ Every skill is one folder with a `SKILL.md` file, in the open [Agent Skills](htt
 
 | Where | Kind | Loads the skill by itself | Runs the scripts | How to install |
 |---|---|---|---|---|
-| Claude Code | Terminal / IDE | Yes | Yes | [Plugin or folder](#claude-code) |
-| Codex (CLI, IDE, ChatGPT desktop app) | Terminal / IDE | Yes | Yes | [Folder](#codex-and-the-chatgpt-desktop-app) |
+| Claude Code | Terminal / IDE | Yes | Yes | [Marketplace, CLI or folder](#claude-code) |
+| Codex (CLI, IDE, ChatGPT desktop app) | Terminal / IDE | Yes | Yes | [Marketplace, CLI or folder](#codex-and-the-chatgpt-desktop-app) |
 | Cursor | IDE | Yes | Yes | [Folder](#cursor) |
 | GitHub Copilot (VS Code, Copilot CLI) | IDE / terminal | Yes | Yes | [Folder](#github-copilot-in-vs-code-and-copilot-cli) |
 | Gemini CLI | Terminal | Yes | Yes | [Folder](#gemini-cli) |
@@ -109,7 +109,17 @@ Where code cannot run, each skill still guides the method and tells the assistan
 
 ## Install in terminal and IDE tools
 
-Start by downloading the repository.
+**Three routes. Pick one, they all end up in the same place.**
+
+| | Route | Best when |
+|---|---|---|
+| 1 | **A marketplace** — [Claude Code](#claude-code) or [Codex](#codex-and-the-chatgpt-desktop-app) | Your tool has one. Installs by toolkit, and updates in place later. |
+| 2 | **[One CLI command](#one-command-for-every-terminal-tool)** | You use several tools, or your tool has no marketplace. Covers Claude Code, Codex, Cursor, Copilot, Gemini CLI and more in a single command. |
+| 3 | **[Copy the folders](#copy-once-for-most-tools)** | You want no installer at all, or you're on a locked-down machine. Works everywhere. |
+
+A skill is just a folder with a `SKILL.md` in it, in the open [Agent Skills](https://agentskills.io) format, so every route installs the same files. Nothing here is specific to one assistant.
+
+**For routes 2 and 3, start by downloading the repository.** Route 1 does this for you.
 
 ```bash
 git clone https://github.com/moheetsubudhi-isb/business-analytics-skills.git
@@ -180,7 +190,17 @@ Type `/` in Claude Code to see the installed skills.
 
 ### Codex and the ChatGPT desktop app
 
-Copy the folders into `~/.agents/skills/` (every project) or `.agents/skills/` (one project). Codex picks a skill when a request matches its description; you can also run `/skills` or type `$` and the skill name to call it. See OpenAI's [Build skills guide](https://learn.chatgpt.com/docs/build-skills).
+Install as plugins, one toolkit at a time, from this repository's own marketplace:
+
+```bash
+codex plugin marketplace add moheetsubudhi-isb/business-analytics-skills
+```
+
+Then browse and install the toolkits you want from the Plugins directory. Each toolkit is a plugin: `optimization-toolkit`, `ml-toolkit`, `recommender-toolkit`, `data-engineering-toolkit`, `pricing-toolkit`, `decision-analysis-toolkit`, `statistics-toolkit`.
+
+Or skip the marketplace and copy the folders into `~/.agents/skills/` (every project) or `.agents/skills/` (one project).
+
+Codex picks a skill when a request matches its description; you can also run `/skills` or type `$` and the skill name to call it. See OpenAI's [Build skills guide](https://learn.chatgpt.com/docs/build-skills) and [plugin docs](https://developers.openai.com/plugins/build/plugins).
 
 ### Cursor
 
@@ -263,6 +283,7 @@ Skills change as the methods get sharpened and as the tools around them move. Ho
 | How you installed | How to update |
 |---|---|
 | Claude Code plugin | `/plugin marketplace update`, then `/plugin update <toolkit>@business-analytics-skills` |
+| Codex plugin | `codex plugin marketplace update`, then reinstall the toolkit from the Plugins directory |
 | `skills` CLI | Re-run the same `npx skills add ...` command; it overwrites with the current version |
 | Copied folders | `git pull` in your clone, then copy again over the same destination |
 | Chat upload (zip) | Download the current `dist/<skill>.zip` and re-upload it, replacing the old one |
@@ -289,6 +310,7 @@ MIT. See [LICENSE](LICENSE). Use them, change them, ship them in your own work, 
 
 - Run `python tools/validate_skills.py` and every script's `--selftest` before committing. CI runs both, along with a secret scan.
 - After changing a skill, run `python tools/build_bundles.py` and commit `dist/`. CI fails if the bundles are out of date.
+- After changing a toolkit's name or description, run `python tools/build_marketplaces.py` and commit the result. `.claude-plugin/marketplace.json` is the single source; the Codex marketplace and every `plugin.json` are generated from it, so the two ecosystems cannot drift apart. CI checks this too.
 - Keep frontmatter to `name` and `description` so skills stay portable.
 - Keep the five sections every skill uses, in this order: **Get the context that changes the answer**, **Procedure**, **Deliverable**, **Traps**, **When you are corrected**. `validate_skills.py` fails without them. The shape is the point — a reader who knows one skill can skim any of the others.
 - Refer to scripts and reference files by paths relative to the skill folder, and never name one assistant's tools. That keeps every skill working in every tool above.
