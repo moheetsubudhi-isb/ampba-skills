@@ -1,13 +1,14 @@
-# AMPBA Skills
+# Business Analytics Skills
 
 Skills that make an AI assistant work like a decision scientist and an advisor, not just a calculator. Each skill:
 
 - asks what the work is for, but only when the answer would change the result;
 - follows a real method, step by step;
 - runs a check wherever there is logic to verify;
-- hands back a plain-language decision brief for the decision owner, plus a technical appendix for the people who build it.
+- hands back a plain-language decision brief for the decision owner, plus a technical appendix for the people who build it;
+- treats your correction as a change to the method, and gives you the line to save so it sticks.
 
-The methods come from analytics coursework at ISB (AMPBA), rewritten from scratch for everyday work. The repository contains no course slides, cases, datasets or faculty material, and every example is invented.
+Every skill is written from the published method, in plain words, with invented examples. Nothing here is copied from any book, course or vendor.
 
 ## Skills
 
@@ -84,7 +85,7 @@ The methods come from analytics coursework at ISB (AMPBA), rewritten from scratc
 | `prediction-interval-reporting` | You need an honest range around one prediction or forecast, and proof that the range covers |
 | `count-and-rate-models` | You are modelling counts or rates: orders per day, defects per batch, claims per policy |
 
-See [catalog.md](catalog.md) for the course modules behind each skill and its trigger-test score.
+See [catalog.md](catalog.md) for the decision each skill handles and how reliably it triggers.
 
 ## Where the skills work
 
@@ -108,30 +109,30 @@ Where code cannot run, each skill still guides the method and tells the assistan
 
 ## Install in terminal and IDE tools
 
-Start by downloading the repository. While it is private, only people added as collaborators can clone it.
+Start by downloading the repository.
 
 ```bash
-git clone https://github.com/moheetsubudhi-isb/ampba-skills.git
+git clone https://github.com/moheetsubudhi-isb/business-analytics-skills.git
 ```
 
 The scripts need Python 3. Most of them also need `numpy` and `pandas`, and the ML scripts need `scikit-learn`:
 
 ```bash
-pip install -r ampba-skills/requirements.txt
+pip install -r business-analytics-skills/requirements.txt
 ```
 
 **Personal or project install.** Each tool below reads skills from a folder in your home directory, which makes them available in every project, and from a folder inside a project, which shares them with everyone who clones that project. Copy the skill folders into whichever one you want.
 
 ### One command for every terminal tool
 
-The open-source [`skills` CLI](https://github.com/vercel-labs/skills) installs into Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI and many other agents at once. It uses your existing GitHub login, so it works with this private repository.
+The open-source [`skills` CLI](https://github.com/vercel-labs/skills) installs into Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI and many other agents at once.
 
 ```bash
-npx skills add moheetsubudhi-isb/ampba-skills --list
+npx skills add moheetsubudhi-isb/business-analytics-skills --list
 ```
 
 ```bash
-npx skills add moheetsubudhi-isb/ampba-skills -g -a claude-code -a codex -a cursor -a github-copilot -a gemini-cli
+npx skills add moheetsubudhi-isb/business-analytics-skills -g -a claude-code -a codex -a cursor -a github-copilot -a gemini-cli
 ```
 
 Leave out `-g` to install into the current project instead of your home directory. Add `--skill ml-data-audit` to install only one skill.
@@ -143,13 +144,13 @@ Codex, Cursor, GitHub Copilot and Gemini CLI all read `~/.agents/skills/`. One c
 macOS and Linux:
 
 ```bash
-mkdir -p ~/.agents/skills && cp -R ampba-skills/plugins/*/skills/* ~/.agents/skills/
+mkdir -p ~/.agents/skills && cp -R business-analytics-skills/plugins/*/skills/* ~/.agents/skills/
 ```
 
 Windows (PowerShell):
 
 ```powershell
-New-Item -ItemType Directory -Force "$HOME\.agents\skills"; Get-ChildItem ampba-skills\plugins\*\skills\* -Directory | Copy-Item -Destination "$HOME\.agents\skills" -Recurse -Force
+New-Item -ItemType Directory -Force "$HOME\.agents\skills"; Get-ChildItem business-analytics-skills\plugins\*\skills\* -Directory | Copy-Item -Destination "$HOME\.agents\skills" -Recurse -Force
 ```
 
 For a single project, copy into `.agents/skills/` at the project root instead.
@@ -159,20 +160,20 @@ For a single project, copy into `.agents/skills/` at the project root instead.
 Install as plugins. Updates arrive with `/plugin marketplace update`.
 
 ```
-/plugin marketplace add moheetsubudhi-isb/ampba-skills
-/plugin install optimization-toolkit@ampba-skills
-/plugin install ml-toolkit@ampba-skills
-/plugin install recommender-toolkit@ampba-skills
-/plugin install data-engineering-toolkit@ampba-skills
-/plugin install pricing-toolkit@ampba-skills
-/plugin install decision-analysis-toolkit@ampba-skills
-/plugin install statistics-toolkit@ampba-skills
+/plugin marketplace add moheetsubudhi-isb/business-analytics-skills
+/plugin install optimization-toolkit@business-analytics-skills
+/plugin install ml-toolkit@business-analytics-skills
+/plugin install recommender-toolkit@business-analytics-skills
+/plugin install data-engineering-toolkit@business-analytics-skills
+/plugin install pricing-toolkit@business-analytics-skills
+/plugin install decision-analysis-toolkit@business-analytics-skills
+/plugin install statistics-toolkit@business-analytics-skills
 ```
 
 Or copy the folders into `~/.claude/skills/` (every project) or `.claude/skills/` (one project):
 
 ```bash
-mkdir -p ~/.claude/skills && cp -R ampba-skills/plugins/*/skills/* ~/.claude/skills/
+mkdir -p ~/.claude/skills && cp -R business-analytics-skills/plugins/*/skills/* ~/.claude/skills/
 ```
 
 Type `/` in Claude Code to see the installed skills.
@@ -255,10 +256,40 @@ This covers the Microsoft Copilot app, ChatGPT without skill upload, Perplexity 
 - **For one conversation:** attach or paste `dist/text/<skill>.md` at the start, then ask your question.
 
 
+## Keeping your copy up to date
+
+Skills change as the methods get sharpened and as the tools around them move. How you update depends on how you installed.
+
+| How you installed | How to update |
+|---|---|
+| Claude Code plugin | `/plugin marketplace update`, then `/plugin update <toolkit>@business-analytics-skills` |
+| `skills` CLI | Re-run the same `npx skills add ...` command; it overwrites with the current version |
+| Copied folders | `git pull` in your clone, then copy again over the same destination |
+| Chat upload (zip) | Download the current `dist/<skill>.zip` and re-upload it, replacing the old one |
+
+Watch the repository on GitHub to hear when skills change.
+
+**If you edited a skill for yourself,** a straight copy or pull will overwrite it. Keep your changes in your own instructions file, or in a copy under a different folder name, and they survive every update.
+
+## Versioning
+
+Changes land under three headings, so you can tell at a glance whether an update will change answers you already rely on.
+
+- **New skill** — a decision moment that had no skill. Safe; nothing existing changes.
+- **Sharpened skill** — the method, defaults or triggers of an existing skill improve. This can change the answer you get to the same question. Called out in the commit.
+- **Retired skill** — a skill is folded into another one. The release note names the replacement.
+
+A skill is never duplicated to cover a moment that already has one. It is improved instead, which keeps the set small enough to read.
+
+## Licence
+
+MIT. See [LICENSE](LICENSE). Use them, change them, ship them in your own work, commercially or not. No warranty: check the output before anyone acts on it, as you would with any analysis.
+
 ## Contributing
 
 - Run `python tools/validate_skills.py` and every script's `--selftest` before committing. CI runs both, along with a secret scan.
 - After changing a skill, run `python tools/build_bundles.py` and commit `dist/`. CI fails if the bundles are out of date.
 - Keep frontmatter to `name` and `description` so skills stay portable.
+- Keep the five sections every skill uses, in this order: **Get the context that changes the answer**, **Procedure**, **Deliverable**, **Traps**, **When you are corrected**. `validate_skills.py` fails without them. The shape is the point — a reader who knows one skill can skim any of the others.
 - Refer to scripts and reference files by paths relative to the skill folder, and never name one assistant's tools. That keeps every skill working in every tool above.
-- Encode the method, not the course material. Invent examples.
+- Encode the method, not anyone's teaching material. Invent every example.

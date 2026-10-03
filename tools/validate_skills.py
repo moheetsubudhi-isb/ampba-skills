@@ -14,6 +14,15 @@ import sys
 import yaml
 
 PORTABLE_KEYS = {"name", "description"}
+# Every skill answers the same four questions in the same order, then says how it
+# learns. Keeping the shape identical is what lets a reader skim any skill in the set.
+REQUIRED_SECTIONS = [
+    "Get the context that changes the answer",
+    "Procedure",
+    "Deliverable",
+    "Traps",
+    "When you are corrected",
+]
 NAME_RE = re.compile(r"[a-z0-9]+(-[a-z0-9]+)*")
 
 root = pathlib.Path(__file__).resolve().parent.parent
@@ -48,6 +57,12 @@ for p in paths:
         errors.append(f"{rel}: description is {len(desc)} characters; maximum is 1024")
     elif "<" in desc or ">" in desc:
         errors.append(f"{rel}: description must not contain angle brackets")
+
+    body = p.read_text()[m.end():]
+    headings = set(re.findall(r"^## (.+)$", body, re.M))
+    missing = [h for h in REQUIRED_SECTIONS if h not in headings]
+    if missing:
+        errors.append(f"{rel}: missing required section(s) {missing}")
 
 for e in errors:
     print("FAIL", e)

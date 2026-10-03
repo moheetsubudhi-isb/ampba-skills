@@ -67,6 +67,18 @@ Where a step names a script and code cannot run here, do the same check by hand 
 - Bagging a stable model such as logistic regression and expecting a gain.
 - Grid-searching the number of trees in a random forest: more trees rarely hurt. Tune depth, leaf size and max_features instead.
 
+## When you are corrected
+
+A correction is the most useful input you get. Treat it as a change to the method, not just to this answer.
+
+1. **Name what it changes.** Say which step or default the correction overturns, then redo that step only. Do not silently regenerate the whole answer.
+2. **Say it back as a rule.** One line, in the user's own words, general enough to apply next time: "revenue is always net of returns", not "I will be more careful".
+3. **Offer the line for keeping.** Give it as a block the user can paste into this skill file, or into whatever instructions file their assistant reads. Say plainly that unless they save it, it is gone when the conversation ends.
+
+If the same correction arrives twice, say so, and treat it as a missing line in this file rather than an accident.
+
+Apply the same rule to inputs. When the user supplies a figure, a definition or a constraint that contradicts a default here, use theirs, state which default it replaced, and carry it through the rest of the work.
+
 ---
 
 ## Reference: references/bagging-and-random-forest.md
