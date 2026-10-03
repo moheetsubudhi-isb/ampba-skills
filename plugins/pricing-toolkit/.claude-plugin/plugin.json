@@ -1,6 +1,16 @@
 {
   "name": "pricing-toolkit",
+  "version": "1.0.0",
   "description": "Pricing and demand skills for estimating price and promotion elasticities, setting prices from willingness-to-pay research, and designing segment prices, tiers, bundles and product-line ladders.",
-  "version": "0.1.0",
-  "author": { "name": "Moheet Subudhi" }
+  "author": {
+    "name": "Moheet Subudhi"
+  },
+  "homepage": "https://github.com/moheetsubudhi-isb/business-analytics-skills",
+  "repository": "https://github.com/moheetsubudhi-isb/business-analytics-skills",
+  "license": "MIT",
+  "keywords": [
+    "analytics",
+    "decision-support",
+    "pricing"
+  ]
 }

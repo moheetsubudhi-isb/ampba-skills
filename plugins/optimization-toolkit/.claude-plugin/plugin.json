@@ -1,6 +1,16 @@
 {
   "name": "optimization-toolkit",
+  "version": "1.0.0",
   "description": "Decision-science skills for turning business decisions into optimisation models, writing business rules correctly, allocating scarce supply fairly, choosing exact solvers or heuristics, and testing models before go-live.",
-  "version": "0.1.0",
-  "author": { "name": "Moheet Subudhi" }
+  "author": {
+    "name": "Moheet Subudhi"
+  },
+  "homepage": "https://github.com/moheetsubudhi-isb/business-analytics-skills",
+  "repository": "https://github.com/moheetsubudhi-isb/business-analytics-skills",
+  "license": "MIT",
+  "keywords": [
+    "analytics",
+    "decision-support",
+    "optimization"
+  ]
 }

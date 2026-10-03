@@ -1,6 +1,16 @@
 {
   "name": "recommender-toolkit",
+  "version": "1.0.0",
   "description": "Recommender-system skills for choosing and building association rules, collaborative filtering, matrix factorisation or graph ranking, and for evaluating recommenders offline and online with the right splits and ranking metrics.",
-  "version": "0.1.0",
-  "author": { "name": "Moheet Subudhi" }
+  "author": {
+    "name": "Moheet Subudhi"
+  },
+  "homepage": "https://github.com/moheetsubudhi-isb/business-analytics-skills",
+  "repository": "https://github.com/moheetsubudhi-isb/business-analytics-skills",
+  "license": "MIT",
+  "keywords": [
+    "analytics",
+    "decision-support",
+    "recommender"
+  ]
 }

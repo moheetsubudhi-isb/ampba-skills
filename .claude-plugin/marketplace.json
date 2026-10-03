@@ -1,5 +1,6 @@
 {
   "name": "business-analytics-skills",
+  "description": "Thirty-six skills that make an AI assistant work like a decision scientist and an advisor: it asks what the work is for, follows a real method, checks its own logic, and hands back a decision brief rather than a number.",
   "owner": {
     "name": "Moheet Subudhi"
   },

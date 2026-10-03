@@ -9,8 +9,12 @@ marketplaces can never disagree about what this repo ships.
   python3 tools/build_marketplaces.py --check   fail if they are out of date (CI)
 
 Generated:
-  .agents/plugins/marketplace.json   Codex / ChatGPT: codex plugin marketplace add
-  plugins/<toolkit>/plugin.json      portable Agent Plugins manifest, one per toolkit
+  .agents/plugins/marketplace.json            Codex / ChatGPT: codex plugin marketplace add
+  plugins/<toolkit>/plugin.json               portable Agent Plugins manifest (Codex)
+  plugins/<toolkit>/.claude-plugin/plugin.json  same facts where Claude Code looks for them
+
+Claude Code reads only the .claude-plugin/ copy. Without it, it invents a
+manifest and stamps every toolkit 0.1.0, dropping the licence and homepage.
 """
 import json
 import pathlib
@@ -48,6 +52,19 @@ def generated(source):
         name, desc = plugin["name"], plugin["description"]
         path = plugin["source"].lstrip("./")
 
+        # Claude Code's location. Keys limited to the ones it reads.
+        out[f"{path}/.claude-plugin/plugin.json"] = json.dumps({
+            "name": name,
+            "version": VERSION,
+            "description": desc,
+            "author": {"name": AUTHOR},
+            "homepage": REPO_URL,
+            "repository": REPO_URL,
+            "license": "MIT",
+            "keywords": ["analytics", "decision-support", name.replace("-toolkit", "")],
+        }, indent=2) + "\n"
+
+        # Portable Agent Plugins location, which Codex reads.
         out[f"{path}/plugin.json"] = json.dumps({
             "$schema": PLUGIN_SCHEMA,
             "name": name,

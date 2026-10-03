@@ -1,8 +1,16 @@
 {
   "name": "ml-toolkit",
+  "version": "1.0.0",
   "description": "Data-science skills for framing ML problems, auditing data, engineering features, reducing dimensions, clustering, model selection and validation, classification and regression metrics, tree ensembles, linear and logistic models, anomaly detection, and text embeddings.",
-  "version": "0.2.0",
   "author": {
     "name": "Moheet Subudhi"
-  }
+  },
+  "homepage": "https://github.com/moheetsubudhi-isb/business-analytics-skills",
+  "repository": "https://github.com/moheetsubudhi-isb/business-analytics-skills",
+  "license": "MIT",
+  "keywords": [
+    "analytics",
+    "decision-support",
+    "ml"
+  ]
 }
