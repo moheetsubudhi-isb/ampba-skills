@@ -53,12 +53,18 @@ while [ $# -gt 0 ]; do
         --source) [ $# -ge 2 ] || die "--source needs a folder" "Example: bash install.sh --source ./business-analytics-skills"; SOURCE="$2"; shift ;;
         --ref) [ $# -ge 2 ] || die "--ref needs a branch or tag" "Example: bash install.sh --ref main"; REF="$2"; shift ;;
         -h|--help) sed -n '2,23p' "$0" 2>/dev/null | sed 's/^# \{0,1\}//' | grep . || say "Options: --yes --dry-run --project --target DIR --only LIST --force --check --uninstall --source DIR --ref REF"; exit 0 ;;
-        *) die "unknown option '$1'" "Run: bash install.sh --help" ;;
+        *) die "unknown option '$1'" "See the options: bash install.sh --help, or https://github.com/$REPO#install-in-terminal-and-ide-tools" ;;
     esac
     shift
 done
 
 has() { command -v "$1" >/dev/null 2>&1; }
+# how to run this installer again, matching how it was started this time
+if [ -f "${BASH_SOURCE[0]:-}" ]; then
+    RERUN="bash $(basename "${BASH_SOURCE[0]}")"
+else
+    RERUN="curl -fsSL https://raw.githubusercontent.com/$REPO/main/install.sh | bash -s --"
+fi
 base() { if [ "$PROJECT" = 1 ]; then printf '%s' "$PWD"; else printf '%s' "$HOME"; fi; }
 
 # ---------------------------------------------------------------- detect tools
@@ -168,7 +174,7 @@ do_check() {
             any=1
         done
     done
-    [ "$any" = 1 ] || say "  None installed by this installer yet. Run: bash install.sh"
+    [ "$any" = 1 ] || say "  None installed by this installer yet. Run: $RERUN"
     step "Python for the scripts"
     python_check
 }
@@ -272,7 +278,7 @@ do_install() {
     say ""
     say "Chat apps (claude.ai, ChatGPT, Microsoft 365 Copilot, Gemini) need an upload instead:"
     say "  https://github.com/$REPO#use-in-chat-tools"
-    say "Update later by running this command again. Remove with: bash install.sh --uninstall"
+    say "Update later by running this command again. Remove with: $RERUN --uninstall"
 }
 
 case "$MODE" in

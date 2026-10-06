@@ -23,6 +23,9 @@ param(
 $ErrorActionPreference = "Stop"
 $Repo = "moheetsubudhi-isb/business-analytics-skills"
 $Manifest = ".business-analytics-skills"
+# how to run this installer again with options, matching how it was started this time
+if ($PSCommandPath) { $Rerun = ".\install.ps1" }
+else { $Rerun = "& ([scriptblock]::Create((irm https://raw.githubusercontent.com/$Repo/main/install.ps1)))" }
 
 function Say([string]$m) { Write-Host $m }
 function Step([string]$m) { Write-Host ""; Write-Host "==> $m" }
@@ -158,7 +161,7 @@ function Invoke-Check {
         Say "  ${d}: $($names.Count) skills ($($stamp -replace '^# ', ''))"
         $any = $true
     }
-    if (-not $any) { Say "  None installed by this installer yet. Run: .\install.ps1" }
+    if (-not $any) { Say "  None installed by this installer yet. Run: $Rerun" }
     Step "Python for the scripts"
     Test-Python
 }
@@ -250,7 +253,7 @@ function Invoke-Install {
     Say ""
     Say "Chat apps (claude.ai, ChatGPT, Microsoft 365 Copilot, Gemini) need an upload instead:"
     Say "  https://github.com/$Repo#use-in-chat-tools"
-    Say "Update later by running this command again. Remove with: .\install.ps1 -Uninstall"
+    Say "Update later by running this command again. Remove with: $Rerun -Uninstall"
 }
 
 try {

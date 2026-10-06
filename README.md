@@ -131,7 +131,7 @@ Windows (PowerShell):
 irm https://raw.githubusercontent.com/moheetsubudhi-isb/business-analytics-skills/main/install.ps1 | iex
 ```
 
-Run the same command again to update. To pass options through the one-liner, add `-s --` after `bash`, for example `curl -fsSL .../install.sh | bash -s -- --dry-run`. Useful options: `--dry-run` to see the plan without changing anything, `--only statistics-toolkit` for one toolkit, `--project` to install into the current project, `--check` to see what is installed, `--uninstall` to remove only what it installed (Windows: `-DryRun`, `-Only`, `-Project`, `-Check`, `-Uninstall`). If something goes wrong, see [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
+Run the same command again to update. To pass options through the one-liner, add `-s --` after `bash`, for example `curl -fsSL .../install.sh | bash -s -- --dry-run`. Useful options: `--dry-run` to see the plan without changing anything, `--only statistics-toolkit` for one toolkit, `--project` to install into the current project, `--check` to see what is installed, `--uninstall` to remove only what it installed (Windows: `-DryRun`, `-Only`, `-Project`, `-Check`, `-Uninstall`, passed as `& ([scriptblock]::Create((irm https://raw.githubusercontent.com/moheetsubudhi-isb/business-analytics-skills/main/install.ps1))) -DryRun`). If something goes wrong, see [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
 
 **Using an AI assistant?** Paste this into any assistant that can run commands, whatever the tool or model:
 
