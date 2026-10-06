@@ -49,18 +49,18 @@ function Get-Tools {
     if ((Test-Path "$HomeDir\.cursor") -or (Has "cursor")) { $found += "Cursor" }
     if ((Test-Path "$HomeDir\.copilot") -or (Has "copilot") -or (Test-Path "$HomeDir\.vscode") -or (Has "code")) { $found += "GitHub Copilot / VS Code" }
     if ((Test-Path "$HomeDir\.gemini") -or (Has "gemini")) { $found += "Gemini CLI" }
-    return ,$found
+    return $found
 }
 
 function Get-Targets([string[]]$found) {
-    if ($Target.Count -gt 0) { return ,$Target }
+    if ($Target.Count -gt 0) { return $Target }
     $base = if ($Project) { (Get-Location).Path } else { $HomeDir }
     $t = @()
     if ($found -contains "Claude Code") { $t += (Join-Path $base ".claude\skills") }
     if (($found -contains "Codex") -or ($found -contains "Gemini CLI") -or -not ($found -contains "Claude Code")) {
         $t += (Join-Path $base ".agents\skills")
     }
-    return ,$t
+    return $t
 }
 
 function Get-SourceFolder {
@@ -110,13 +110,13 @@ function Get-Skills([string]$src) {
     if ($skills.Count -eq 0) {
         Stop-Install "no skills matched '$Only'" @("Use toolkit names (statistics-toolkit) or skill names (ml-data-audit), separated by commas")
     }
-    return ,$skills
+    return $skills
 }
 
 function Read-Manifest([string]$dir) {
     $f = Join-Path $dir $Manifest
-    if (-not (Test-Path $f)) { return ,@() }
-    return ,@(Get-Content $f | Where-Object { $_ -and -not $_.StartsWith("#") })
+    if (-not (Test-Path $f)) { return }
+    return @(Get-Content $f | Where-Object { $_ -and -not $_.StartsWith("#") })
 }
 
 function Test-Python {
@@ -147,16 +147,16 @@ function Get-KnownDirs {
             $dirs += (Join-Path $b $s)
         }
     }
-    return ,($dirs + $Target)
+    return ($dirs + $Target)
 }
 
 function Invoke-Check {
     Step "Installed skills"
     $any = $false
-    foreach ($d in Get-KnownDirs) {
+    foreach ($d in @(Get-KnownDirs)) {
         $f = Join-Path $d $Manifest
         if (-not (Test-Path $f)) { continue }
-        $names = Read-Manifest $d
+        $names = @(Read-Manifest $d)
         $stamp = (Get-Content $f | Where-Object { $_.StartsWith("# ") } | Select-Object -First 1)
         Say "  ${d}: $($names.Count) skills ($($stamp -replace '^# ', ''))"
         $any = $true
@@ -168,11 +168,11 @@ function Invoke-Check {
 
 function Invoke-Uninstall {
     $removed = 0
-    foreach ($d in Get-KnownDirs) {
+    foreach ($d in @(Get-KnownDirs)) {
         $f = Join-Path $d $Manifest
         if (-not (Test-Path $f)) { continue }
         Step "Removing from $d"
-        foreach ($n in Read-Manifest $d) {
+        foreach ($n in @(Read-Manifest $d)) {
             $p = Join-Path $d $n
             $item = Get-Item $p -ErrorAction SilentlyContinue
             if ($item -and $item.LinkType) { Warn "$n is a link to a local copy; left in place"; continue }
@@ -186,10 +186,10 @@ function Invoke-Uninstall {
 }
 
 function Invoke-Install {
-    $found = Get-Tools
-    $targets = Get-Targets $found
+    $found = @(Get-Tools)
+    $targets = @(Get-Targets $found)
     $src = Get-SourceFolder
-    $skills = Get-Skills $src
+    $skills = @(Get-Skills $src)
 
     Step "Plan"
     if ($found.Count -gt 0) { Say "  Assistants found: $($found -join ', ')" }
@@ -215,7 +215,7 @@ function Invoke-Install {
             Stop-Install "cannot create $t" @("Check that you can write to $(Split-Path $t -Parent)", "Or install somewhere you can write: .\install.ps1 -Target <folder your assistant reads>")
         }
         $kept = [System.Collections.Generic.List[string]]::new()
-        foreach ($n in Read-Manifest $t) { $kept.Add($n) }
+        foreach ($n in @(Read-Manifest $t)) { $kept.Add($n) }
         foreach ($s in $skills) {
             $dest = Join-Path $t $s.Name
             $item = Get-Item $dest -ErrorAction SilentlyContinue
