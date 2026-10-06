@@ -10,6 +10,14 @@ Skills that make an AI assistant work like a decision scientist and an advisor, 
 
 Every skill is written from the published method, in plain words, with invented examples. Nothing here is copied from any book, course or vendor.
 
+**Install in one line** (details and other routes under [Install](#install-in-terminal-and-ide-tools)):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/moheetsubudhi-isb/business-analytics-skills/main/install.sh | bash
+```
+
+On Windows: `irm https://raw.githubusercontent.com/moheetsubudhi-isb/business-analytics-skills/main/install.ps1 | iex`. Chat apps such as claude.ai and ChatGPT use an upload instead: see [Use in chat tools](#use-in-chat-tools).
+
 ## Skills
 
 36 skills in seven toolkits. Each one loads on its own when a request matches it, so nobody has to name it.
@@ -109,13 +117,33 @@ Where code cannot run, each skill still guides the method and tells the assistan
 
 ## Install in terminal and IDE tools
 
-**Three routes. Pick one, they all end up in the same place.**
+**Quickest: one command.** It finds the assistants on your machine (Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI), shows where it will put the skills, asks once, installs, checks the result, and tells you exactly what to do if anything fails. It needs no Git, Node or Python.
+
+macOS and Linux:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/moheetsubudhi-isb/business-analytics-skills/main/install.sh | bash
+```
+
+Windows (PowerShell):
+
+```powershell
+irm https://raw.githubusercontent.com/moheetsubudhi-isb/business-analytics-skills/main/install.ps1 | iex
+```
+
+Run the same command again to update. To pass options through the one-liner, add `-s --` after `bash`, for example `curl -fsSL .../install.sh | bash -s -- --dry-run`. Useful options: `--dry-run` to see the plan without changing anything, `--only statistics-toolkit` for one toolkit, `--project` to install into the current project, `--check` to see what is installed, `--uninstall` to remove only what it installed (Windows: `-DryRun`, `-Only`, `-Project`, `-Check`, `-Uninstall`). If something goes wrong, see [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
+
+**Using an AI assistant?** Paste this into any assistant that can run commands, whatever the tool or model:
+
+> Install the skills from https://github.com/moheetsubudhi-isb/business-analytics-skills by running its install script (`install.sh` on macOS or Linux, `install.ps1` on Windows) with the yes option. If you cannot run commands here, show me the command to run myself, then tell me what the installer printed.
+
+**Prefer to choose the route yourself?** There are three. They all end up in the same place.
 
 | | Route | Best when |
 |---|---|---|
 | 1 | **A marketplace** — [Claude Code](#claude-code) or [Codex](#codex-and-the-chatgpt-desktop-app) | Your tool has one. Installs by toolkit, and updates in place later. |
 | 2 | **[One CLI command](#one-command-for-every-terminal-tool)** | You use several tools, or your tool has no marketplace. Covers Claude Code, Codex, Cursor, Copilot, Gemini CLI and more in a single command. |
-| 3 | **[Copy the folders](#copy-once-for-most-tools)** | You want no installer at all, or you're on a locked-down machine. Works everywhere. |
+| 3 | **The install script above, or [copy the folders](#copy-once-for-most-tools) by hand** | Your tool has no marketplace, or you're on a locked-down machine. Works everywhere. |
 
 A skill is just a folder with a `SKILL.md` in it, in the open [Agent Skills](https://agentskills.io) format, so every route installs the same files. Nothing here is specific to one assistant.
 

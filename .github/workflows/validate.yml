@@ -21,3 +21,54 @@ jobs:
       - uses: gitleaks/gitleaks-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  installer-unix:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: No assistant installed -> shared ~/.agents/skills
+        run: |
+          export HOME="$RUNNER_TEMP/h1"; mkdir -p "$HOME"
+          PATH=/usr/bin:/bin bash install.sh --source . --yes
+          test "$(ls "$HOME/.agents/skills" | wc -l | tr -d ' ')" -ge 36
+          test ! -d "$HOME/.claude/skills"
+      - name: Claude Code and Codex -> both folders, rerun is safe, foreign skill untouched
+        run: |
+          export HOME="$RUNNER_TEMP/h2"; mkdir -p "$HOME/.claude/skills/ml-data-audit" "$HOME/.codex"
+          echo mine > "$HOME/.claude/skills/ml-data-audit/SKILL.md"
+          PATH=/usr/bin:/bin bash install.sh --source . --yes
+          PATH=/usr/bin:/bin bash install.sh --source . --yes
+          grep -qx mine "$HOME/.claude/skills/ml-data-audit/SKILL.md"
+          test -f "$HOME/.agents/skills/causal-claim-check/SKILL.md"
+          PATH=/usr/bin:/bin bash install.sh --check | grep -q "skills ("
+          PATH=/usr/bin:/bin bash install.sh --uninstall
+          test ! -d "$HOME/.agents/skills/causal-claim-check"
+          grep -qx mine "$HOME/.claude/skills/ml-data-audit/SKILL.md"
+      - name: A bad option explains itself
+        run: |
+          out="$(bash install.sh --nope 2>&1 || true)"
+          echo "$out" | grep -q "What to do"
+  installer-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Windows PowerShell 5.1 install, rerun, check, uninstall
+        shell: powershell
+        run: |
+          $h = Join-Path $env:RUNNER_TEMP "h1"
+          New-Item -ItemType Directory -Force -Path (Join-Path $h ".claude") | Out-Null
+          .\install.ps1 -Source . -Yes -HomeDir $h
+          .\install.ps1 -Source . -Yes -HomeDir $h
+          if (-not (Test-Path (Join-Path $h ".claude\skills\causal-claim-check\SKILL.md"))) { throw "not installed" }
+          .\install.ps1 -Check -HomeDir $h
+          .\install.ps1 -Uninstall -HomeDir $h
+          if (Test-Path (Join-Path $h ".claude\skills\causal-claim-check")) { throw "not removed" }
+      - name: PowerShell 7 install into the shared folder
+        shell: pwsh
+        run: |
+          $h = Join-Path $env:RUNNER_TEMP "h2"
+          New-Item -ItemType Directory -Force -Path $h | Out-Null
+          .\install.ps1 -Source . -Yes -HomeDir $h -Target (Join-Path $h ".agents\skills")
+          if (-not (Test-Path (Join-Path $h ".agents\skills\ml-data-audit\SKILL.md"))) { throw "not installed" }
