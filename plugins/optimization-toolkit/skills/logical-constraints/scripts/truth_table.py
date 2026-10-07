@@ -15,13 +15,61 @@ With --sense max|min --target v, only the assignments an optimiser would pick
       --sense max --target c
   python3 truth_table.py --selftest
 
-Expressions run through eval(); pass only expressions you wrote yourself.
+Expressions are read by a small built-in evaluator that allows only numbers, the variables you
+declare, arithmetic, comparisons, and/or/not, and min, max, abs. Nothing else runs.
 """
 import argparse
+import ast
 import itertools
+import operator
 import sys
 
-SAFE = {"__builtins__": {}, "min": min, "max": max, "abs": abs}
+BIN = {ast.Add: operator.add, ast.Sub: operator.sub, ast.Mult: operator.mul,
+       ast.FloorDiv: operator.floordiv, ast.Mod: operator.mod}
+CMP = {ast.Eq: operator.eq, ast.NotEq: operator.ne, ast.Lt: operator.lt, ast.LtE: operator.le,
+       ast.Gt: operator.gt, ast.GtE: operator.ge}
+FUNCS = {"min": min, "max": max, "abs": abs}
+
+
+def evaluate(node, env):
+    """Tree-walking evaluator for the few forms a business rule needs. No eval."""
+    if isinstance(node, ast.Expression):
+        return evaluate(node.body, env)
+    if isinstance(node, ast.Constant) and isinstance(node.value, (int, float, bool)):
+        return node.value
+    if isinstance(node, ast.Name) and node.id in env:
+        return env[node.id]
+    if isinstance(node, ast.BoolOp):
+        vals = (evaluate(v, env) for v in node.values)
+        return all(vals) if isinstance(node.op, ast.And) else any(vals)
+    if isinstance(node, ast.UnaryOp):
+        v = evaluate(node.operand, env)
+        if isinstance(node.op, ast.Not):
+            return not v
+        if isinstance(node.op, ast.USub):
+            return -v
+    if isinstance(node, ast.BinOp) and type(node.op) in BIN:
+        return BIN[type(node.op)](evaluate(node.left, env), evaluate(node.right, env))
+    if isinstance(node, ast.Compare) and all(type(o) in CMP for o in node.ops):
+        left = evaluate(node.left, env)
+        for op, right_node in zip(node.ops, node.comparators):
+            right = evaluate(right_node, env)
+            if not CMP[type(op)](left, right):
+                return False
+            left = right
+        return True
+    if isinstance(node, ast.IfExp):
+        return evaluate(node.body if evaluate(node.test, env) else node.orelse, env)
+    if isinstance(node, ast.Call) and isinstance(node.func, ast.Name) and node.func.id in FUNCS and not node.keywords:
+        return FUNCS[node.func.id](*(evaluate(a, env) for a in node.args))
+    raise ValueError(f"not allowed in a rule: {ast.dump(node)[:60]}; use declared variables, numbers, + - * // %, comparisons, and/or/not, min, max, abs")
+
+
+def compile_rule(text):
+    try:
+        return ast.parse(text, mode="eval")
+    except SyntaxError as e:
+        raise ValueError(f"cannot read '{text}': {e.msg}") from None
 
 
 def domains(specs):
@@ -37,7 +85,7 @@ def domains(specs):
 
 
 def holds(exprs, env):
-    return all(eval(e, SAFE, dict(env)) for e in exprs)
+    return all(evaluate(compile_rule(e), env) for e in exprs)
 
 
 def check(given, decide, constraints, rule, sense=None, target=None):
@@ -76,6 +124,12 @@ def selftest():
     big_m = ["z <= x", "z <= y", "z >= x - (1 - b) * 4", "z >= y - b * 4"]
     assert not check(xy, zb, big_m, "z == min(x, y)"), "min with big-M, any direction"
     assert check(xy, ["z=0..4"], ["z <= x", "z <= y"], "z == min(x, y)", "min", "z"), "min without big-M breaks when minimising"
+    for bad in ("__import__('os').getcwd()", "open('f')", "a.__class__", "[1][0]"):
+        try:
+            check(["a"], [], [bad], "a == a")
+            raise AssertionError(f"accepted {bad}")
+        except ValueError:
+            pass
     print("selftest ok")
 
 
@@ -93,7 +147,10 @@ def main():
         return selftest()
     if not a.rule or (a.sense and a.target not in [n for n, _ in domains(a.decide)]):
         ap.error("--rule is required; --sense needs --target naming a --decide variable")
-    failures = check(a.given, a.decide, a.constraint, a.rule, a.sense, a.target)
+    try:
+        failures = check(a.given, a.decide, a.constraint, a.rule, a.sense, a.target)
+    except ValueError as e:
+        sys.exit(f"cannot use that rule: {e}")
     if not failures:
         print("PASS: constraints match the rule in every situation")
         return
