@@ -223,7 +223,7 @@ do_install() {
         case "$answer" in [Nn]*) say "Nothing installed."; exit 0 ;; esac
     fi
 
-    local installed=0 skipped=0 src name dest stamp
+    local installed=0 skipped=0 linked=0 src name dest stamp
     stamp="# $REPO@$REF installed $(date '+%Y-%m-%d %H:%M')"
     for t in "${TARGETS[@]}"; do
         step "Installing into $t"
@@ -234,6 +234,7 @@ do_install() {
             "Fix the folder's owner: sudo chown -R \"$(id -un)\" \"$t\"" \
             "Or install somewhere you can write: bash install.sh --target <folder your assistant reads>"
         local kept=()
+        linked=0
         if [ -f "$t/$MANIFEST" ]; then
             while IFS= read -r name; do case "$name" in ''|'#'*) ;; *) kept+=("$name") ;; esac; done < "$t/$MANIFEST"
         fi
@@ -241,8 +242,7 @@ do_install() {
             name="$(basename "$src")"
             dest="$t/$name"
             if [ -L "$dest" ]; then
-                warn "$name is linked to a local copy; left as it is"
-                skipped=$((skipped + 1)); continue
+                linked=$((linked + 1)); continue
             fi
             if [ -e "$dest" ] && ! owned "$t" "$name" && [ "$FORCE" = 0 ]; then
                 warn "a different '$name' already exists there; skipped (use --force to replace it)"
@@ -255,11 +255,11 @@ do_install() {
         done
         { say "$stamp"; printf '%s\n' "${kept[@]+"${kept[@]}"}" | sort -u; } > "$t/$MANIFEST"
         local ok=0
-        while IFS= read -r name; do
-            case "$name" in ''|'#'*) continue ;; esac
-            [ -f "$t/$name/SKILL.md" ] && ok=$((ok + 1))
-        done < "$t/$MANIFEST"
-        say "  Verified: $ok skills from this set are in $t"
+        for src in "${SKILLS[@]}"; do
+            [ -f "$t/$(basename "$src")/SKILL.md" ] && ok=$((ok + 1))
+        done
+        [ "$linked" -gt 0 ] && say "  $linked of them are links to a local copy of this repository (yours, left as they are; update with git pull)"
+        say "  Verified: $ok of ${#SKILLS[@]} skills are in place in $t"
         say "  Check one: $t/$(basename "${SKILLS[0]}")/SKILL.md"
     done
 

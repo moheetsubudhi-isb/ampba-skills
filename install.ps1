@@ -214,12 +214,13 @@ function Invoke-Install {
         try { New-Item -ItemType Directory -Force -Path $t | Out-Null } catch {
             Stop-Install "cannot create $t" @("Check that you can write to $(Split-Path $t -Parent)", "Or install somewhere you can write: .\install.ps1 -Target <folder your assistant reads>")
         }
+        $linked = 0
         $kept = [System.Collections.Generic.List[string]]::new()
         foreach ($n in @(Read-Manifest $t)) { $kept.Add($n) }
         foreach ($s in $skills) {
             $dest = Join-Path $t $s.Name
             $item = Get-Item $dest -ErrorAction SilentlyContinue
-            if ($item -and $item.LinkType) { Warn "$($s.Name) is linked to a local copy; left as it is"; $skipped++; continue }
+            if ($item -and $item.LinkType) { $linked++; continue }
             if ($item -and -not ($kept -contains $s.Name) -and -not $Force) {
                 Warn "a different '$($s.Name)' already exists there; skipped (use -Force to replace it)"; $skipped++; continue
             }
@@ -233,8 +234,9 @@ function Invoke-Install {
         }
         $lines = @($stamp) + ($kept | Sort-Object -Unique)
         Set-Content -Path (Join-Path $t $Manifest) -Value $lines -Encoding UTF8
-        $ok = @($kept | Where-Object { Test-Path (Join-Path (Join-Path $t $_) "SKILL.md") }).Count
-        Say "  Verified: $ok skills from this set are in $t"
+        $ok = @($skills | Where-Object { Test-Path (Join-Path (Join-Path $t $_.Name) "SKILL.md") }).Count
+        if ($linked -gt 0) { Say "  $linked of them are links to a local copy of this repository (yours, left as they are; update with git pull)" }
+        Say "  Verified: $ok of $($skills.Count) skills are in place in $t"
         Say "  Check one: $(Join-Path (Join-Path $t $skills[0].Name) 'SKILL.md')"
     }
 
