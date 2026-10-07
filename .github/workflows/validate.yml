@@ -72,3 +72,49 @@ jobs:
           New-Item -ItemType Directory -Force -Path $h | Out-Null
           .\install.ps1 -Source . -Yes -HomeDir $h -Target (Join-Path $h ".agents\skills")
           if (-not (Test-Path (Join-Path $h ".agents\skills\ml-data-audit\SKILL.md"))) { throw "not installed" }
+  download-routes:
+    # The one-liners people paste, fetched from GitHub exactly as published.
+    if: github.ref == 'refs/heads/main'
+    needs: [installer-unix, installer-windows]
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: curl | bash from GitHub
+        if: runner.os != 'Windows'
+        run: |
+          export HOME="$RUNNER_TEMP/h"; mkdir -p "$HOME/.claude"
+          curl -fsSL "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/install.sh" | PATH=/usr/bin:/bin bash -s -- --yes --ref ${{ github.sha }}
+          test -f "$HOME/.claude/skills/causal-claim-check/SKILL.md"
+      - name: irm | iex form from GitHub
+        if: runner.os == 'Windows'
+        shell: powershell
+        run: |
+          $h = Join-Path $env:RUNNER_TEMP "h"
+          New-Item -ItemType Directory -Force -Path $h | Out-Null
+          & ([scriptblock]::Create((irm "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/install.ps1"))) -Yes -HomeDir $h -Ref ${{ github.sha }}
+          if (-not (Test-Path (Join-Path $h ".agents\skills\causal-claim-check\SKILL.md"))) { throw "not installed" }
+      - name: Every chat-tool bundle downloads
+        shell: bash
+        run: |
+          for f in causal-claim-check.zip microsoft-365/causal-claim-check.zip text/causal-claim-check.md; do
+            curl -fsSL -o /dev/null "https://github.com/${{ github.repository }}/raw/${{ github.sha }}/dist/$f"
+          done
+  claude-marketplace:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Marketplace adds and every toolkit installs
+        run: |
+          npm install -g @anthropic-ai/claude-code >/dev/null
+          export CLAUDE_CONFIG_DIR="$RUNNER_TEMP/cc"
+          claude plugin marketplace add ./
+          for t in $(python3 -c "import json;print(' '.join(p['name'] for p in json.load(open('.claude-plugin/marketplace.json'))['plugins']))"); do
+            claude plugin install "$t@business-analytics-skills"
+          done
+          claude plugin list | grep -c enabled
